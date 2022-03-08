@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>PK WORLD ADMIN</title>
+    <title>Fraichee Dashboard</title>
     <!-- icons -->
     <link href="{{url('public/new_assets/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{url('public/new_assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
@@ -41,7 +41,7 @@
                 <div class="page-logo">
                     <a href="{{url('/dashboard')}}">
                         <img alt="" src="{{url('public/new_assets/img/logo.png')}}">
-                        <span class="logo-default">PK WORLD</span> </a>
+                        <span class="logo-default">Fraichee</span> </a>
                 </div>
                 <!-- logo end -->
                 <ul class="nav navbar-nav navbar-left in">

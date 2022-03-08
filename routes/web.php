@@ -37,6 +37,10 @@ Route::match(['get','post'],'/dashboard/categories', [DashboardController::class
 //products
 Route::match(['get','post'],'/dashboard/products', [DashboardController::class,'products'])->name('products');
 Route::match(['get','post'],'/dashboard/child-products', [DashboardController::class,'childproducts'])->name('childproducts');
+Route::match(['get','post'],'/dashboard/add-service-address', [DashboardController::class,'add_service_address'])->name('add_service_address');
+Route::match(['get','post'],'/dashboard/coupon-code', [DashboardController::class,'coupon_code'])->name('coupon_code');
+Route::match(['get','post'],'/dashboard/contact-us-details', [DashboardController::class,'forms_contact'])->name('contact-us-details');
+Route::match(['get','post'],'/dashboard/subscribers', [DashboardController::class,'subscribers'])->name('subscribers');
 
     // Route::match(['get','post'],'/dashboard/categories', [DashboardController::class,'addblog_categories'])->name('categories');
     Route::match(['get','post'],'/dashboard/blog', [DashboardController::class,'addblog'])->name('blog');

@@ -22,81 +22,113 @@ class DashboardController extends Controller
         $crud = $this->GCurdController->_getGroceryCrudEnterprise();
         $crud->setTable('categories');
         // $crud->columns(['name','symbol','code','rate','is_default','is_active']);
+        $crud->setSubject('Categories', 'Categories');
         $crud->setSkin('bootstrap-v4');
         $output = $crud->render();
         return $this->GCurdController->show($output);
     }
 
-    // Add Blog categories Type
-    public function addblog_categories(){
+    // Add products
+    public function products(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('products');
+    $crud->columns(['service_id','title','image','status']);
+    $crud->setRelation('service_id','categories','name');
+    $crud->displayAs('service_id','Service');
+    $crud->setSubject('products', 'products');
 
-        $crud = $this->GCurdController->_getGroceryCrudEnterprise();
-        $crud->setTable('blog_categories');
-        $crud->setSubject('categories', 'Blog Categories');
-        $crud->columns(['cat_name','cat_slug','cat_status']);
-        $crud->displayAs('cat_name', 'Name');
-        $crud->displayAs('cat_slug', 'Slug');
-        $crud->displayAs('cat_status', 'Status');
-        $crud->setSkin('bootstrap-v4');
-        $output = $crud->render();
-        return $this->GCurdController->show($output);
+    $crud->setFieldUpload('image', 'public/assets/images/products', env('APP_URL').'/public/assets/images/products');
+    $crud->callbackBeforeDelete(function ($stateParameters) {
+    $check = DB::table('products')->where('prod_id',$stateParameters->primaryKeyValue)->get();
+    unlink(public_path().'/assets/images/products' .  $check[0]->image);
+    return $stateParameters;
+    });
+    $crud->callbackColumn('image', function ($value, $row) {
+    $val = env('APP_URL').'/public/assets/images/products/'.$value;
+    $img = "<div class='thumbnail span1'><img src='$val' /></div>";
+    return($img);
+    });
+
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
     }
 
-    // Add Blog Type
-    public function addblog(){
-        $crud = $this->GCurdController->_getGroceryCrudEnterprise();
-        $crud->setTable('blog');
-        $crud->columns(['post_title','cat_id','post_img','post_created_at','post_status']);
-        $crud->setRelation('cat_id','blog_categories','cat_name');
-        $crud->setRelation('destination_id','destination','destination_name');
-        $crud->setTexteditor(['post_desc']);
-        $crud->displayAs('post_title','Title');
-        $crud->displayAs('cat_id','Category');
-        $crud->displayAs('post_img','Image');
-        $crud->displayAs('post_created_at','Date');
-        $crud->displayAs('post_status','Status');
-        $crud->displayAs('cat_id','select as blog name');
+    // Add child_products
+    public function childproducts(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('child_products');
+    $crud->columns(['prod_id','cp_name','cp_price','cp_desc','cp_image','status']);
+    $crud->setRelation('prod_id','products','title');
+    $crud->displayAs('prod_id','Parent Product');
+    $crud->displayAs('cp_name','Child Product');
+    $crud->displayAs('cp_price','Price');
+    $crud->displayAs('cp_desc','Desc');
+    $crud->displayAs('cp_image','Img');
+    $crud->setTexteditor(['cp_desc']);
+    $crud->setSubject('child_products', 'child products');
 
-        $crud->setFieldUpload('post_img', '../imta.pkworld.pk/public/blog', env('Img_APP_URL').'/public/blog');
-        $crud->callbackBeforeDelete(function ($stateParameters) {
-        $check = DB::table('blog')->where('post_id',$stateParameters->primaryKeyValue)->get();
-        unlink('../imta.pkworld.pk/public/blog/' .  $check[0]->post_img);
-        return $stateParameters;
-        });
-        $crud->callbackColumn('post_img', function ($value, $row) {
-        $val = env('Img_APP_URL').'/public/blog/'.$value;
-        $img = "<div class='thumbnail span1'><img src='$val' /></div>";
-        return($img);
-        });
+    $crud->setFieldUpload('cp_image', 'public/assets/images/products', env('APP_URL').'/public/assets/images/products');
+    $crud->callbackBeforeDelete(function ($stateParameters) {
+    $check = DB::table('child_products')->where('cp_id',$stateParameters->primaryKeyValue)->get();
+    unlink(public_path().'/assets/images/products' .  $check[0]->cp_image);
+    return $stateParameters;
+    });
+    $crud->callbackColumn('cp_image', function ($value, $row) {
+    $val = env('APP_URL').'/public/assets/images/products/'.$value;
+    $img = "<div class='thumbnail span1'><img src='$val' /></div>";
+    return($img);
+    });
 
-
-        $crud->setSkin('bootstrap-v4');
-        $output = $crud->render();
-        return $this->GCurdController->show($output);
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
     }
 
-        // Add destination
-    public function adddestination(){
-        $crud = $this->GCurdController->_getGroceryCrudEnterprise();
-        $crud->setTable('destination');
-        // $crud->columns(['post_title','cat_id','post_img','post_created_at','post_status']);
-        // $crud->displayAs('post_title','Title');
 
-        $crud->setFieldUpload('destination_img', '../imta.pkworld.pk/public/destination', env('Img_APP_URL').'/public/destination');
-        $crud->callbackBeforeDelete(function ($stateParameters) {
-        $check = DB::table('destination')->where('id',$stateParameters->primaryKeyValue)->get();
-        unlink('../imta.pkworld.pk/public/destination/' .  $check[0]->destination_img);
-        return $stateParameters;
-        });
-        $crud->callbackColumn('destination_img', function ($value, $row) {
-        $val = env('Img_APP_URL').'/public/destination/'.$value;
-        $img = "<div class='thumbnail span1'><img src='$val' /></div>";
-        return($img);
-        });
+    // Add add-coupen
+    public function coupon_code(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('coupon_code');
+    // $crud->columns(['prod_id','cp_name','cp_price','cp_desc','cp_image','status']);
+    $crud->setSubject('coupon_code', 'Add Coupon');
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
+    }
 
 
-        $crud->setSkin('bootstrap-v4');
-        $output = $crud->render();
-        return $this->GCurdController->show($output);
+    // Add add_service_address
+    public function add_service_address(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('service_address');
+    // $crud->columns(['prod_id','cp_name','cp_price','cp_desc','cp_image','status']);
+    $crud->setSubject('service address', 'Add Service Address');
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
+    }
+
+
+    // Add forms_contact
+    public function forms_contact(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('forms_contact');
+    $crud->columns(['name','email','message','create_at']);
+    $crud->setSubject('Contact Us', 'Contact Us');
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
+    }
+
+    // Add subscribers
+    public function subscribers(){
+    $crud = $this->GCurdController->_getGroceryCrudEnterprise();
+    $crud->setTable('subscribers');
+    $crud->columns(['sub_email','sub_status']);
+    $crud->setSubject('Subscribers', 'Subscribers');
+    $crud->setSkin('bootstrap-v4');
+    $output = $crud->render();
+    return $this->GCurdController->show($output);
     }
 }

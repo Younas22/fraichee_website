@@ -11,14 +11,14 @@
                                     <span></span>
                                 </div>
                             </li>
-                            <li class="sidebar-user-panel">
+                            <li class="sidebar-user-panel d-none">
                                 <div class="user-panel">
                                     <div class="row">
                                         <div class="sidebar-userpic">
                                             <img src="{{url('public/new_assets/img/dp.jpg')}}" class="img-responsive" alt=""> </div>
                                     </div>
                                     <div class="profile-usertitle">
-                                        <div class="sidebar-userpic-name"> PK WORLD </div>
+                                        <div class="sidebar-userpic-name"> fraichee </div>
                                         <div class="profile-usertitle-job"> ADMIN </div>
                                     </div>
                                     <div class="sidebar-userpic-btn d-none">
@@ -65,6 +65,36 @@
                                     </li> --}}
                                 </ul>
                             </li>
+
+
+                            <li class="nav-item">
+                                <a href="{{url('/dashboard/client-user')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">group</i>
+                                    <span class="title">Users list</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url('/dashboard/orders-list')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">notifications_active</i>
+                                    <span class="title">Orders list</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="{{url('/dashboard/subscription-list')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">notifications_none</i>
+                                    <span class="title">subscription list</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+                            </li>
+                            
+
+
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/categories')}}" class="nav-link nav-toggle">
                                     <i class="material-icons">home</i>
@@ -75,7 +105,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">room</i>
+                                    <i class="material-icons">local_laundry_service</i>
                                     <span class="title">products</span>
                                     <span class="arrow"></span>
                                 </a>
@@ -92,141 +122,50 @@
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">vpn_key</i>
-                                    <span class="title">Policies</span>
-                                    <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/checkin')}}" class="nav-link ">
-                                            <span class="title">Checkin</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/checkout')}}" class="nav-link ">
-                                            <span class="title">Checkout</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">dvr</i>
-                                    <span class="title">Facilities</span>
-                                    <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/main_facilitie')}}" class="nav-link ">
-                                            <span class="title">Main Facilities</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/rooms_facilitie')}}" class="nav-link ">
-                                            <span class="title">Rooms Facilities</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/property_facilitie')}}" class="nav-link ">
-                                            <span class="title">Property Facilities</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/breakfast_type')}}" class="nav-link ">
-                                            <span class="title">Breakfast Facilities</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
+                                <a href="{{url('/dashboard/coupon-code')}}" class="nav-link nav-toggle">
                                     <i class="material-icons">payment</i>
-                                    <span class="title">Payment Method</span>
-                                    <span class="arrow"></span>
+                                    <span class="title">Add Coupon Code</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/payment_method')}}" class="nav-link ">
-                                            <span class="title">Add Payment Method</span>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </li>
+
+ 
+
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">desktop_mac</i>
-                                    <span class="title">Properties</span> <span class="arrow"></span>
+                                <a href="{{url('/dashboard/add-service-address')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">room</i>
+                                    <span class="title">Service Address</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/active_properties')}}" class="nav-link "> <span class="title">ACTIVE</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/pending_properties')}}" class="nav-link "> <span class="title">PENDING APPROVAL</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/denied_properties')}}" class="nav-link "> <span class="title">DENIED</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/paused_properties')}}" class="nav-link "> <span class="title">PAUSED</span>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </li>
 
-                            <li class="menu-heading m-t-20">
-                                <span>-- User Interface</span>
-                            </li>
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">group</i>
-                                    <span class="title">Users</span>
-                                    <span class="arrow"></span>
+                                <a href="{{url('/dashboard/contact-us-details')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">sms</i>
+                                    <span class="title">Contact Us</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/client-user')}}" class="nav-link ">
-                                            <span class="title">All Clients List</span>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </li>
+
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">settings</i>
-                                    <span class="title">Settings</span>
-                                    <span class="arrow"></span>
+                                <a href="{{url('/dashboard/subscribers')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">email</i>
+                                    <span class="title">Subscribers</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/currencies')}}" class="nav-link ">
-                                            <span class="title">Currencies</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/categories')}}" class="nav-link ">
-                                            <span class="title">Blog Categories</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/blog')}}" class="nav-link ">
-                                            <span class="title">Blog Post</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="{{url('/dashboard/add-destination')}}" class="nav-link ">
-                                            <span class="title">Destination</span>
-                                        </a>
-                                    </li>
-                                </ul>
 
                             </li>
+
+
+
 
                         </ul>
                     </div>
