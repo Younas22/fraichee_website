@@ -15,7 +15,7 @@
                                 <div class="user-panel">
                                     <div class="row">
                                         <div class="sidebar-userpic">
-                                            <img src="{{url('public/assets/admin/img/dp.jpg')}}" class="img-responsive" alt=""> </div>
+                                            <img src="{{url('public/new_assets/img/dp.jpg')}}" class="img-responsive" alt=""> </div>
                                     </div>
                                     <div class="profile-usertitle">
                                         <div class="sidebar-userpic-name"> fraichee </div>

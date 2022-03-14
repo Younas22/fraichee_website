@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminHome;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,12 @@ Route::match(['get','post'],'/dashboard/subscribers', [DashboardController::clas
 
 });
 
+
+
+
+
+
+
+
+//Home
+Route::get('/', [Home::class, 'index'])->name('index');

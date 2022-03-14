@@ -1,0 +1,2042 @@
+/* #Custom Css */
+:root {
+    --primary: #1665f8;
+    --section-padding: 50px;
+    --color-primary: #032b56;
+    --color-secondary: #e6eaef;
+}
+@font-face {
+    font-family: Helvetica;
+    src: url(../fonts/helvetica/Helvetica.ttf);
+}
+@font-face {
+    font-family: Manrope;
+    src: url(../fonts/manrope/Manrope-Regular.ttf);
+}
+@font-face {
+    font-family: Manrope-Bold;
+    src: url(../fonts/manrope/Manrope-Bold.ttf);
+}
+@font-face {
+    font-family: Manrope-Medium;
+    src: url(../fonts/manrope/Manrope-Medium.ttf);
+}
+@font-face {
+    font-family: Manrope-ExtraBold;
+    src: url(../fonts/manrope/Manrope-ExtraBold.ttf);
+}
+body,
+html {
+    overflow-x: hidden;
+}
+body {
+    font-size: 16px;
+    font-family: "Manrope-Medium";
+    color: var(--color-primary);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.btn-link {
+    text-decoration: none;
+}
+.btn-link:focus {
+    text-decoration: none;
+}
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+.text-primary {
+    color: var(--primary) !important;
+}
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn {
+    border-radius: 2px;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.form-control {
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+    font-size: 14px;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-width: 2px;
+    border-color: var(--primary);
+}
+.section-title p {
+    font-size: 16px;
+    font-family: "Manrope-Bold";
+    line-height: 1.5;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+.section-title h1 {
+    font-size: 48px;
+    font-family: "Manrope-ExtraBold";
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: -2.5px;
+}
+/* Header */
+
+header {
+    height: 76px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 9999;
+}
+header nav {
+    width: 100%;
+}
+header .searchicon {
+    padding-right: 0;
+}
+header .form-control:focus {
+    box-shadow: none;
+}
+header .searchicon svg {
+    width: 20px;
+}
+header .form-inline .input-group {
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+header .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+header .navbar-nav .nav-item .nav-link {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-family: "Manrope-Medium";
+}
+header .navbar-nav .nav-item .nav-link.active {
+    color: var(--primary);
+}
+header .navbar-nav .nav-item:nth-child(3) {
+    flex: 2;
+}
+header > .btn-primary {
+    min-width: 188px;
+    line-height: 3.4;
+    border-radius: 0;
+}
+header > .btn-primary svg {
+    margin-right: 10px;
+}
+/* Moblile Collapse */
+.mobile-collapse {
+    position: fixed;
+    top: 76px;
+    width: 100%;
+    z-index: 99999;
+    left: 0;
+}
+.mobile-collapse .navbar-nav .nav-item .nav-link {
+    color: var(--color-primary);
+}
+/* Banner */
+.banner {
+    position: relative;
+    z-index: 99;
+    max-height: 600px;
+    margin-bottom: 150px;
+    margin-top: 76px;
+    padding-top: 40px;
+    background-image: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-room-with-a-washing-machine-scaled.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 111, 128, 0.3);
+    z-index: -1;
+}
+.banner .sub {
+    font-size: 16px;
+    font-family: "Manrope-bold";
+    color: #fff;
+}
+.banner h1 {
+    font-size: 72px;
+    font-family: "Manrope-ExtraBold";
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -2.5px;
+}
+.banner .desc {
+    font-size: 16px;
+    font-family: "Manrope-Medium";
+    color: #fff;
+    margin-top: 14px;
+}
+.banner .btn-group-banner {
+    display: flex;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+}
+.banner .btn-group-banner .btn-lg {
+    padding: 18px 45px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    border-width: 2px;
+    max-width: 225px;
+    width: 100%;
+}
+.banner .btn-group-banner .btn-lg svg {
+    width: 18px;
+    margin-right: 10px;
+}
+.banner .btn-group-banner .btn-lg:last-of-type {
+    margin-left: 10px;
+}
+.banner .btn-group-banner .btn-outline-light:hover {
+    background-color: transparent;
+    color: #fff;
+}
+.banner .card {
+    border: 0;
+    box-shadow: 0px 9px 8px rgb(0 0 0 / 11%);
+    margin-top: 40px;
+    overflow: hidden;
+}
+.banner .card .card-title {
+    font-family: "Manrope-Bold";
+    font-size: 24px;
+}
+.banner .card .form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.banner .card .form-control:focus {
+    border-color: var(--primary);
+}
+.banner .card .row .row {
+    margin-left: -7px;
+    margin-right: -7px;
+}
+.banner .card .row .row .col-md-4 {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.banner .card .btn-lg {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 47px;
+    justify-content: center;
+    border-radius: 5px;
+}
+.banner .card .btn-lg svg {
+    width: 18px;
+    margin-left: 10px;
+}
+.banner .card .promo {
+    background-image: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-machines-1024x700.jpg);
+    background-size: cover;
+    background-position: 50%;
+    height: 100%;
+    position: relative;
+    z-index: 999;
+}
+.banner .card .promo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 101, 248, 0.9);
+    z-index: -1;
+}
+.banner .card .promo .card-title {
+    font-family: "Manrope-Bold";
+    font-size: 24px;
+    color: #fff;
+}
+.banner .card .promo .card-text {
+    font-family: "Manrope";
+    font-size: 16px;
+    color: #fff;
+    max-width: 95%;
+}
+
+.banner .card .ribbon {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: auto;
+    right: 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 150px;
+    overflow: hidden;
+    height: 150px;
+}
+.banner .card .ribbon .ribbon-inner {
+    background-color: #9bcb3b;
+    margin-top: 45px;
+    transform: translateY(-50%) translateX(-50%) translateX(45px) rotate(-45deg);
+    font-family: "Manrope-ExtraBold";
+    line-height: 1.5;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* About-Company */
+.about-company {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: #fff;
+}
+.about-company img {
+    border-radius: 5px;
+}
+.about-company .desc {
+    font-size: 16px;
+}
+.about-company .alert svg {
+    width: 40px;
+    fill: var(--primary);
+}
+.about-company .alert svg line {
+    stroke: var(--primary);
+}
+.about-company .alert .alert-inner h5 {
+    font-family: "Manrope-Bold";
+    font-size: 18px;
+}
+.about-company .count-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #dde8f5;
+    border-radius: 100%;
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    font-family: "Manrope-ExtraBold";
+}
+.about-company .count-container p {
+    font-family: "Manrope-Medium";
+    font-size: 16px;
+    margin-top: -60px;
+}
+.our-promise {
+    background-color: rgb(3, 43, 86);
+    position: relative;
+}
+
+.our-promise .bg-img {
+    background: url(../img/bg_memphis.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 999;
+    padding-bottom: var(--section-padding);
+}
+.our-promise .bg-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 43, 86, 0.9);
+    z-index: -1;
+}
+
+.our-promise .title h2 {
+    color: #ffff;
+    font-size: 48px;
+    font-weight: 900;
+    font-family: "manrope";
+    list-style: 1.1em;
+}
+.our-promise .title h6 {
+    color: #ffff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "manrope";
+    list-style: 1.6em;
+}
+.our-promise .title p {
+    color: #ffff;
+    font-size: 17px;
+    font-family: "manrope";
+    line-height: 1.5em;
+}
+.our-promise .btn {
+    font-size: 18px;
+    background-color: #1665f8;
+    padding: 17px 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    font-family: "manrope";
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.our-promise .btn:hover {
+    color: #ffff;
+    background-color: #032b56;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+}
+
+.about {
+    background: url(../img/laundry-machines-scaled.jpg);
+    position: relative;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+    padding: 7em 0em 9em 0em;
+}
+.about::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+}
+.about .content {
+    padding-bottom: var(--section-padding);
+}
+.about .title h2 {
+    color: #032b56;
+    font-size: 48px;
+    font-weight: 900;
+    font-family: "manrope";
+    list-style: 1.1em;
+}
+
+.about .title h6 {
+    color: #1665f8;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "manrope";
+    list-style: 1.6em;
+}
+.about .title h5 {
+    margin: 0em 0em 1em 0em;
+    padding: 0px 0px 0px 0px;
+    font-family: "Manrope";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #032b56;
+}
+
+.about .title p {
+    color: #000;
+    font-size: 17px;
+    font-family: "manrope";
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+}
+.about .learn-btn {
+    padding: 0px;
+    margin: 1em 0em 0em 0em;
+    font-family: "Manrope";
+    font-size: 16px;
+    font-weight: 500;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-radius: 0px 0px 0px 0px;
+    border-color: var(--color-primary);
+    color: #032b56;
+    background-color: transparent;
+}
+.about .machine {
+    background-color: #ffffff;
+    padding: 3em 2em 3em 2em;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    z-index: 999;
+    margin-bottom: 20px;
+}
+.about .machine::before {
+    content: "";
+    background-color: transparent;
+    background-image: linear-gradient(135deg, rgb(161 133 133) 0%, var(--primary) 100%);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+}
+.about .machine:hover::before {
+    left: 0;
+}
+.about .machine:hover .icon {
+    background-color: #fff;
+}
+.about .machine:hover h5,
+.about .machine:hover p,
+.about .machine:hover button {
+    color: #fff;
+}
+.about .machine:hover button {
+    border-color: #fff;
+}
+.about .icon {
+    height: 85px;
+    padding: 10px 10px 10px 10px;
+    transform: rotate(0deg);
+    width: 85px;
+    background-color: #e6eaef;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.discount {
+    background: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-attendant-scaled.jpg);
+    position: relative;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+    padding: 7em 0em 9em 0em;
+}
+.discount::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #768ba28e;
+    z-index: -1;
+}
+.discount .btn {
+    font-size: 18px;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    font-family: "manrope";
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.discount .btn:hover {
+    color: #ffff;
+    background-color: #032b56;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+}
+/*why-choose-us*/
+
+.why-choose-us {
+    padding: 7em 0em 9em 0em;
+}
+
+.why-choose-us .desc {
+    color: #000;
+    font-size: 16px;
+}
+
+.why-choose-us .btn {
+    font-size: 16px;
+    background-color: #1665f8;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    font-family: "Manrope";
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.why-choose-us .btn:hover {
+    color: #ffff;
+    background-color: #032b56;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+}
+
+.why-choose-us .card {
+    background-color: #ffffff;
+    padding: 3em 2em 3em 2em;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #704848;
+    border-radius: 5px 5px 5px 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.why-choose-us .card:hover {
+    box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 10%);
+    transition: all 0.6s ease;
+}
+.why-choose-us .box-icon {
+    height: 85px;
+    padding: 10px 10px 10px 10px;
+    width: 85px;
+    background-color: #e6eaef;
+    border-radius: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+}
+.why-choose-us .box-icon i {
+    font-size: 48px;
+    color: var(--primary);
+}
+
+.why-choose-us .card-title h5 {
+    margin: 0em 0em 1em 0em;
+    padding: 0px 0px 0px 0px;
+    font-family: "Manrope";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #032b56;
+}
+
+.laundary {
+    background: url(../img/laundry-machines-scaled.jpg);
+    position: relative;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+    padding: 7em 0em 9em 0em;
+}
+.laundary .card {
+    border: none;
+}
+.laundary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+}
+.laundary .section-title h5 {
+    font-family: "Manrope";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #032b56;
+}
+.laundary .section-title p {
+    color: #032b56;
+    font-family: "Manrope";
+}
+
+.laundary .card-package {
+    background-color: #ffffff;
+    padding: 3em 2em 3em 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.laundary .kg .price {
+    font-size: 72px;
+    color: #1665f8;
+    font-family: "Manrope-ExtraBold";
+    line-height: 0.8;
+}
+.laundary .kg {
+    display: inline-flex;
+}
+.laundary .kg .dollor {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1665f8;
+}
+.laundary .wraper {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 150px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.laundary .ribon-wraper {
+    text-align: center;
+    left: 0;
+    width: 200%;
+    transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+    margin-top: 35px;
+    font-size: 13px;
+    line-height: 2;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #032b56;
+    color: #ffffff;
+    font-family: "Manrope";
+    font-size: 14px;
+}
+
+.laundary .title {
+    text-align: center;
+    padding: 3em 2em 1em 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+}
+.laundary .content {
+    text-align: center;
+    padding: 0em 2em 1em 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+}
+
+.laundary .card-list {
+    background-color: #02010100;
+    padding: 0em 3em 2em 3em;
+    text-align: left;
+    list-style: none;
+}
+
+.laundary .card-list li {
+    padding: 13px 0px;
+    font-size: 14px;
+    font-family: "manrope";
+    color: #032b56;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.laundary li::after {
+    content: "\F272";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    left: -31px;
+    top: 50%;
+    font-size: 20px;
+    transform: translateY(-50%);
+    color: #032b56;
+    font-weight: 900;
+}
+.laundary .bi-check-lg {
+    font-size: 1.3em;
+}
+.card-button {
+    text-align: center;
+    padding: 1em 2em 1em 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+}
+.laundary .btn {
+    font-size: 16px;
+    background-color: #1665f8;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    font-family: "manrope";
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.laundary .btn:hover {
+    color: #ffff;
+    background-color: #032b56;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+}
+
+.laundary .leo {
+    text-align: center;
+    padding: 0em 2em 1em 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0px 0px 0px 0px;
+}
+
+.laundary .leo span {
+    font-size: 13px;
+}
+
+/* Laundry-Services */
+.laundry-services {
+    background-image: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-machines-scaled.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    z-index: 999;
+}
+.laundry-services::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 53, 91, 0.9);
+    z-index: -1;
+}
+.laundry-services .desc {
+    font-size: 16px;
+    color: #fff;
+    font-family: "Manrope";
+}
+.laundry-services .nav .nav-item {
+    color: #fff;
+    font-family: "Manrope";
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.laundry-services .nav .nav-item svg {
+    color: #9bcb3b;
+}
+.laundry-services .card label {
+    font-family: "Manrope-Bold";
+}
+.laundry-services .card .form-control:not(textarea) {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.laundry-services .card textarea.form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.laundry-services .card .form-control:focus {
+    border-color: var(--primary);
+}
+.laundry-services .btn-lg {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 47px;
+    justify-content: center;
+    border-radius: 5px;
+}
+.laundry-services .card .btn-lg svg {
+    width: 18px;
+    margin-left: 10px;
+}
+
+/* Testimoinals */
+.testimonial {
+    background-image: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/women-selecting-clothes-scaled.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    z-index: 999;
+}
+.testimonial::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+}
+.testimonial .testimoial-slider .card {
+    padding-bottom: 20px;
+}
+.testimonial .testimoial-slider .card .card-body .bi-quote {
+    font-size: 4rem;
+}
+
+.testimonial .testimoial-slider .card .img-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.testimonial .testimoial-slider .author-name {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+.testimonial .testimoial-slider .card .author-des {
+    color: var(--color-secondary);
+}
+/* Blogs */
+
+/* seaction */
+.insight {
+    background-color: #e6eaef;
+    padding-top: calc(var(--section-padding) + var(--section-padding));
+    padding-bottom: calc(var(--section-padding) + var(--section-padding));
+}
+.insight a {
+    text-decoration: none;
+    color: #032b56;
+}
+/* seaction */
+/* heading */
+.insight .post-avatar:before {
+    content: ".";
+}
+.insight .insight-heading {
+    font-family: "Manrope";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: #032b56;
+}
+.more-article a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Manrope";
+    font-weight: 500;
+    font-size: 12px;
+    padding: 4px 21px;
+}
+
+.more-article {
+    background: #1665f8;
+}
+.more-article:hover {
+    color: #ffff;
+    background-color: #032b56;
+}
+/* heading */
+/* card */
+.insight .card {
+    height: 100%;
+    border: none;
+}
+.insight .card:hover {
+    box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 10%);
+    background-color: #ffff;
+}
+.card .post-meta-data {
+    color: #1665f8;
+    font-family: "Manrope";
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6em;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    margin-bottom: 13px;
+}
+.card .post-excerpt {
+    margin-bottom: 10px;
+}
+
+.card .post-excerpt p {
+    color: #54595f;
+    font-family: "Manrope";
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.card .card-title a {
+    font-family: "Manrope";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5em;
+    text-decoration: none;
+}
+/* card */
+
+/* Blogs */
+/* Footer */
+footer .newsletter {
+    position: relative;
+}
+footer .newsletter::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + var(--section-padding));
+    background: linear-gradient(180deg, #e6eaef 45%, #032b56 30%);
+    z-index: -1;
+}
+footer .newsletter .card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: calc(100% - 20px);
+    background-color: #dde8f5;
+}
+footer .newsletter .card .card-body {
+    padding: var(--section-padding);
+}
+footer .newsletter .card .card-title {
+    font-family: "Manrope-Bold";
+    font-size: 24px;
+}
+footer .newsletter .card .form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+footer .newsletter .card .btn-primary {
+    border-radius: 5px;
+}
+footer .newsletter .card .form-control:focus {
+    border-color: var(--primary);
+}
+footer .footer {
+    background-color: #032b56;
+    padding-top: calc(var(--section-padding) + var(--section-padding));
+    color: #fff;
+    font-size: 14px;
+    font-family: "Manrope";
+    padding-bottom: var(--section-padding);
+}
+footer .footer .footer-title {
+    font-size: 18px;
+    font-family: "Manrope-Bold";
+}
+footer .footer .footer-list li {
+    position: relative;
+}
+footer .footer .footer-list li::after {
+    content: "\F309";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    color: var(--primary);
+    font-size: 28px;
+    transform: translateY(-50%);
+}
+footer .footer .footer-list li a {
+    color: #fff;
+}
+footer .footer .footer-list li a:hover {
+    color: var(--primary);
+}
+footer .footer .contact-info li a {
+    color: #fff;
+}
+footer .footer .contact-info li a:hover {
+    color: var(--primary);
+}
+footer .footer .contact-info li .bi {
+    color: var(--primary);
+}
+footer .copyright {
+    font-size: 14px;
+    font-family: "Manrope";
+    color: #fff;
+    background-color: #032b56;
+    border-top: 1px solid #123f6f;
+    padding-top: 30px;
+    padding-bottom: var(--section-padding);
+}
+
+.section-header {
+    background-image: url("https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-room-with-a-washing-machine-scaled.jpg");
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    z-index: -1;
+}
+.section-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d355077;
+    z-index: -1;
+}
+
+.section-header .section-title h3 {
+    font-size: 32px;
+    font-family: "Manrope-Bold";
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+.section-header .section-title .icon-link a {
+    font-family: "Manrope";
+    margin: 0px 5px 0px 5px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.5em;
+    text-decoration: none;
+    z-index: 1;
+}
+.section-header .section-title .icon-link i {
+    font-size: 14px;
+    margin: 0px 3px 0px 3px;
+}
+/* single-blog */
+.single-blog {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: calc(var(--section-padding) + var(--section-padding));
+}
+.single-blog .paragraph p {
+    font-size: 16px;
+    font-family: "Manrope";
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.9rem;
+}
+/* card */
+.single-blog .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background-color: #e6eaef;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+.single-blog .card .card-body {
+    display: flex;
+    align-items: center;
+}
+.single-blog .card .card-body img {
+    border-radius: 50px;
+    margin-right: 10px;
+}
+/* card */
+
+/* form */
+.single-blog .form {
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.single-blog .form .form-title h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #032b56;
+    font-family: "Manrope-ExtraBold";
+    letter-spacing: -2px;
+}
+
+.single-blog .form .form-title p {
+    font-size: 16px;
+    font-family: "Manrope";
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.9rem;
+}
+
+.single-blog .form label {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #032b56;
+}
+.single-blog .form textarea.form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.single-blog .form .form-control:not(textarea) {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.single-blog .form .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+/* form */
+.single-blog .bordered {
+    border-left: 2px solid #dde8f5;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 3em 3em 3em 3em;
+}
+/* search */
+.single-blog .search {
+    position: relative;
+    overflow: hidden;
+}
+.single-blog .search form {
+    display: flex;
+    align-items: baseline;
+    margin-top: 50px;
+}
+.single-blog .search .form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.single-blog .search .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+.single-blog aside .search-form .btn {
+    height: 47px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.single-blog aside .search-form .btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.single-blog aside .post-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.single-blog aside .post-card .img {
+    width: 77px;
+    height: 53px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.single-blog aside .post-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.single-blog aside .post-card .post-meta-data {
+    color: #1665f8;
+    font-family: "Manrope";
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6em;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    margin-bottom: 13px;
+}
+.no-js #loader {
+    display: none;
+}
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_1.gif) center no-repeat #fff;
+}
+/* search */
+/* sign-in */
+.account-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+    margin-top: calc(var(--section-padding) + var(--section-padding));
+    margin-bottom: calc(var(--section-padding) + var(--section-padding));
+}
+.account-wrap .title {
+    font-family: "Manrope-ExtraBold";
+}
+.account-wrap .img {
+    background-image: url(https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-room-with-a-washing-machine-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+.account-wrap .img,
+.account-wrap .login-wrap {
+    width: 50%;
+}
+@media (max-width: 991.98px) {
+    .account-wrap .img,
+    .account-wrap .login-wrap {
+        width: 100%;
+    }
+}
+@media (max-width: 767.98px) {
+    .account-wrap .img {
+        height: 250px;
+    }
+}
+.account-wrap .login-wrap {
+    position: relative;
+    background: #fff h3;
+    background-font-weight: 300;
+}
+.account-wrap .form-group {
+    position: relative;
+}
+.account-wrap .form-group .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 700;
+}
+.account-wrap .form-control {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    border-radius: 5px;
+}
+.account-wrap .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+.account-wrap .btn {
+    height: 47px;
+    border-radius: 5px;
+}
+.cart-hero {
+    background-image: url(https://html.matethemes.com/karte/karte/assets/images/inner-pages/breadcum-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: calc(var(--section-padding) + 20px);
+}
+
+/* cart-hero */
+/* cart-table */
+
+.cart-table .table {
+    border: 1px solid #dee2e6;
+}
+
+.cart-table .table thead th {
+    border-bottom: none;
+}
+
+.cart-table .table th {
+    color: #555555;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 18px 30px 18px;
+}
+
+.cart-table .table td {
+    padding: 30px;
+    color: #555555;
+    font-size: 16px;
+    vertical-align: middle;
+    font-family: "Manrope";
+}
+
+.cart-table .table .cart-product {
+    display: flex;
+    align-items: center;
+}
+
+.cart-table .table .cart-product h5 {
+    font-family: "Manrope-Bold";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1a1919;
+    margin-left: 20px;
+}
+
+.cart-table .table .cart-product a {
+    text-decoration: none;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-table .table .qtySelector {
+    width: 160px;
+    padding: 0px 50px 0px;
+    height: 50px;
+    border: 1px solid #2f2f30;
+    position: relative;
+}
+
+.cart-table .table .qtySelector span:hover {
+    cursor: pointer;
+    background: var(--primary);
+    color: #fff;
+}
+
+.cart-table .table .qtySelector .decreaseQty {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #e4e4e4;
+}
+
+.cart-table .table .qtySelector input {
+    width: 50px;
+    height: 48px;
+    text-align: center;
+    border: none;
+}
+
+.cart-table .table .qtySelector input:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.cart-table .table .qtySelector .increaseQty {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-left: 1px solid #e4e4e4;
+}
+
+.cart-table .table .remove-btn {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 200;
+    color: #202020;
+}
+/* cart-table */
+/* cart-button-group */
+
+.cart-button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.cart-button-group .cart-coupon input {
+    height: 50px;
+    min-width: 250px;
+    border: 1px solid #202020;
+    font-size: 14px;
+    color: #444242;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.cart-button-group .cart-coupon input:focus-visible {
+    outline: none;
+}
+
+.cart-button-group .cart-coupon button {
+    color: rgb(253, 253, 253);
+    font-size: 12px;
+    border-radius: 0;
+    min-width: 184px;
+    padding: 0px 40px 0px;
+    height: 50px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cart-button-group .cart-coupon button:focus {
+    box-shadow: none;
+}
+
+.cart-button-group .cart-btn button {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #202020;
+    border-radius: 0;
+    min-width: 184px;
+    padding: 0px 40px 0px;
+    height: 50px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cart-button-group .cart-btn button:focus {
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .cart-button-group {
+        display: block;
+        margin-top: 20px;
+    }
+    .cart-button-group .cart-coupon button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .cart-button-group .cart-btn button {
+        margin-left: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .cart-button-group input {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+/* cart-button */
+/* cart-total */
+
+.cart-total {
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-total h3 {
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
+    color: #1a1a1a;
+}
+
+.cart-total .table {
+    border: 1px solid #dee2e6;
+}
+
+.cart-total .table thead th {
+    border: none;
+}
+
+.cart-total .table th {
+    color: #555555;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 18px 30px 18px;
+}
+
+.cart-total .table td {
+    padding: 30px;
+    color: #555555;
+    font-size: 16px;
+    vertical-align: middle;
+    font-family: "Manrope";
+}
+
+.cart-total .table .radio-list {
+    list-style: none;
+}
+
+.cart-total .table .radio-list li {
+    margin-bottom: 14px;
+    color: #555555;
+    font-family: "Manrope";
+    font-weight: 400;
+}
+
+.cart-total .table .radio-list li label::before {
+    background: transparent;
+    border: 1px solid #2f2f30;
+}
+
+.cart-total .table h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cart-total .table p {
+    font-size: 14px;
+}
+
+.cart-total .table tr .subtotal {
+    font-weight: 600;
+}
+
+.cart-total .cart-check-out {
+    position: relative;
+    display: block;
+    border: 1px solid #eeeeee;
+    padding: 40px 40px 40px;
+}
+
+.cart-total .nav .nav-items {
+    margin-bottom: 0;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+}
+
+.cart-total .nav li {
+    color: #555555;
+}
+
+.cart-total .nav li strong {
+    color: #555555;
+}
+/* checkout */
+.checkout .form-control:not(textarea) {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 47px;
+    border-radius: 5px;
+}
+
+.checkout .form-control:focus {
+    border-color: var(--primary);
+}
+.checkout textarea {
+    border-width: 2px;
+    border-color: #dde8f5;
+    height: 150px;
+    border-radius: 5px;
+}
+.checkout .checkout-coupon .form-control {
+    margin-right: 12px;
+    width: auto;
+}
+
+.checkout .btn-block.text-left {
+    font-size: 16px;
+}
+
+.checkout .checkbox-form h3 {
+    border-bottom: 1px solid #dee2e6;
+    font-size: 25px;
+    margin: 0 0 25px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    font-family: "Manrope-Bold";
+}
+.checkout .your-order {
+    background: #f1f1f1;
+    padding: 30px 40px 30px;
+}
+.checkout .your-order h3 {
+    border-bottom: 1px solid #dee2e6;
+    font-size: 25px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    font-family: "Manrope-Bold";
+}
+
+.checkout .collapse-buttons a {
+    font-size: 18px;
+    font-family: "Manrope-Bold";
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+/* shop */
+.shop {
+    padding-top: calc(var(--section-padding) * 2);
+    padding-bottom: var(--section-padding);
+}
+.shop .card {
+    border: 1px solid #dce1e5;
+    border-left: 20px solid #dce1e5 !important;
+    margin-bottom: 18px;
+}
+.shop .card .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Manrope-Bold";
+    margin-bottom: 10px;
+}
+.shop .card .card-text {
+    font-size: 14px;
+    font-family: "Manrope-Medium";
+}
+.shop .card .card-text + div p {
+    font-size: 14px;
+}
+.shop .card .modal {
+    z-index: 99999;
+}
+.shop .card .modal-header .close {
+    font-size: 16px;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+}
+.shop .card .modal .modal-header .modal-title {
+    font-size: 16px;
+    font-family: "Manrope-ExtraBold";
+}
+.shop .card .modal .media-body {
+    text-align: left;
+}
+.shop .card .modal .media-body .media {
+    border-bottom: 1px solid #dce1e5;
+}
+.shop .card .modal .media-body .text-primary {
+    font-family: "Manrope-Bold";
+    font-size: 14px;
+}
+.shop .card .modal .media-body h3 {
+    font-family: "Manrope-ExtraBold";
+}
+.shop .card .modal-body .modal-pricing {
+    max-width: 480px;
+    margin: 0 auto;
+    max-height: 260px;
+    overflow: auto;
+    padding-right: 15px;
+}
+.shop .card .modal-body .modal-pricing .price-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8c939c;
+    font-family: "Manrope-Bold";
+    margin-bottom: 0;
+}
+
+.shop .card .modal-body .modal-pricing .list-items .item {
+    background-image: url(https://app.laundryheap.com/images/dot-bg.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 7px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shop .card .modal-body .modal-pricing .list-items .item .item-title {
+    background-color: #fff;
+    padding-right: 10px;
+    margin-bottom: -3px;
+}
+.shop .card .modal-body .modal-pricing .list-items .item .item-price {
+    background-color: #fff;
+    padding-left: 10px;
+    margin-bottom: -3px;
+    padding-right: 24px;
+}
+.shop .card .modal-body .modal-pricing .list-items .item .item-title h6 {
+    margin-bottom: 0;
+    line-height: 80%;
+    font-family: "Manrope-Medium";
+}
+.shop .card .modal-body .modal-pricing .list-items .item .item-price p {
+    margin-bottom: 0;
+    line-height: 80%;
+    font-family: "Manrope-Medium";
+}
+.shop .card .modal-body .modal-pricing .list-items .item i {
+    position: absolute;
+    right: 0;
+    top: -1px;
+    cursor: pointer;
+}
+/* summary */
+
+.shop .summary .card {
+    background: #f6f7f8;
+    padding: 5px;
+    border: 1px solid #dce1e5 !important;
+    /* display: block; */
+    border-radius: 8px;
+}
+
+.shop .summary .card .card-title {
+    font-weight: 600;
+    border-bottom: 1px solid #dce1e5;
+}
+.shop .summary .card .navbar-nav {
+    border-top: 1px solid #dce1e5;
+    border-bottom: 1px solid #dce1e5;
+}
+.shop .summary .card .list-item {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.shop .summary .card .list-item .title p {
+    font-family: "Manrope-Medium";
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.shop .summary .card .list-item .counter {
+    font-family: "Manrope-Medium";
+}
+.shop .summary .card .list-item .counter .bi {
+    cursor: pointer;
+}
+.shop .summary .card .list-item .price p {
+    font-family: "Manrope-Medium";
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.shop .summary .card .total-price {
+    border-bottom: 1px solid #dce1e5;
+}
+.shop .summary .card .total-price h6 {
+    font-family: "Manrope-Medium";
+    font-size: 14px;
+}
+.shop .summary .card .total-price span {
+    font-family: "Manrope-Medium";
+    font-size: 18px;
+    font-weight: 600;
+}
+.shop .summary .card .total-price p {
+    font-family: "Manrope-Medium";
+    font-size: 12px;
+}
+/* cart-total */
+/* responsive */
+
+@media screen and (max-width: 992px) {
+    header > .btn-primary {
+        display: none;
+    }
+    .mobile-collapse .input-group-text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .single-blog .bordered {
+        border-left: none;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .banner {
+        max-height: fit-content;
+        padding-bottom: 100px;
+        margin-bottom: 0;
+    }
+    .single-blog aside .post-card .img {
+        width: auto;
+        height: auto;
+    }
+    footer .newsletter .card::before {
+        display: none;
+    }
+}
+@media screen and (max-width: 576px) {
+    .banner h1 {
+        font-size: 40px;
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+    }
+    .banner .desc {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .banner .btn-group-banner .btn-lg {
+        max-width: 100%;
+        justify-content: center;
+        font-size: 22px;
+    }
+    .banner .btn-group-banner .btn-lg:last-of-type {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .banner .btn-group-banner .btn-lg svg {
+        width: 22px;
+    }
+    .about-company .count-container {
+        right: -3px;
+        bottom: -100px;
+    }
+    .section-title h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+    }
+    footer .newsletter .card .form-control {
+        width: 100%;
+        margin-right: 0;
+    }
+    footer .newsletter .card .btn-primary {
+        width: 100%;
+        margin: 0;
+    }
+    footer .newsletter .card .input-group-append {
+        width: 100%;
+        margin-top: 10px;
+        height: 47px;
+    }
+    footer .copyright .copyright-text {
+        margin-top: 10px;
+    }
+    .slick-slide {
+        height: auto;
+    }
+    .single-blog .bordered {
+        border-left: none;
+        padding: 0;
+    }
+    .single-blog .search form {
+        margin-top: 0;
+    }
+    .single-blog .form .form-title h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+        margin-bottom: 20px;
+    }
+    .checkout .your-order {
+        padding: 30px 18px 30px;
+    }
+    .ship-to h3 {
+        font-size: 1.5rem;
+    }
+    .checkout .checkbox-form h3 {
+        font-size: 22px;
+    }
+    .checkout .btn-block.text-left {
+        overflow: hidden;
+    }
+    .section-header {
+        height: 40vh;
+    }
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 640px;
+    }
+}
