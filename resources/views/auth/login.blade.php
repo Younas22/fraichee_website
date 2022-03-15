@@ -9,14 +9,14 @@
     <meta name="author" content="SmartUniversity" />
     <title>PK WORLD ADMIN</title>
     <!-- icons -->
-    <link href="{{url('public/new_assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{url('public/new_assets/plugins/iconic/css/material-design-iconic-font.min.css')}}">
+    <link href="{{url('public/assets/admin/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{url('public/assets/admin/plugins/iconic/css/material-design-iconic-font.min.css')}}">
     <!-- bootstrap -->
-    <link href="{{url('public/new_assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- style -->
-    <link rel="stylesheet" href="{{url('public/new_assets/css/pages/extra_pages.css')}}">
+    <link rel="stylesheet" href="{{url('public/assets/admin/css/pages/extra_pages.css')}}">
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{url('public/new_assets/img/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{url('public/assets/admin/img/favicon.ico')}}" />
 </head>
 
 <body>
@@ -81,10 +81,10 @@
         </div>
     </div>
     <!-- start js include path -->
-    <script src="{{url('public/new_assets/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{url('public/assets/admin/plugins/jquery/jquery.min.js')}}"></script>
     <!-- bootstrap -->
-    <script src="{{url('public/new_assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('public/new_assets/js/pages/extra_pages/login.js')}}"></script>
+    <script src="{{url('public/assets/admin/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('public/assets/admin/js/pages/extra_pages/login.js')}}"></script>
     <!-- end js include path -->
 </body>
 

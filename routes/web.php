@@ -58,3 +58,6 @@ Route::match(['get','post'],'/dashboard/subscribers', [DashboardController::clas
 
 //Home
 Route::get('/', [Home::class, 'index'])->name('index');
+Route::get('/shop', [Home::class, 'shop'])->name('shop');
+Route::get('/cart', [Home::class, 'cart'])->name('cart');
+Route::get('/checkout', [Home::class, 'checkout'])->name('checkout');
