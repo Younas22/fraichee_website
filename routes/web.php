@@ -61,3 +61,6 @@ Route::get('/', [Home::class, 'index'])->name('index');
 Route::get('/shop', [Home::class, 'shop'])->name('shop');
 Route::get('/cart', [Home::class, 'cart'])->name('cart');
 Route::get('/checkout', [Home::class, 'checkout'])->name('checkout');
+Route::get('/blog', [Home::class, 'blog'])->name('blog');
+Route::get('/blog_details', [Home::class, 'blog_details'])->name('blog_details');
+Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');

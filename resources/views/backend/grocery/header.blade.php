@@ -20,25 +20,25 @@
 
     
     <!-- icons -->
-    <link href="{{url('public/new_assets/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{url('public/new_assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <!--bootstrap -->
-    <link href="{{url('public/new_assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{url('public/new_assets/plugins/summernote/summernote.css')}}" rel="stylesheet">
+    <link href="{{url('public/assets/admin/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/plugins/summernote/summernote.css')}}" rel="stylesheet">
     <!-- morris chart -->
-    <link href="{{url('public/new_assets/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
     <!-- Material Design Lite CSS -->
-    <link rel="stylesheet" href="{{url('public/new_assets/plugins/material/material.min.css')}}">
-    <link rel="stylesheet" href="{{url('public/new_assets/css/material_style.css')}}">
+    <link rel="stylesheet" href="{{url('public/assets/admin/plugins/material/material.min.css')}}">
+    <link rel="stylesheet" href="{{url('public/assets/admin/css/material_style.css')}}">
     <!-- animation -->
-    <!-- <link href="{{url('public/new_assets/css/pages/animate_page.css')}}" rel="stylesheet"> -->
+    <!-- <link href="{{url('public/assets/admin/css/pages/animate_page.css')}}" rel="stylesheet"> -->
     <!-- Template Styles -->
-    <link href="{{url('public/new_assets/css/plugins.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{url('public/new_assets/css/style.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{url('public/new_assets/css/responsive.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{url('public/new_assets/css/theme-color.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/css/plugins.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/css/style.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/css/responsive.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('public/assets/admin/css/theme-color.css')}}" rel="stylesheet" type="text/css" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{url('public/new_assets/img/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{url('public/assets/admin/img/favicon.ico')}}" />
 
 </head>
 <!-- END HEAD -->
@@ -52,7 +52,7 @@
                 <!-- logo start -->
                 <div class="page-logo">
                     <a href="{{url('/dashboard')}}">
-                        <img alt="" src="{{url('public/new_assets/img/logo.png')}}">
+                        <img alt="" src="{{url('public/assets/admin/img/logo.png')}}">
                         <span class="logo-default">PK WORLD</span> </a>
                 </div>
                 <!-- logo end -->
@@ -168,7 +168,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="photo">
-                                                    <img src="{{url('public/new_assets/img/user/user2.jpg')}}" class="img-circle" alt="">
+                                                    <img src="{{url('public/assets/admin/img/user/user2.jpg')}}" class="img-circle" alt="">
                                                 </span>
                                                 <span class="subject">
                                                     <span class="from"> Sarah Smith </span>
@@ -180,7 +180,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="photo">
-                                                    <img src="{{url('public/new_assets/img/user/user3.jpg')}}" class="img-circle" alt="">
+                                                    <img src="{{url('public/assets/admin/img/user/user3.jpg')}}" class="img-circle" alt="">
                                                 </span>
                                                 <span class="subject">
                                                     <span class="from"> John Deo </span>
@@ -193,7 +193,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="photo">
-                                                    <img src="{{url('public/new_assets/img/user/user1.jpg')}}" class="img-circle" alt="">
+                                                    <img src="{{url('public/assets/admin/img/user/user1.jpg')}}" class="img-circle" alt="">
                                                 </span>
                                                 <span class="subject">
                                                     <span class="from"> Rajesh </span>
@@ -205,7 +205,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="photo">
-                                                    <img src="{{url('public/new_assets/img/user/user8.jpg')}}" class="img-circle" alt="">
+                                                    <img src="{{url('public/assets/admin/img/user/user8.jpg')}}" class="img-circle" alt="">
                                                 </span>
                                                 <span class="subject">
                                                     <span class="from"> Lina Smith </span>
@@ -217,7 +217,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="photo">
-                                                    <img src="{{url('public/new_assets/img/user/user5.jpg')}}" class="img-circle" alt="">
+                                                    <img src="{{url('public/assets/admin/img/user/user5.jpg')}}" class="img-circle" alt="">
                                                 </span>
                                                 <span class="subject">
                                                     <span class="from"> Jacob Ryan </span>
@@ -238,7 +238,7 @@
                         <li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                 data-close-others="true">
-                                <img alt="" class="img-circle " src="{{url('public/new_assets/img/dp.jpg')}}" />
+                                <img alt="" class="img-circle " src="{{url('public/assets/admin/img/dp.jpg')}}" />
                                 <span class="username username-hide-on-mobile"> Supper Admin </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>

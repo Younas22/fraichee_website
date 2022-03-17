@@ -18,7 +18,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg bg-white py-0 ">
-      <a class="navbar-brand p-0" href="index.php">
+      <a class="navbar-brand p-0" href="{{url('/')}}">
         <img src="{{url('public/assets/web/img/logo.png')}}" alt="logo" class="img-fluid logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse-mobile" aria-expanded="false" aria-controls="collapse-mobile">
@@ -26,10 +26,10 @@
       </button>
       <ul class="navbar-nav ml-auto align-items-center d-none d-lg-flex">
         <li class="nav-item active">
-          <a class="nav-link text-uppercase" href="/">Home</a>
+          <a class="nav-link text-uppercase" href="{{url('/')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-uppercase" href="blog.php">Blog</a>
+          <a class="nav-link text-uppercase" href="{{url('/blog')}}">Blog</a>
         </li>
         <li class="nav-item">
           <form class="form-inline mb-0">
@@ -46,7 +46,7 @@
 
       </ul>
     </nav>
-    <a class="btn btn-primary" href="/"><i data-feather="layers"></i>Get Orders</a>
+    <a class="btn btn-primary" href="{{url('/shop')}}"><i data-feather="layers"></i>Get Orders</a>
   </header>
   <!-- header -->
   <!--Moble-collapse-->

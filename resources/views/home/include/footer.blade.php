@@ -109,7 +109,25 @@
 <script src="{{url('public/assets/web/js/slick.min.js')}}"></script>
 <script src="{{url('public/assets/web/js/script.js')}}"></script>
 
+<script type="text/javascript">
+  $('.add_to_cart').click(function () {
+    var ele = $(this);
+    var id = ele.attr("data-id");
+            $.ajax({
+                url: '{{ route('add.to.cart') }}',
+                method: "get",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: id
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        
 
+  });
+</script>
 </body>
 
 </html>

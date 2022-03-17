@@ -51,6 +51,7 @@ class Home extends Controller
     //cart
     public function cart()
     {
+
         return view('home.cart');
     }
 
@@ -58,5 +59,45 @@ class Home extends Controller
     public function checkout()
     {
         return view('home.checkout');
+    }
+
+
+    //blog
+    public function blog()
+    {
+        return view('home.blog');
+    }
+
+    //blog_details
+    public function blog_details()
+    {
+        return view('home.blog_details');
+    }
+
+
+//addToCart
+        public function addToCart(Request $request)
+    {
+        $product = $lan_child_products = DB::table('child_products')
+            ->select()
+            ->where('cp_id',$request->id)
+            ->first();
+            // dd($product);
+          
+        $cart = session()->get('cart', []);
+  
+        if(isset($cart[$request->id])) {
+            $cart[$request->id]['quantity']++;
+        } else {
+            $cart[$request->id] = [
+                "name" => $product->cp_name,
+                "quantity" => 1,
+                "image" => $product->cp_image,
+                "price" => $product->cp_price
+            ];
+        }
+          
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 }

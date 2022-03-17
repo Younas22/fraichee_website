@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                
+                <?php //dd(session('cart')); ?>
 <!-- // Laundary -->
             <?php foreach ($laundary as $key): ?>
                 <div class="card">
@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-12 col-md-2 text-center">
                                 <button type="button" class="btn btn-primary service-item-button btn-block mt-3 mt-md-0" data-toggle="modal" data-target="#abc<?=$key->service_id?>">
-                                    <i class="bi bi-plus-circle mr-1"></i> <?=$key->service_id?>
+                                    <i class="bi bi-plus-circle mr-1"></i> Price
                                 </button>
 
 
@@ -66,7 +66,10 @@
                                                         <div class="item-price">
                                                             <p class="text-center"><?=$child_products->cp_price?></p>
                                                         </div>
-                                                        <i class="bi bi-plus-circle text-primary"></i>
+                                                        
+                                                        <!-- <a href="{{ route('add.to.cart', $child_products->cp_id) }}"><i class="bi bi-plus-circle text-primary"></i></a> -->
+
+                                                        <i data-id="{{ $child_products->cp_id }}"  class="add_to_cart bi bi-plus-circle text-primary"></i>
                                                     </div>
                                                     </li>
                                                     </ul>
@@ -98,27 +101,29 @@
                             <h6 class="card-title pb-2">Price estimator</h6>
                             <p class="mb-2">Add items to start estimating...</p>
                             <ul class="navbar-nav flex-column">
-                                <li class="list-item py-2">
-                                    <div class="title">
-                                        <p>Shirt on Hanger</p>
-                                    </div>
-                                    <div class="counter">
-                                        <i class="bi bi-dash-circle text-primary mr-1"></i>
-                                        1
-                                        <i class="bi bi-plus-circle text-primary ml-1"></i>
-                                    </div>
-                                    <div class="price">
-                                        <p>£11.80</p>
-                                    </div>
-                                </li>
+                                <?php if(session('cart')){ foreach (session('cart') as $cart) {?>
+                                    <li class="list-item py-2">
+                                        <div class="title">
+                                            <p><?=$cart['name']?></p>
+                                        </div>
+<!--                                         <div class="counter">
+                                            <i class="bi bi-dash-circle text-primary mr-1"></i>
+                                            <?=$cart['quantity']?>
+                                            <i class="bi bi-plus-circle text-primary ml-1"></i>
+                                        </div> -->
+                                        <div class="price">
+                                            <p>£<?=$cart['price']?></p>
+                                        </div>
+                                    </li>
+                                <?php } } ?>
                             </ul>
-
+<!-- 
                             <div class="total-price mt-3">
                                 <h6 class="mb-0 text-right">Estimate <span class="text-primary"> £20.00*</span></h6>
                                 <p class="text-primary text-right">* £20 is our minimum order</p>
-                            </div>
-                            <button type="button" class="btn btn-primary py-2 my-3 w-100">continue order</button>
-                            <p>Please note that the final price may vary and it will be calculated after the cleaning process.</p>
+                            </div> -->
+                            <a href="{{url('/cart')}}" class="btn btn-primary py-2 my-3 w-100">continue order</a>
+                            <!-- <p>Please note that the final price may vary and it will be calculated after the cleaning process.</p> -->
                         </div>
                     </div>
                 </section>

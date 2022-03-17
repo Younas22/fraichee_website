@@ -29,16 +29,19 @@
                     </tr>
                 </thead>
                 <tbody>
+
+
+                    <?php if(session('cart')){ foreach (session('cart') as $cart) {?>
                     <tr>
                         <td scope="row" class="cart-product">
                             <a href="#" class="cart-product-img">
-                                <img src="https://html.matethemes.com/karte/karte/assets/images/shop/cart-product-thumb-1.jpg" alt="cart-product-img">
+                                <img height="50" width="50" src="http://localhost/fraichee_web/public/assets/images/products/<?=$cart['image']?>" alt="cart-product-img">
                             </a>
                             <a href="#">
-                                <h5>Product Name</h5>
+                                <h5><?=$cart['name']?></h5>
                             </a>
                         </td>
-                        <td>$250.00</td>
+                        <td><?=$cart['quantity']?></td>
                         <td>
                             <div class="qtySelector text-center">
                                 <span class="decreaseQty"><i class="bi bi-dash-lg"></i></span>
@@ -46,29 +49,11 @@
                                 <span class="increaseQty"><i class="bi bi-plus-lg"></i></span>
                             </div>
                         </td>
-                        <td>$250.00</td>
+                        <td><?=$cart['price']?></td>
                         <td class="remove-btn"><i class="bi bi-x-lg"></i></td>
                     </tr>
-                    <tr>
-                        <td scope="row" class="cart-product">
-                            <a href="#" class="cart-product-img">
-                                <img src="https://html.matethemes.com/karte/karte/assets/images/shop/cart-product-thumb-1.jpg" alt="cart-product-img">
-                            </a>
-                            <a href="#">
-                                <h5>Product Name</h5>
-                            </a>
-                        </td>
-                        <td>$250.00</td>
-                        <td>
-                            <div class="qtySelector text-center">
-                                <span class="decreaseQty"><i class="bi bi-dash-lg"></i></span>
-                                <input type="number" readonly class="qtyValue" value="1">
-                                <span class="increaseQty"><i class="bi bi-plus-lg"></i></span>
-                            </div>
-                        </td>
-                        <td>$250.00</td>
-                        <td class="remove-btn"><i class="bi bi-x-lg"></i></td>
-                    </tr>
+                    <?php }} ?>
+
                 </tbody>
             </table>
         </div>
@@ -86,7 +71,7 @@
             </form>
         </div>
         <div class="cart-btn">
-            <button class="btn" type="submit">Continue Shopping</button>
+            <a href="{{url('/checkout')}}" class="btn" type="submit">Continue Shopping</a>
             <button class="btn btn-primary bg-primary text-white" type="submit">Update cart</button>
         </div>
 </section>

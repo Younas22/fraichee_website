@@ -673,7 +673,7 @@
           <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/woman-is-doing-laundry-300x205.jpg" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">
-              <a href="@"> Laundry Tips To Follow During Coronavirus</a>
+              <a href="{{url('/blog_details')}}"> Laundry Tips To Follow During Coronavirus</a>
             </h5>
             <div class="post-meta-data">
               <span class="post-date"> November 2, 2021 </span>
@@ -694,7 +694,7 @@
           <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-room-with-a-washing-machine-1-300x200.jpg" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">
-              <a href="@">
+              <a href="{{url('/blog_details')}}">
                 Tips To Choose & Maintain The Best Fabrics For Tablecloths
               </a>
             </h5>
@@ -717,7 +717,7 @@
           <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/family-doing-laundry-1-300x207.jpg" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">
-              <a href="@">
+              <a href="{{url('/blog_details')}}">
                 Useful Tips to Wash Baby Clothes The Right Way
               </a>
             </h5>
@@ -740,7 +740,7 @@
           <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/family-doing-laundry-300x200.jpg" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">
-              <a href="@"> Laundry Tips For Winters </a>
+              <a href="{{url('/blog_details')}}"> Laundry Tips For Winters </a>
             </h5>
             <div class="post-meta-data">
               <span class="post-date"> November 2, 2021 </span>
