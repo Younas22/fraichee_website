@@ -31,7 +31,7 @@
                 <tbody>
 
 
-                    <?php if(session('cart')){ foreach (session('cart') as $cart) {?>
+                    <?php if(session('cart')){ foreach (session('cart') as $id => $cart) {?>
                     <tr>
                         <td scope="row" class="cart-product">
                             <a href="#" class="cart-product-img">
@@ -41,16 +41,16 @@
                                 <h5><?=$cart['name']?></h5>
                             </a>
                         </td>
-                        <td><?=$cart['quantity']?></td>
+                        <td>£<?=$cart['price']?></td>
                         <td>
                             <div class="qtySelector text-center">
-                                <span class="decreaseQty"><i class="bi bi-dash-lg"></i></span>
-                                <input type="number" readonly class="qtyValue" value="1">
-                                <span class="increaseQty"><i class="bi bi-plus-lg"></i></span>
+                                <span class="decreaseQty"><i class="bi bi-dash-lg" onClick="decrement_quantity(<?php echo $id; ?>)"></i></span>
+                                <input type="number" readonly class="qtyValue" id="qtyValue-<?php echo $id; ?>" value="<?=$cart['quantity']?>">
+                                <span class="increaseQty"><i class="bi bi-plus-lg" onClick="increment_quantity(<?php echo $id; ?>)"></i></span>
                             </div>
                         </td>
-                        <td><?=$cart['price']?></td>
-                        <td class="remove-btn"><i class="bi bi-x-lg"></i></td>
+                        <td>£<?=$cart['price']*$cart['quantity']?></td>
+                        <td class="remove-btn" data-id="<?php echo $id; ?>"><i class="bi bi-x-lg"></i></td>
                     </tr>
                     <?php }} ?>
 

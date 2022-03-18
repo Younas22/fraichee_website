@@ -64,3 +64,6 @@ Route::get('/checkout', [Home::class, 'checkout'])->name('checkout');
 Route::get('/blog', [Home::class, 'blog'])->name('blog');
 Route::get('/blog_details', [Home::class, 'blog_details'])->name('blog_details');
 Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');
+Route::post('update-cart', [Home::class, 'update_cart'])->name('update.cart');
+Route::delete('remove-from-cart', [Home::class, 'remove'])->name('remove.from.cart');
+

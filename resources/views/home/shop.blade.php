@@ -64,7 +64,7 @@
                                                             <h6><?=$child_products->cp_name?></h6>
                                                         </div>
                                                         <div class="item-price">
-                                                            <p class="text-center"><?=$child_products->cp_price?></p>
+                                                            <p class="text-center">£<?=$child_products->cp_price?></p>
                                                         </div>
                                                         
                                                         <!-- <a href="{{ route('add.to.cart', $child_products->cp_id) }}"><i class="bi bi-plus-circle text-primary"></i></a> -->
