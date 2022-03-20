@@ -11,7 +11,7 @@
 </section>
 <section class="py-4 mt-4 checkout">
     <div class="container">
-        <div class="row">
+        <div class="row d-none">
             <din class="col-md-12">
                 <button class="btn btn-light btn-lg btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     <i class="bi bi-cart mr-1"></i>
@@ -68,142 +68,94 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="checkbox-form mt-5">
+
+                     @if (Session::has('success'))
+                     <div class="alert alert-success text-center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                        <p>{{ Session::get('success') }}</p>
+                     </div>
+                     @endif
+
+
+                        <div class='form-row row'>
+                           <div class='col-md-12 error form-group d-none'>
+                              <div class='alert-danger alert'>Please correct the errors and try
+                                 again.
+                              </div>
+                           </div>
+                        </div>
+                        
                     <h3>Billing Details</h3>
-                    <form class="row g-3">
-                        <div class="col-12 form-group">
-                            <label for="Country">Country *</label>
-                            <select class="form-select form-control">
-                                <option value="5">Banladesh</option>
-                                <option value="1">Romania</option>
-                                <option value="2">French</option>
-                                <option value="3">Germany</option>
-                                <option value="4">Australia</option>
-                            </select>
-                        </div>
+                    <form class="row g-3 require-validation" action="{{route('checkout-order')}}" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" data-cc-on-file="false"
+                        id="payment-form" method="POST">
+                        @csrf
+
+                        <!-- Payment -->
+                    <?php if(session('cart')){ $total = 0; foreach (session('cart') as $id => $cart) {
+                    $total = $total + $cart['price']*$cart['quantity']; }} ?>
+
+                        <?php if ($total < 30) { ?>
+                            <input type="hidden" name="total_cost" value="<?=$total+3.99?>">
+                        <?php }else{?>
+                            <input type="hidden" name="total_cost" value="<?=$total?>">
+                        <?php } ?>
 
                         <div class="col-md-6 form-group">
-                            <label for="inputCity" class="form-label">First Name *</label>
-                            <input type="text" class="form-control" id="inputCity" />
+                            <label for="inputCity" class="form-label">Card Holder Name *</label>
+                            <input type="text" name="card_holder_name" class="form-control required" placeholder="Card Holder Name" required="" />
+                            <input type="hidden" name="order_id" value="<?=$order_id?>" />
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="inputCity" class="form-label">Last Name*</label>
-                            <input type="text" class="form-control" id="inputCity" />
+                            <label for="inputCity" class="form-label">Card Number *</label>
+                            <input type="text" name="card_no" class="form-control required" id="card_no" placeholder="Card Number" required="" />
                         </div>
-                        <div class="col-12 form-group">
-                            <label for="inputAddress2" class="form-label">Company Name *</label>
-                            <input type="text" class="form-control" id="Company name" />
-                        </div>
-                        <div class="col-12 form-group">
-                            <label for="inputAddress2" class="form-label">Address </label>
-                            <input type="text" class="form-control" id="inputAddress1" placeholder="Street Address" />
-                            <input type="text" class="form-control mt-4" id="inputAddress2" placeholder="Apartment, suite, unit etc. (optional)" />
-                        </div>
-                        <div class="col-12 form-group">
-                            <label for="inputAddress2" class="form-label">Town / City *</label>
-                            <input type="text" class="form-control" id="inputCity" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputstate">State / Country *</label>
-                            <input type="text" class="form-control" id="input" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputstate">Postcode / Zip *</label>
-                            <input type="text" class="form-control" id="input" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputstate">Email Address</label>
-                            <input type="email" class="form-control" id="input" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputstate">Phone</label>
-                            <input type="email" class="form-control" id="input" />
-                        </div>
-                    </form>
-                    <div class="form-group">
-                        <input type="checkbox" id="newAddressCheck" data-toggle="collapse" data-target="#create-address" aria-expanded="false" aria-controls="create-address" />
-                        <label class="form-check-label" for="newAddressCheck">
-                            Create an account?
-                        </label>
-                    </div>
-                    <div class="collapse" id="create-address">
-                        <form action="">
-                            <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
-                            <div class="form-group">
-                                <label class="form-label">Account password *</label>
-                                <input class="form-control" type="password" placeholder="password" />
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-
-                <div class="ship-to" style="border-bottom:1px solid #ddd; padding: 2px; ">
-                    <h3 class="d-flex align-items-center justify-content-between">
-                        <label>Ship to a different address?</label>
-                        <input type="checkbox" id="gridCheck" data-toggle="collapse" data-target="#different-address" aria-expanded="false" aria-controls="different-address" />
-                    </h3>
-                </div>
-                </p>
-                <div class="collapse" id="different-address">
-                    <div class="">
-                        <form class="row g-3">
-                            <div class="col-12 form-group">
-                                <label for="Country">Country *</label>
-                                <select class="form-control" aria-label="Default select example" aria-placeholder="Banladesh">
-                                    <option value="5">Banladesh</option>
-                                    <option value="1">Romania</option>
-                                    <option value="2">French</option>
-                                    <option value="3">Germany</option>
-                                    <option value="4">Australia</option>
+                        <div class="col-4 form-group">
+                            <label for="inputAddress2" class="form-label">Expiry Month *</label>
+                                <select name="month" id="card-expiry-month" class="form-control required" required>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
                                 </select>
-                            </div>
+                        </div>
 
-                            <div class="col-md-6 form-group">
-                                <label for="inputCity" class="form-label">First Name *</label>
-                                <input type="text" class="form-control" id="inputCity" />
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label for="inputCity" class="form-label">Last Name*</label>
-                                <input type="text" class="form-control" id="inputCity" />
-                            </div>
-                            <div class="col-12 form-group">
-                                <label for="inputAddress2" class="form-label">Company Name *</label>
-                                <input type="text" class="form-control" id="Company name" />
-                            </div>
-                            <div class="col-12 form-group">
-                                <label for="inputAddress2" class="form-label">Address </label>
-                                <input type="text" class="form-control" id="inputAddress1" placeholder="Street Address" />
-                                <input type="text" class="form-control mt-4" id="inputAddress2" placeholder="Apartment, suite, unit etc. (optional)" />
-                            </div>
-                            <div class="col-12 form-group ">
-                                <label for="inputAddress2" class="form-label">Town / City *</label>
-                                <input type="text" class="form-control" id="inputCity" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputstate">State / Country *</label>
-                                <input type="text" class="form-control" id="input" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputstate">Postcode / Zip *</label>
-                                <input type="text" class="form-control" id="input" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputstate">Email Address</label>
-                                <input type="email" class="form-control" id="input" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputstate">Phone</label>
-                                <input type="email" class="form-control" id="input" />
-                            </div>
+                            <div class="col-4 form-group">
+                            <label for="inputAddress2" class="form-label">Expiry Year *</label>
+                               <select name="year" id="card-expiry-year" class="form-control required" required>
+                                    <option value="18">2018</option>
+                                    <option value="19">2019</option>
+                                    <option value="20">2020</option>
+                                    <option value="21">2021</option>
+                                    <option value="22">2022</option>
+                                    <option value="23">2023</option>
+                                    <option value="24">2024</option>
+                                    <option value="25">2025</option>
+                                    <option value="26">2026</option>
+                                    <option value="27">2027</option>
+                                    <option value="28">2028</option>
+                                    <option value="29">2029</option>
+                                    <option value="30">2030</option>
+                                </select>
+                        </div>
 
-                        </form>
+                        <div class="col-4 form-group">
+                            <label for="inputAddress2" class="form-label">CVC *</label>
+                            <input type="text" id="card-cvc" name="cvc" class="form-control required" placeholder="CVC" required>
+                        </div>
+                    <div class="order-button-payment text-center mt-3">
+                        <input value="Place order" class="btn btn-primary btn-lg btn-block" type="submit" />
                     </div>
-                </div>
-                <div class="order-notes ">
-                    <div class="checkout-form-list checkout-form-list-2">
-                        <label>Order Notes</label>
-                        <textarea id="checkout-mess" class="form-control" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-                    </div>
+                    </form>
+
+
                 </div>
             </div>
             <div class="col-lg-6 col-12">
@@ -218,64 +170,54 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                    <?php if(session('cart')){ $total = 0; foreach (session('cart') as $id => $cart) {
+                        $total = $total + $cart['price']*$cart['quantity'];
+                        ?>
                                 <tr>
-                                    <th scope="row">
-                                        Vestibulum suscipit <strong>× 1</strong>
-                                    </th>
-                                    <td>$165.00</td>
+                                    <th scope="row"><?=$cart['name']?> <strong>× <?=$cart['quantity']?></strong></th>
+                                    <td>£<?=$cart['price']*$cart['quantity'];?></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Vestibulum suscipit × 1</th>
-                                    <td>Jacob</td>
-                                </tr>
-                                <tr>
+                    <?php }} ?>
+
+<!--                                 <tr>
                                     <th scope="row">Cart Subtotal</th>
                                     <td>$165.00</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Order Total</th>
-                                    <td>$215.00</td>
-                                </tr>
+                                    <td>£<?=$total?></td>
+                                </tr> -->
+
+                        <?php if ($total < 30) { ?>
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td>£<?=$total?></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Delivery cost</th>
+                            <td>£3.99</td>
+                        </tr>
+                        <tr>
+                            <td>Total Price:</td>
+                            <td class="text-primary">£<?= $total+3.99?></td>
+                        </tr>
+                        <?php }else{?>
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td>£<?=$total?></td>
+                        </tr>
+                        <tr>
+                            <td>Total Price:</td>
+                            <td class="text-primary">£<?= $total?></td>
+                        </tr>
+                        <?php } ?>
+
                             </tbody>
                         </table>
                     </div>
-                    <div class="d-flex flex-column collapse-buttons px-2">
-                        <a type="button" data-toggle="collapse" data-target="#payment1" aria-expanded="false" aria-controls="payment">
-                            Direct Bank Transfer.
-                        </a>
-                        <div class="collapse" id="payment1">
-                            <div class="m-0">
-                                Make your payment directly into our bank account. Please use
-                                your Order ID as the payment reference. Your order won’t be
-                                shipped until the funds have cleared in our account.
-                            </div>
-                        </div>
 
-                        <a type="button" data-toggle="collapse" data-target="#payment2" aria-expanded="false" aria-controls="payment">
-                            Cheque Payment
-                        </a>
-                        <div class="collapse" id="payment2">
-                            <div class="m-0">
-                                Make your payment directly into our bank account. Please use
-                                your Order ID as the payment reference. Your order won’t be
-                                shipped until the funds have cleared in our account.
-                            </div>
-                        </div>
 
-                        <a type="button" data-toggle="collapse" data-target="#payment3" aria-expanded="false" aria-controls="payment">
-                            PayPal
-                        </a>
-                        <div class="collapse" id="payment3">
-                            <div class="m-0">
-                                Make your payment directly into our bank account. Please use
-                                your Order ID as the payment reference. Your order won’t be
-                                shipped until the funds have cleared in our account.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-button-payment text-center mt-3">
-                        <input value="Place order" class="btn btn-primary btn-lg btn-block" type="submit" />
-                    </div>
                 </div>
             </div>
         </div>

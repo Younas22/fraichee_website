@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use DB;
+use Stripe;
 // 
 
 class Home extends Controller
@@ -22,6 +23,7 @@ class Home extends Controller
     //shop
     public function shop(Request $request)
     {
+
         $laundary = DB::table('categories')->select()->where('panel', 'laundary')->get();
         $subscribe = DB::table('categories')->select()->where('panel', 'subscribe')->get();
 
@@ -56,9 +58,91 @@ class Home extends Controller
     }
 
     //checkout
-    public function checkout()
+    public function checkout(Request $request)
     {
-        return view('home.checkout');
+        // dd($request->total_cost);
+        // dd(session('cart')); 
+        $order_data = [
+            'user_id' => 10,
+            'order_type' => 'laundry',
+            // 'order_date' => date('m-d-Y'),
+            'note_box' => $request->note_box,
+            'other_address' => $request->other_address,
+            'pickup_date' => $request->pickup_dates,
+            'delivery_date' => $request->delivery_dates,
+            'amount' => $request->total_cost
+        ];
+
+        $laundary = DB::table('orders')->insertGetId($order_data);
+        foreach (session('cart') as $id => $cart) {
+            $cart_order = [
+                'order_id'=>$laundary,
+                'item_id'=>$id,
+                'price'=>$cart['price'],
+                'quantity'=>$cart['quantity']
+            ];
+
+            DB::table('cart_order')->insertGetId($cart_order);
+        }
+        return redirect(route('checkout_order_no',$laundary));
+    }
+
+
+    //checkout_order_no
+    public function checkout_order_no(Request $request)
+    {
+        $order_id = $request->order_no;
+        return view('home.checkout',compact('order_id'));
+    }
+
+
+    //checkout-order-
+    public function checkout_order(Request $request)
+    {
+
+//card details for strip
+       // $card_no = $request->card_no;
+       // $month = $request->month;
+       // $year = $request->year;
+       // $cvc = $request->cvc;
+        // dd($request->total_cost);
+
+        $amount = $request->total_cost;
+
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create ([
+                "amount" => $amount*100,
+                "currency" => "gbp",
+                "source" => $request->stripeToken,
+                "description" => "This payment is tested purpose fraichee.com"
+        ]);
+   
+        // Session::flash('success', 'Payment successful!');
+
+
+
+
+
+        $invoice_id = 'F'.rand(10,10000);
+            $payment_details = [
+                'card_holder_name' => $request->card_holder_name,
+                'card_type' => 'visa',
+                'invoice_id' => $invoice_id,
+                'status' => 1
+            ];
+
+        DB::table('orders')->where('order_id', $request->order_id)->update($payment_details);
+        Session::flush();
+        return redirect(route('compalate-checkout-order',$invoice_id));
+    }
+
+
+
+    //complate-checkout-order
+    public function compalate_checkout_order(Request $request)
+    { 
+        $invoice_id = $request->invoice_no;
+        return view('home.compalate_checkout_order',compact('invoice_id'));
     }
 
 
@@ -98,6 +182,8 @@ class Home extends Controller
         }
           
         session()->put('cart', $cart);
+
+
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
@@ -113,8 +199,10 @@ class Home extends Controller
         }
     }
 
-        //remove
-    public function remove(Request $request)
+
+
+    //remove
+        public function remove(Request $request)
     {
         if($request->id) {
             $cart = session()->get('cart');

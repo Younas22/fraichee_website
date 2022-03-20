@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
 
-class AdminHome extends Controller
+class AdminAccount extends Controller
 {
 
     public function index()
