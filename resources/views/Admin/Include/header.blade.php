@@ -227,7 +227,7 @@
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                 data-close-others="true">
                                 <img alt="" class="img-circle " src="{{url('public/assets/admin/img/dp.jpg')}}" />
-                                <span class="username username-hide-on-mobile"> Supper Admin </span>
+                                <span class="username username-hide-on-mobile"> <?=session('logAdmin')->role?> </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default animated jello">
@@ -252,8 +252,13 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <?php if (session('logAdmin')->role == 'customer') {?>
+                                    <a href="{{ route('usersignout') }}">
+                                        <i class="icon-logout"></i> Log Out </a>
+                                    <?php }else{?>
                                     <a href="{{ route('signout') }}">
                                         <i class="icon-logout"></i> Log Out </a>
+                                    <?php } ?>
                                 </li>
                             </ul>
                         </li>

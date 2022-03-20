@@ -66,7 +66,7 @@
                                 </ul>
                             </li>
 
-
+<?php if (session('logAdmin')->role == 'admin') { ?>
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/client-user')}}" class="nav-link nav-toggle">
                                     <i class="material-icons">group</i>
@@ -163,7 +163,17 @@
                                 </a>
 
                             </li>
+<?php }else{?>
 
+                            <li class="nav-item">
+                                <a href="{{url('/dashboard/subscribers')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">email</i>
+                                    <span class="title">Subscribers</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+
+                            </li>
+<?php } ?>
 
 
 

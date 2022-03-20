@@ -13,15 +13,27 @@
                 <div class="w-100">
                     <h3 class="mb-4 title">Sign In</h3>
                 </div>
+                    @if (Session::get('fail'))
+                    <div class="alert alert-light">
+                    {{Session::get('fail')}}
+                    </div>
+                    @endif
             </div>
-            <form action="#" class="account-form">
+            <form class="account-form" action="{{ route('user-login.custom') }}" method="POST" >
+                @csrf
                 <div class="form-group mb-3">
-                    <label class="label" for="name">Username</label>
-                    <input type="text" class="form-control" placeholder="Username" required="">
+                    <label class="label" for="email">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                     @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
                 </div>
                 <div class="form-group mb-3">
                     <label class="label" for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                    @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Sign In</button>

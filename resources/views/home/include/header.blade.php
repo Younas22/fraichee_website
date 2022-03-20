@@ -31,7 +31,15 @@
         <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{url('/blog')}}">Blog</a>
         </li>
-        <li class="nav-item">
+
+
+            <?php  if (session()->has('logAdmin') && session('logAdmin')->role == 'customer') { ?>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="{{url('/dashboard')}}">Dashboard</a>
+            </li>
+            <?php } ?>
+
+<!--    <li class="nav-item">
           <form class="form-inline mb-0">
             <div class="input-group">
               <div class="input-group-prepend ">
@@ -42,11 +50,11 @@
               <input type="text" class="form-control border-0 search-navbar" placeholder="Search..." aria-label="search" aria-describedby="basic-addon1">
             </div>
           </form>
-        </li>
+        </li> -->
 
       </ul>
     </nav>
-    <a class="btn btn-primary" href="{{url('/shop')}}"><i data-feather="layers"></i>Get Orders</a>
+    <a class="btn btn-primary" href="{{url('/login')}}"><i data-feather="layers"></i>Get Orders</a>
   </header>
   <!-- header -->
   <!--Moble-collapse-->
@@ -61,6 +69,13 @@
             <li class="nav-item">
               <a class="nav-link text-uppercase" href="blog.php">Blog</a>
             </li>
+
+            <?php  if (session()->has('logAdmin') && session('logAdmin')->role == 'customer') { ?>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="{{url('/dashboard')}}">Dashboard</a>
+            </li>
+            <?php } ?>
+<!-- 
             <li class="nav-item">
               <form class="form-inline mb-0">
                 <div class="input-group">
@@ -72,7 +87,7 @@
                   <input type="text" class="form-control border-0 search-navbar" placeholder="Search..." aria-label="search" aria-describedby="basic-addon1">
                 </div>
               </form>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

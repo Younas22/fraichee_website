@@ -21,7 +21,7 @@ use App\Http\Controllers\WebAccount;
 
 Route::match(['get','post'],'/grocery_example', [GroceryController::class, 'grocery_crud']);
 // Admin Panel Routes
-Route::get('admin', [AdminAccount::class, 'index'])->name('login');
+Route::get('admin', [AdminAccount::class, 'index'])->name('admin');
 Route::post('custom-login', [AdminAccount::class, 'customLogin'])->name('login.custom');
 Route::get('signout', [AdminAccount::class, 'signOut'])->name('signout');
 
@@ -57,8 +57,13 @@ Route::match(['get','post'],'/dashboard/subscribers', [DashboardController::clas
 
 //web accounts details
 Route::get('/login', [WebAccount::class, 'login'])->name('login');
+Route::post('user-custom-login', [WebAccount::class, 'usercustomLogin'])->name('user-login.custom'); 
 Route::get('/signup', [WebAccount::class, 'signup'])->name('signup');
+Route::post('custom-registration', [WebAccount::class, 'customRegistration'])->name('register.custom'); 
 Route::get('/forget-password', [WebAccount::class, 'forget_password'])->name('forget-password');
+Route::post('/location', [WebAccount::class, 'location'])->name('location');
+Route::get('usersignout', [WebAccount::class, 'signOutuser'])->name('usersignout');
+
 
 
 

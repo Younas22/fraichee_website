@@ -163,6 +163,30 @@ $(function() {
 
 
 <script type="text/javascript">
+
+
+$('#postcode').click(function(){  
+           var query = $('#get_postcode').val();  
+           if(query != '')  
+           {  
+                $.ajax({  
+                     url: '{{ route('location') }}', 
+                     method:"POST",  
+                     data: {
+                      _token: '{{ csrf_token() }}',
+                      keyword: query
+                      },
+
+                     success:function(data)  
+                     {  
+                          // $('#addressList').fadeIn();  
+                          $('#list_of_address').html(data);  
+                     }  
+                });  
+           }  
+      });
+
+
   $('.add_to_cart').click(function () {
     var ele = $(this);
     var id = ele.attr("data-id");

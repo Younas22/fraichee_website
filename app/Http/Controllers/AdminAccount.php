@@ -14,7 +14,9 @@ class AdminAccount extends Controller
 
     public function index()
     {
-        // echo "string"; exit();
+        if (session()->has('logAdmin')) {
+            return redirect('/dashboard');
+        }
         return view('auth.login');
     }
 
@@ -26,14 +28,14 @@ class AdminAccount extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        $credentials = User::where('email', '=', $request->email)->where('role', '=', 1)->first();
+        $credentials = User::where('email', '=', $request->email)->where('role', '=', 'admin')->first();
 
         if(!$credentials){
             return back()->with('fail','We do not Recognize Your Email');
         }else{
             // Check Password
             if(Hash::check($request->password, $credentials->password)){
-                $request->session()->put('logUser', $credentials);
+                $request->session()->put('logAdmin', $credentials);
                 return redirect('/dashboard');
             }else{
                 return back()->with('fail', 'Your Password is Incorrect');

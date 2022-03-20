@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Hash;
+use Session;
 use App\Models\User;
 use DB;
 use Stripe;
@@ -48,6 +49,8 @@ class Home extends Controller
                 'laundary',
                 'subscribe'
             ));
+      
+        return redirect("login")->withSuccess('You are not allowed to access');
     }
 
     //cart
@@ -63,7 +66,7 @@ class Home extends Controller
         // dd($request->total_cost);
         // dd(session('cart')); 
         $order_data = [
-            'user_id' => 10,
+            'user_id' => session('logUser')->user_id,
             'order_type' => 'laundry',
             // 'order_date' => date('m-d-Y'),
             'note_box' => $request->note_box,
@@ -132,7 +135,8 @@ class Home extends Controller
             ];
 
         DB::table('orders')->where('order_id', $request->order_id)->update($payment_details);
-        Session::flush();
+        // Session::flush();
+        Session::forget('cart');
         return redirect(route('compalate-checkout-order',$invoice_id));
     }
 
