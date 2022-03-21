@@ -45,7 +45,7 @@ class DashboardController extends Controller
     });
     $crud->callbackColumn('image', function ($value, $row) {
     $val = env('APP_URL').'/public/assets/images/products/'.$value;
-    $img = "<div class='thumbnail span1'><img src='$val' /></div>";
+    $img = "<div class='thumbnail span1'><center><img src='$val' style='border: 1px solid #ddd; border-radius: 4px; width: 100px;' /></center></div>";
     return($img);
     });
 
@@ -76,7 +76,7 @@ class DashboardController extends Controller
     });
     $crud->callbackColumn('cp_image', function ($value, $row) {
     $val = env('APP_URL').'/public/assets/images/products/'.$value;
-    $img = "<div class='thumbnail span1'><img src='$val' /></div>";
+    $img = "<div class='thumbnail span1'><center><img src='$val' style='border: 1px solid #ddd; border-radius: 4px; width: 100px;' /></center></div>";
     return($img);
     });
 

@@ -66,7 +66,7 @@ class Home extends Controller
         // dd($request->total_cost);
         // dd(session('cart')); 
         $order_data = [
-            'user_id' => session('logUser')->user_id,
+            'user_id' => session('logAdmin')->user_id,
             'order_type' => 'laundry',
             // 'order_date' => date('m-d-Y'),
             'note_box' => $request->note_box,

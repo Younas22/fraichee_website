@@ -166,9 +166,9 @@
 <?php }else{?>
 
                             <li class="nav-item">
-                                <a href="{{url('/dashboard/subscribers')}}" class="nav-link nav-toggle">
-                                    <i class="material-icons">email</i>
-                                    <span class="title">Subscribers</span>
+                                <a href="{{url('/dashboard/customer-profile')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">group</i>
+                                    <span class="title">Profile</span>
                                     {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
 

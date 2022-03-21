@@ -32,6 +32,7 @@ Route::group(['prefix' => '',"middleware" => "AuthCheck"],function(){
     Route::get('/dashboard', [AdminAccount::class, 'dashboard'])->name('dashboard');
     // user Route
     Route::match(['get','post'],'/dashboard/client-user', [UserController::class,'clientUser']);
+    Route::match(['get','post'],'/dashboard/customer-profile', [UserController::class,'customer_profile']);
 
 //categories
 Route::match(['get','post'],'/dashboard/categories', [DashboardController::class,'addcategories'])->name('categories');

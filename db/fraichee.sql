@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 01:36 PM
+-- Generation Time: Mar 21, 2022 at 07:15 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -28,37 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart_order` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `invoice_id` varchar(255) NOT NULL,
-  `delivery_days` varchar(500) DEFAULT NULL,
-  `delivery_options` varchar(255) NOT NULL,
-  `cart_details` text NOT NULL,
-  `total_amount` double NOT NULL,
-  `first_day` varchar(255) DEFAULT NULL,
-  `second_day` varchar(255) DEFAULT NULL,
-  `therd_day` varchar(255) DEFAULT NULL,
-  `fourth_day` varchar(255) DEFAULT NULL,
-  `type` enum('laundary','subscribe') NOT NULL,
-  `date` datetime NOT NULL,
-  `note_box` longtext DEFAULT NULL,
-  `other_address` text DEFAULT NULL,
-  `status` enum('pending','approved','cancelled') NOT NULL
+  `cart_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `item_id` bigint(20) DEFAULT NULL,
+  `price` double NOT NULL,
+  `quantity` int(255) DEFAULT NULL,
+  `status` enum('pending','approved','cancelled') NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cart_order`
 --
 
-INSERT INTO `cart_order` (`order_id`, `user_id`, `invoice_id`, `delivery_days`, `delivery_options`, `cart_details`, `total_amount`, `first_day`, `second_day`, `therd_day`, `fourth_day`, `type`, `date`, `note_box`, `other_address`, `status`) VALUES
-(61, 41, '0', '2021-09-30', '', '[{\"cart_id\":\"132\",\"user_id\":\"41\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"65\",\"cart_qty\":\"1\",\"price\":\"4.69\",\"total_price\":\"4.69\",\"date\":\"2021-09-04 11:10:38\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-30\"}]', 8.68, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'chak 22-10-R kacha khuh', 'pending'),
-(62, 44, '0', '2021-09-09', '', '[{\"cart_id\":\"154\",\"user_id\":\"44\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"65\",\"cart_qty\":\"1\",\"price\":\"4.69\",\"total_price\":\"4.69\",\"date\":\"2021-09-06 08:27:12\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-09\"}]', 8.68, NULL, NULL, NULL, NULL, 'laundary', '2021-09-08 00:00:00', '', '', 'pending'),
-(63, 43, '0', '2021-09-30', '', '[{\"cart_id\":\"157\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"65\",\"cart_qty\":\"1\",\"price\":\"4.69\",\"total_price\":\"4.69\",\"date\":\"2021-09-08 08:33:50\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-30\"},{\"cart_id\":\"159\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"66\",\"cart_qty\":\"1\",\"price\":\"3.69\",\"total_price\":\"3.69\",\"date\":\"2021-09-10 21:25:02\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-30\"}]', 16.36, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending'),
-(74, 43, '0', '2021-09-29', '', '[{\"cart_id\":\"182\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"66\",\"cart_qty\":\"1\",\"price\":\"3.69\",\"total_price\":\"3.69\",\"date\":\"2021-09-11 07:11:46\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-29\"},{\"cart_id\":\"183\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"67\",\"cart_qty\":\"1\",\"price\":\"5.69\",\"total_price\":\"5.69\",\"date\":\"2021-09-11 07:11:50\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-29\"}]', 17.36, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending'),
-(75, 43, '0', '2021-09-22', '', '[{\"cart_id\":\"184\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"66\",\"cart_qty\":\"1\",\"price\":\"3.69\",\"total_price\":\"3.69\",\"date\":\"2021-09-11 07:12:55\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-22\"}]', 7.68, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending'),
-(76, 43, '0', '2021-09-22', '', '[{\"cart_id\":\"185\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"66\",\"cart_qty\":\"1\",\"price\":\"3.69\",\"total_price\":\"3.69\",\"date\":\"2021-09-11 07:16:31\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-22\"}]', 7.68, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending'),
-(77, 43, '', '2021-09-29', '', '[{\"cart_id\":\"186\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"67\",\"cart_qty\":\"1\",\"price\":\"5.69\",\"total_price\":\"5.69\",\"date\":\"2021-09-11 07:19:03\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-29\"},{\"cart_id\":\"187\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"68\",\"cart_qty\":\"1\",\"price\":\"4.69\",\"total_price\":\"4.69\",\"date\":\"2021-09-11 07:19:07\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-29\"}]', 18.36, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending'),
-(78, 43, 'F1643', '2021-09-23', '', '[{\"cart_id\":\"188\",\"user_id\":\"43\",\"service_id\":\"3\",\"prod_id\":\"29\",\"cp_id\":\"66\",\"cart_qty\":\"1\",\"price\":\"3.69\",\"total_price\":\"3.69\",\"date\":\"2021-09-11 07:21:05\",\"panel\":\"laundary\",\"status\":\"0\",\"delivery_days\":\"2021-09-23\"}]', 7.68, NULL, NULL, NULL, NULL, 'laundary', '2021-09-11 00:00:00', '', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', 'pending');
+INSERT INTO `cart_order` (`cart_id`, `order_id`, `item_id`, `price`, `quantity`, `status`) VALUES
+(1, 1, 65, 4.69, 1, 'pending'),
+(2, 1, 103, 7.69, 1, 'pending'),
+(3, 1, 15, 6.69, 1, 'pending');
 
 -- --------------------------------------------------------
 
@@ -296,13 +281,29 @@ INSERT INTO `forms_contact` (`id`, `name`, `email`, `subject`, `message`, `creat
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `user_role` text NOT NULL,
-  `cat_id` int(11) NOT NULL,
-  `parent_prod_id` int(11) NOT NULL,
-  `child_prod_id` varchar(255) NOT NULL,
-  `delivery_days` text NOT NULL,
-  `status` enum('1','0') NOT NULL
+  `order_type` varchar(255) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `note_box` text DEFAULT NULL,
+  `other_address` text DEFAULT NULL,
+  `pickup_date` varchar(255) DEFAULT NULL,
+  `delivery_date` varchar(255) DEFAULT NULL,
+  `first_day` varchar(255) DEFAULT NULL,
+  `second_day` varchar(255) DEFAULT NULL,
+  `therd_day` varchar(255) DEFAULT NULL,
+  `fourth_day` varchar(255) DEFAULT NULL,
+  `invoice_id` varbinary(255) DEFAULT NULL,
+  `amount` decimal(11,2) DEFAULT NULL,
+  `card_holder_name` varchar(255) DEFAULT NULL,
+  `card_type` varchar(255) DEFAULT NULL,
+  `status` enum('1','0') DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `order_type`, `order_date`, `note_box`, `other_address`, `pickup_date`, `delivery_date`, `first_day`, `second_day`, `therd_day`, `fourth_day`, `invoice_id`, `amount`, `card_holder_name`, `card_type`, `status`) VALUES
+(1, 53, 'laundry', '2022-03-21 05:10:48', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-21', '2022-03-29', NULL, NULL, NULL, NULL, 0x4635373534, '23.06', 'Younas', 'visa', '1');
 
 -- --------------------------------------------------------
 
@@ -436,15 +437,15 @@ INSERT INTO `subscription` (`subsc_id`, `subsc_name`) VALUES
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `address` text NOT NULL,
-  `contact` varchar(255) NOT NULL,
-  `image` varchar(5000) NOT NULL,
-  `role` enum('admin','subscriber','partner','customer') NOT NULL,
-  `status` tinyint(1) DEFAULT NULL,
-  `join_date` datetime NOT NULL,
+  `name` text DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `image` varchar(5000) DEFAULT NULL,
+  `role` enum('admin','subscriber','partner','customer') NOT NULL DEFAULT 'customer',
+  `status` tinyint(1) DEFAULT 1,
+  `join_date` datetime NOT NULL DEFAULT current_timestamp(),
   `coupon_code` varchar(255) DEFAULT NULL,
   `coupon_val` varchar(255) DEFAULT NULL,
   `coupon_status` int(1) NOT NULL DEFAULT 0,
@@ -467,7 +468,8 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `address`, `contact
 (49, 'Fiona Kivumbi', 'fionakivumbi@hotmail.com', 'Launduary123@', '175 Westmoreland Road, , Bromley, BR2 0TZ', '07852570404', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
 (50, 'Godfred Junior', 'afrosquaduk@gmail.com', 'Kingston3', '43 Corona Road, , Lewisham, SE12 9LS', '07539398934', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
 (51, 'Kelvin Ansah', 'kelvinoseiansah@gmail.com', 'eld009', 'Address Not Found!', '0543696916', '', 'customer', NULL, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(52, 'Test 123', 'ansahkelvin0@gmail.com', 'eld009', 'Select Address', '08745414778', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none');
+(52, 'Test 123', 'ansahkelvin0@gmail.com', 'eld009', 'Select Address', '08745414778', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
+(53, 'amjid khan', 'abc@admin.com', '$2y$10$Zb4i6aB4F1yy2hfjaOLWj.gRftarhr95WepE9JUowO51eV7RPEM1m', '141 Brierley, New Addington, Croydon, CR0 9DS', '3047222723', 'photo-1553095066-5014bc7b7f2d.jpg', 'customer', 1, '2022-03-21 10:06:37', NULL, NULL, 0, 'd-none');
 
 --
 -- Indexes for dumped tables
@@ -477,7 +479,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `address`, `contact
 -- Indexes for table `cart_order`
 --
 ALTER TABLE `cart_order`
-  ADD PRIMARY KEY (`order_id`);
+  ADD PRIMARY KEY (`cart_id`);
 
 --
 -- Indexes for table `categories`
@@ -553,7 +555,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart_order`
 --
 ALTER TABLE `cart_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -583,7 +585,7 @@ ALTER TABLE `forms_contact`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -619,7 +621,7 @@ ALTER TABLE `subscription`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
