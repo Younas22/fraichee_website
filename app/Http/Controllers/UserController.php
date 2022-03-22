@@ -68,8 +68,6 @@ class UserController extends Controller
         $config = config('grocerycrud');
 
         $crud = new GroceryCrud($config, $database);
-
-
         $crud->setTable('users');
         $crud->setSubject('Profile', 'Profile');
         $crud->columns(['name','email','contact','image','address']);
@@ -132,97 +130,35 @@ class UserController extends Controller
         // all customer_order Show
     public Function customer_order(Request $request)
     {
-        $database = $this->_getDatabaseConnection();
-        $config = config('grocerycrud');
-        $crud = new GroceryCrud($config, $database);
-        $crud->setTable('orders');
-        $crud->setSubject('orders', 'orders');
-        $crud->columns(['invoice_id','user_id','pickup_date','delivery_date','amount','order_date']);
-        $crud->unsetAdd();
-                $crud->unsetEdit();
-        $crud->setRelation('user_id','users','name');
-        $crud->displayAs('user_id','Name');
-        $crud->where(['orders.user_id' => session('logAdmin')->user_id]);
-        $crud->unsetReadFields(['card_type', 'card_holder_name', 'first_day','second_day','therd_day','fourth_day']);
 
-$crud->callbackColumn('invoice_id', function ($value, $row) {
-if (!empty($value)) {
-    return "<a href='http://localhost/fraichee_web/dashboard/order-details/" . $row->order_id."' target='blank'>$value</a>";
-}else{
-    return '&nbsp;';
-}
-});
+        $customer_order = DB::table('orders')
+        ->select('orders.*','users.name')
+        ->where('orders.user_id', session('logAdmin')->user_id)
+        ->join('users', 'users.user_id', '=', 'orders.user_id')
+        ->paginate(10);
 
-        $crud->setRead();
-        $crud->setSkin('Flexigrid');
-        $output = $crud->render();
-        if ($output->isJSONResponse) {
-            return response($output->output, 200)
-                ->header('Content-Type', 'application/json')
-                ->header('charset', 'utf-8');
-        }
-
-        $css_files = $output->css_files;
-        $js_files = $output->js_files;
-        $output = $output->output;
-        return view('backend.grocery.grocery_example', [
-            'output' => $output,
-            'css_files' => $css_files,
-            'js_files' => $js_files
-        ]);
+        // dd($order_details);
+        return view('Admin.customer_order', 
+                compact(
+                'customer_order'
+            ));
     }
 
 
         // all customer_order Show
     public Function order_details(Request $request)
     {
-        $database = $this->_getDatabaseConnection();
-        $config = config('grocerycrud');
-        $crud = new GroceryCrud($config, $database);
-        $crud->setTable('cart_order');
-        $crud->setRelation('item_id','child_products','cp_name');
-        $crud->setSubject('orders details', 'orders details');
-        // $crud->columns(['cp_name','cp_price','cp_image']);
-        // $crud->columns(['order_id','child_products.cp_name']);
-        $crud->unsetAdd();
-        $crud->unsetEdit();
-        
-        // $crud->displayAs('user_id','Name');
-        // $crud->where(['cart_order.order_id' => $request->order_no]);
+        $order_details = DB::table('cart_order')
+        ->select('cart_order.*','child_products.cp_name as name','child_products.cp_image')
+        ->where('cart_order.order_id', $request->order_no)
+        ->join('child_products', 'child_products.cp_id', '=', 'cart_order.item_id')
+        ->get();
 
-    // $crud->callbackColumn('cp_image', function ($value, $row) {
-    // $val = env('APP_URL').'/public/assets/images/products/'.$value;
-    // $img = "<div class='thumbnail span1'><center><img src='$val' style='border: 1px solid #ddd; border-radius: 4px; width: 100px;' /></center></div>";
-    // return($img);
-    // });
-
-//         $crud->unsetReadFields(['card_type', 'card_holder_name', 'first_day','second_day','therd_day','fourth_day']);
-
-// $crud->callbackColumn('invoice_id', function ($value, $row) {
-// if (!empty($value)) {
-//     return "<a href='http://localhost/fraichee_web/dashboard/order-details/" . $row->order_id."' target='blank'>$value</a>";
-// }else{
-//     return '&nbsp;';
-// }
-// });
-
-        $crud->setRead();
-        $crud->setSkin('Flexigrid');
-        $output = $crud->render();
-        if ($output->isJSONResponse) {
-            return response($output->output, 200)
-                ->header('Content-Type', 'application/json')
-                ->header('charset', 'utf-8');
-        }
-
-        $css_files = $output->css_files;
-        $js_files = $output->js_files;
-        $output = $output->output;
-        return view('backend.grocery.grocery_example', [
-            'output' => $output,
-            'css_files' => $css_files,
-            'js_files' => $js_files
-        ]);
+        // dd($order_details);
+        return view('Admin.order_details', 
+                compact(
+                'order_details'
+            ));
     }
 
 

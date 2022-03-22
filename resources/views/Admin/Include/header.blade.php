@@ -47,7 +47,7 @@
                 <ul class="nav navbar-nav navbar-left in">
                     <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
                 </ul>
-                <form class="search-form-opened" action="#" method="GET">
+                <form class="search-form-opened d-none" action="#" method="GET">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search..." name="query">
                         <span class="input-group-btn search-btn">
@@ -67,7 +67,7 @@
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
                         <!-- start notification dropdown -->
-                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                        <li class="dropdown dropdown-extended dropdown-notification d-none" id="header_notification_bar">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                 data-close-others="true">
                                 <i class="fa fa-bell-o"></i>
@@ -140,7 +140,7 @@
                         </li>
                         <!-- end notification dropdown -->
                         <!-- start message dropdown -->
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                        <li class="dropdown dropdown-extended dropdown-inbox d-none" id="header_inbox_bar">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                 data-close-others="true">
                                 <i class="fa fa-envelope-o"></i>
@@ -232,24 +232,13 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default animated jello">
                                 <li>
-                                    <a href="user_profile.html">
+                                    <?php if (session('logAdmin')->role == 'customer') {?>
+                                    <a href="<?=url('dashboard/customer-profile')?>">
                                         <i class="icon-user"></i> Profile </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-settings"></i> Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-directions"></i> Help
-                                    </a>
-                                </li>
-                                <li class="divider"> </li>
-                                <li>
-                                    <a href="lock_screen.html">
-                                        <i class="icon-lock"></i> Lock
-                                    </a>
+                                    <?php }else{?>
+                                    <a href="<?=url('dashboard/admin-profile')?>">
+                                        <i class="icon-user"></i> Profile </a>
+                                    <?php } ?>
                                 </li>
                                 <li>
                                     <?php if (session('logAdmin')->role == 'customer') {?>

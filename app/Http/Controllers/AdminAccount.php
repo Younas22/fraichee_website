@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use DB;
 
 
 class AdminAccount extends Controller
@@ -48,6 +49,40 @@ class AdminAccount extends Controller
     // User Dashboard Function
     public function dashboard()
     {
+
+        if (session('logAdmin')->role == 'customer') {
+        $customer_order = DB::table('orders')
+        ->select('orders.*','users.name')
+        ->where('orders.user_id', session('logAdmin')->user_id)
+        ->join('users', 'users.user_id', '=', 'orders.user_id')
+        ->paginate(10);
+
+        $complete_order = DB::table('orders')
+        ->where('orders.user_id', session('logAdmin')->user_id)
+        ->where('orders.status', 1)
+        ->get();
+
+        $complete_order_no = $complete_order->count();
+
+        $pending_order = DB::table('orders')
+        ->where('orders.user_id', session('logAdmin')->user_id)
+        ->where('orders.status', 0)
+        ->get();
+
+        $pending_order_no = $pending_order->count();
+
+
+                return view('admin.home', 
+                compact(
+                'customer_order',
+                'complete_order_no',
+                'pending_order_no'
+            ));
+        }
+
+
+        // dd($customer_order);
+
         return view('admin.home');
     }
 

@@ -44,7 +44,18 @@
 {{--                             <li class="menu-heading">
                                 <span>Main</span>
                             </li> --}}
-                            <li class="nav-item start active">
+
+
+                        <li class="nav-item">
+                                <a href="{{url('/')}}" class="nav-link nav-toggle" target="blank">
+                                    <i class="material-icons">home</i>
+                                    <span class="title">Web</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item start active d-none">
                                 <a href="#" class="nav-link nav-toggle">
                                     <i class="material-icons">dashboard</i>
                                     <span class="title">Dashboard</span>
@@ -65,6 +76,17 @@
                                     </li> --}}
                                 </ul>
                             </li>
+
+
+                            <li class="nav-item start active">
+                                <a href="{{url('/dashboard')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">dashboard</i>
+                                    <span class="title">Dashboard</span>
+                                    {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
+                                </a>
+
+                            </li>
+
 
 <?php if (session('logAdmin')->role == 'admin') { ?>
                             <li class="nav-item">
