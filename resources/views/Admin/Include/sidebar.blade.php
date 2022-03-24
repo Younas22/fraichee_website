@@ -95,7 +95,6 @@
                                     <span class="title">Users list</span>
                                     {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-
                             </li>
 
                             <li class="nav-item">
@@ -106,24 +105,20 @@
                                 </a>
                             </li>
 
-
-                            <li class="nav-item">
+<!--                             <li class="nav-item">
                                 <a href="{{url('/dashboard/subscription-list')}}" class="nav-link nav-toggle">
                                     <i class="material-icons">notifications_none</i>
                                     <span class="title">subscription list</span>
                                     {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-                            </li>
+                            </li> -->
                             
-
-
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/categories')}}" class="nav-link nav-toggle">
                                     <i class="material-icons">home</i>
                                     <span class="title">Categories</span>
                                     {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}
                                 </a>
-
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle">
@@ -144,6 +139,28 @@
                                     </li>
                                 </ul>
                             </li>
+
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle">
+                                    <i class="material-icons">desktop_mac</i>
+                                    <span class="title">Blogs</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{url('/dashboard/blog-categories')}}" class="nav-link ">
+                                            <span class="title">Blog Categories</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url('/dashboard/blog-post')}}" class="nav-link ">
+                                            <span class="title">Blog Post</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
 
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/coupon-code')}}" class="nav-link nav-toggle">

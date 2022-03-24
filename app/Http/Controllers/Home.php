@@ -18,7 +18,11 @@ class Home extends Controller
     //home
     public function index()
     {
-        return view('home.home');
+        $blog = DB::table('blog')->get();
+        return view('home.home', 
+                compact(
+                'blog'
+            ));
     }
 
     //shop
@@ -27,21 +31,6 @@ class Home extends Controller
 
         $laundary = DB::table('categories')->select()->where('panel', 'laundary')->get();
         $subscribe = DB::table('categories')->select()->where('panel', 'subscribe')->get();
-
-        // dd($laundary);
-
-        // $sub_products = DB::table('products')
-        // ->select()
-        // ->where('categories.panel', 'subscribe')
-        // ->join('categories', 'categories.service_id', '=', 'products.service_id')
-        // ->get();
-
-
-        // $child_products = DB::table('child_products')
-        // ->select()
-        // ->where('prod_id',$request->pid)
-        // ->get();
-
 
         // dd($lan_products);
             return view('home.shop', 
@@ -153,7 +142,11 @@ class Home extends Controller
     //blog
     public function blog()
     {
-        return view('home.blog');
+        $blog = DB::table('blog')->paginate(6);
+        return view('home.blog', 
+                compact(
+                'blog'
+            ));
     }
 
     //blog_details

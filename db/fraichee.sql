@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 07:15 AM
+-- Generation Time: Mar 24, 2022 at 06:29 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,61 @@ SET time_zone = "+00:00";
 --
 -- Database: `fraichee`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `post_id` int(11) NOT NULL,
+  `post_title` varchar(250) NOT NULL,
+  `post_slug` varchar(255) DEFAULT NULL,
+  `post_desc` text DEFAULT NULL,
+  `cat_id` int(11) DEFAULT NULL,
+  `destination_id` int(11) DEFAULT NULL,
+  `post_meta_keywords` text DEFAULT NULL,
+  `post_meta_desc` text DEFAULT NULL,
+  `post_order` int(11) NOT NULL,
+  `post_related` varchar(200) DEFAULT NULL,
+  `post_img` varchar(255) DEFAULT NULL,
+  `post_status` enum('Yes','No') NOT NULL DEFAULT 'Yes',
+  `post_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `post_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`post_id`, `post_title`, `post_slug`, `post_desc`, `cat_id`, `destination_id`, `post_meta_keywords`, `post_meta_desc`, `post_order`, `post_related`, `post_img`, `post_status`, `post_created_at`, `post_updated_at`) VALUES
+(17, 'Where to Eat in Rome During Holidays', 'Where-to-Eat-in-Rome-During-Holidays', '<p>UPDATED FOR 2014! There is a widely held misconception that during the Christmas and New Year&rsquo;s holidays, Rome&rsquo;s restaurants shut down and people who don&rsquo;t have the luxury of eating at home are left to scavenge for food wherever they can get it. While one should expect some venues to be closed and many to embrace limited hours and prix fixe menus, visitors to Rome can eat very well during the holidays. It just requires a bit of planning.</p>\r\n\r\n<p>To partake in the traditional Christmas Eve fish feast, head to Il Sanlorenzo, the best place in central Rome to find fresh, local and relatively sustainable fish. Il Sanlorenzo is open at lunch and dinner on Christmas Eve and New Year&rsquo;s Eve.</p>\r\n\r\n<p>A short stroll away on via dei Giubbonari, Roscioli will be open for lunch only on Christmas Eve and on New Year&rsquo;s Eve.</p>\r\n\r\n<p>For fine dining options, try Metamorfosi, which will be open at dinner on New Year&rsquo;s Eve and on New Year&rsquo;s Day, Pipero al Rex, which will be open at lunch and dinner on December 24, 25, 31, and at lunch only on January 1, or All&rsquo;Oro, which will be open throughout the holidays.</p>\r\n\r\n<p>For Roman fare, Cesare al Casaletto will be open for lunch only on December 25th, 26th and January 1st. Near the Vatican, Romeo will be open for lunch only on December 24 and for lunch and dinner on December 31. Flavio al Velavevodetto will be open for lunch on December 24, 25 and 31. Also in Testaccio, La Torricella is open for lunch on December 24. It is open December 24 for lunch, December 25 at lunch and dinner, and for lunch and dinner on New Year&rsquo;s Eve and New Year&rsquo;s Day.</p>\r\n\r\n<p>For international cusine, try Mesob, which will be open throughout the holidays</p>\r\n\r\n<p>A special event will take place at Vino Roma on December 25th at 6:00pm; Hande Leimer is offering a Christmas edition of her new tasting type Wine &amp; Cheese Dinner, with an even more interesting wine selection. For booking and details, visit the Vino Roma site.</p>\r\n\r\n<p>For craft beer check out Birra + in Pigneto, which will always be open, but will close at 8:30pm on Christmas Eve and on New Year&rsquo;s Eve, and Ma Che Siete Venuti a Fa&rsquo; in Trastevere, which will be open from the late afternoon every day this holiday season. These two watering holes are the only places on the list where reservations are not accepted and no food is served.</p>\r\n\r\n<p>It is also worth noting that most Kosher restaurants in the Ghetto will be open on Christmas Eve and Christmas Day.</p>\r\n\r\n<p>You can get the portable version of this list by purchasing my app &ldquo;Katie Parla&rsquo;s Rome&rdquo;, details here and be sure to call all venues in advance before turing up. While the aforementioned openings have been confirmed multiple times, non si sa mai (you never know what can happen!). Buone feste!</p>\r\n', 15, NULL, 'Where to Eat in Rome During Holidays', 'For Roman fare, Cesare al Casaletto will be open for lunch only on December 25th, 26th and January 1st. Near the Vatican, Romeo will be open for lunch only on', 1, '21,25,30,33', 'Screenshot-10.png', 'Yes', '2022-02-09 05:00:00', '2022-02-10 05:00:00'),
+(18, 'Flavio Al Velavevodetto in Testaccio', 'Flavio-Al-Velavevodetto-in-Testaccio', '<p>Waaaay back in December 2012, I wrote&nbsp;<a href=\"http://www.parlafood.com/5-places-in-rome-that-need-to-step-up-their-game-in-2013/\" target=\"_blank\">a post</a>&nbsp;in which I put&nbsp;<a href=\"http://www.ristorantevelavevodetto.it/\" target=\"_blank\">Flavio al Velavevodetto</a>(and few other places) on notice. That year, Flavio, a Testaccio-based restaurant specializing in traditional Roman fare, had gone from being&nbsp;completely satisfying to wildly inconsistent, a change that was likely linked to opening a second restaurant, Velavevodetto ai Quiriti in Prati. Service glitches and food failures became increasingly common, which isn&rsquo;t unusual for a restaurant to suffer following expansion. Many readers and app users reported negative experiences&ndash;so I was concerned&ndash;but I remained optimistic that things would turn around.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Fast forward to December 2014 and Flavio al Velavevodetto has more than just rebounded. It has surpassed its earlier reputation and is one of the few places in Rome that manages to maintain an extremely high level of quality, both in its raw ingredients and its final dishes. Meat comes from the restaurant&rsquo;s own herds and flocks, while seasonal vegetables are cultivated on their land in northern Lazio. Ingredients are transformed into superb Roman classics like&nbsp;<em>polpette di bollito</em>&nbsp;(fried disks of shredded beef),&nbsp;<em>tonnarelli cacio e pepe</em>&nbsp;(fresh pasta with Pecorino Romano cheese and black pepper),&nbsp;<em>rigatoni alla carbonara, rigatoni alla gricia</em>&nbsp;(pasta with guanciale, Pecorino Romano cheese and black pepper),&nbsp;<em>fettucine con rigaglie di pollo</em>(fettucine with chicken innards),&nbsp;<em>coda alla vaccinara</em>&nbsp;(oxtail braised with tomato and celery),&nbsp;<em>coratella di manzetta maremanna</em>&nbsp;(veal heart, lungs and liver), and&nbsp;<em>trippa alla romana</em>&nbsp;(tripe cooked with tomato, Roman mint and Pecorino Romano), just to name a few of the menu&rsquo;s many highlights. The wine selection is wonderful, with a healthy number of quality organic wines from Lazio, plus some interesting natural wines from other Italian regions, which are well-suited to the cucina romana.</p>\r\n\r\n<p>Throw in a historic setting (the restaurant is based inside the&nbsp;<a href=\"http://www.turismoroma.it/cosa-fare/monte-dei-cocci?lang=en\" target=\"_blank\">Monte dei Cocci</a>, an ancient Roman archeological site) and Flavio al Velavevodetto is pretty close to perfect. There&nbsp;<em>are</em>&nbsp;still occasional missteps, especially regarding the service. As a regular, I don&rsquo;t experience many of the shortcomings app users and readers have cited in recent emails to me, but last week, a &euro;6 vegetable side dish, which was aggressively over-salted, appeared on the final bill after we reported it was inedible. Regardless of these occasional service glitches, the food and atmosphere are stellar and Flavio and his team are doing some of the finest&nbsp;<em>cucina romana</em>&nbsp;anywhere. Bump it to the top of your Rome dining list, if it&rsquo;s not already there.</p>\r\n\r\n<p><a href=\"http://www.ristorantevelavevodetto.it/\" target=\"_blank\">Flavio al Velavevodetto</a><br />\r\nVia Monte di Testaccio 97<br />\r\n+3906 574 4194<br />\r\nOpen: Daily, including holidays</p>\r\n', 15, NULL, 'Flavio Al Velavevodetto in Testaccio', 'Waaaay back in December 2012, I wrote a post in which I put Flavio al Velavevodetto(and few other places) on notice. That year, Flavio, a Testaccio-basedTestaccio میں فلاویو امام Velavevodetto', 2, '17,25,30,35', 'Screenshot-10-efa85.png', 'Yes', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'The Tiber River’s Last Eel Fishermen', 'The-Tiber-River-s-Last-Eel-Fishermen', '<p>Cesare and Alfredo Bergamini have been fishing for eels in the Tiber since 1947. Now 74 and 77, respectively, the brothers learned the profession from their grandfather. In post-war Rome, they shared the water with other eel fishermen&ndash;and a great deal more eels. But falling eel stock caused by pollution coupled with spiraling profitability due to collapsed demand has driven others away from the trade.</p>\r\n\r\n<p>On a recent visit to the Bergamini brothers&rsquo; dock in Mezzocamino in southwestern Rome, Cesare recounted his daily routine while repairing his handmade nets. He goes out in his dinghy (water conditions permitting) at 7:00 each morning to check his eel traps, around 300 hand-crafted funnel-like nets. He said the quantity of eels they catch depends on the river level. Last week, the Tiber had risen more than 4 meters due to heavy rains, which meant Cesare couldn&rsquo;t lay his nets and it was impossible to catch anything.</p>\r\n\r\n<p>Decades ago, his haul on a good day would have been several hundred kilos, while today the catch is severely diminished. Cesare explained that the eels he catches are healthy and adapt to the Tiber&rsquo;s conditions. But the use of acidic compounds to purify the water upriver have decimated the eel&rsquo;s food stock, dramatically decreasing their number. He ponders this ecological crime while darning a net with a homemade needle. It&rsquo;s just one offense of many against the river, he explains. He gestures to a collapsed embankment downriver, cursing the expensive public work that was doomed to fail due to its location and currents. Local authorities mismanage the Tiber and make decisions about its maintenance that affect the river&rsquo;s ecosystem without consulting the very people who know the river best. It&rsquo;s an often told tale of the city&rsquo;s exploitation of its resources and people. The balance of the river is constantly threatened, but the Bergamini brothers and their eels bear witness to this harsh reality and survive.</p>\r\n', 16, NULL, 'The Tiber River’s Last Eel Fishermen', 'Cesare and Alfredo Bergamini have been fishing for eels in the Tiber since 1947. Now 74 and 77, respectively, the brothers learned the profession from their', 3, '17,18,32,33', 'Screenshot-10-9def7.png', 'Yes', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(20, 'Hotel Review: DOM Hotel In Rome', 'Hotel-Review-DOM-Hotel-In-Rome', '<p><small>A very pricey cocktail in progress on the roof of the new-ish DOM Hotel.</small></p>\r\n\r\n<p>The DOM Hotel, a five-star luxury retreat, opened on Via Giulia in central Rome a little less than a year ago. The place is a good value, in relation to its category, and the location is hard to beat. I weigh DOM&rsquo;s pros and cons in this Sunday&rsquo;s NYT Travel section (or read online&nbsp;<a href=\"http://www.nytimes.com/2014/11/30/travel/hotel-review-dom-hotel-in-rome.html?ref=travel\" target=\"_blank\">here</a>).</p>\r\n', 15, NULL, 'Hotel Review: DOM Hotel In Rome', 'A very pricey cocktail in progress on the roof of the new-ish DOM Hotel.', 4, '17,18,19,33', 'Screenshot-10-dd122.png', 'Yes', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_categories`
+--
+
+CREATE TABLE `blog_categories` (
+  `cat_id` int(11) NOT NULL,
+  `cat_name` varchar(250) CHARACTER SET utf8 NOT NULL,
+  `cat_slug` varchar(250) DEFAULT NULL,
+  `cat_status` enum('Yes','No') NOT NULL DEFAULT 'Yes'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blog_categories`
+--
+
+INSERT INTO `blog_categories` (`cat_id`, `cat_name`, `cat_slug`, `cat_status`) VALUES
+(15, 'Travel and Foods', 'Travel-and-Foods', 'Yes'),
+(16, 'Adventure', 'Adventure', 'Yes'),
+(17, 'Shopping and Fashion', 'Shopping-and-Fashion', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -43,7 +98,11 @@ CREATE TABLE `cart_order` (
 INSERT INTO `cart_order` (`cart_id`, `order_id`, `item_id`, `price`, `quantity`, `status`) VALUES
 (1, 1, 65, 4.69, 1, 'pending'),
 (2, 1, 103, 7.69, 1, 'pending'),
-(3, 1, 15, 6.69, 1, 'pending');
+(3, 1, 15, 6.69, 1, 'pending'),
+(4, 2, 65, 4.69, 2, 'pending'),
+(5, 3, 65, 4.69, 2, 'pending'),
+(6, 3, 104, 3.69, 2, 'pending'),
+(7, 4, 115, 14.69, 1, 'pending');
 
 -- --------------------------------------------------------
 
@@ -303,7 +362,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `order_type`, `order_date`, `note_box`, `other_address`, `pickup_date`, `delivery_date`, `first_day`, `second_day`, `therd_day`, `fourth_day`, `invoice_id`, `amount`, `card_holder_name`, `card_type`, `status`) VALUES
-(1, 53, 'laundry', '2022-03-21 05:10:48', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-21', '2022-03-29', NULL, NULL, NULL, NULL, 0x4635373534, '23.06', 'Younas', 'visa', '1');
+(1, 53, 'laundry', '2022-03-21 05:10:48', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-21', '2022-03-29', NULL, NULL, NULL, NULL, 0x4635373534, '23.06', 'Younas', 'visa', '0'),
+(2, 53, 'laundry', '2022-03-21 19:07:23', NULL, 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-22', '2022-03-30', NULL, NULL, NULL, NULL, 0x4631373934, '13.37', 'Younas', 'visa', '1'),
+(3, 54, 'laundry', '2022-03-23 17:29:04', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-23', '2022-03-31', NULL, NULL, NULL, NULL, 0x4634363732, '20.75', 'Younas', 'visa', '1'),
+(4, 54, 'laundry', '2022-03-23 17:33:53', 'abc', 'chak 22-10-R kacha khuh', '2022-03-23', '2022-04-08', NULL, NULL, NULL, NULL, 0x4635333334, '18.68', 'Younas', 'visa', '1');
 
 -- --------------------------------------------------------
 
@@ -458,22 +520,27 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `address`, `contact`, `image`, `role`, `status`, `join_date`, `coupon_code`, `coupon_val`, `coupon_status`, `hide_class`) VALUES
 (1, 'bakhtawar shah', 'admin@admin.com', '$2y$10$jtO4yxaUte4VOdla6bm5tOm34PBTpuKNXqbXFQZGmTL64fjoaPJXq', '', '+923007376286', '', 'admin', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(41, 'amjid khan', 'hm.younas22@gmail.com', '1111', 'Address Not Found!', '1111111111', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(43, 'Younas', 'phpfiverrpk@gmail.com', 'XyP3pVAr', 'Address Not Found!', '1111111111', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
 (44, 'Reagan Tumushabe', 'tumushabereagan@gmail.com', 'dacquq-zarSaz-8tutgo', '154 Brierley, New Addington, Croydon, CR0 9DS', '07540061409', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(45, 'Magdalene  Sakyi ', 'magdalenesakyi22@gmail.com', 'Money22', '28 Croftongate Way, , Lewisham, SE4 2DL', '07983011557', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(46, 'John  Tabor', 'jlstabor@yahoo.co.uk', '1Wrentham', 'Church Of The Transfiguration, 1 Wrentham Avenue, Brent, NW10 3HT', '07733263516', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(47, 'Godfred Junior', 'godfredjnr@gmail.com', 'Kingston3', '43 Corona Road, , Lewisham, SE12 9LS', '07539398934', '', 'customer', 1, '0000-00-00 00:00:00', 'firstorder', '15', 1, 'd-none'),
-(48, 'Kellz ', 'Kellzloner1@mail.com', 'Queenmagda1', 'Flat 7, Arnold House, Southwark, SE17 3SU', '+44 7916 593180', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(49, 'Fiona Kivumbi', 'fionakivumbi@hotmail.com', 'Launduary123@', '175 Westmoreland Road, , Bromley, BR2 0TZ', '07852570404', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(50, 'Godfred Junior', 'afrosquaduk@gmail.com', 'Kingston3', '43 Corona Road, , Lewisham, SE12 9LS', '07539398934', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
 (51, 'Kelvin Ansah', 'kelvinoseiansah@gmail.com', 'eld009', 'Address Not Found!', '0543696916', '', 'customer', NULL, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
 (52, 'Test 123', 'ansahkelvin0@gmail.com', 'eld009', 'Select Address', '08745414778', '', 'customer', 1, '0000-00-00 00:00:00', NULL, NULL, 0, 'd-none'),
-(53, 'amjid khan', 'abc@admin.com', '$2y$10$Zb4i6aB4F1yy2hfjaOLWj.gRftarhr95WepE9JUowO51eV7RPEM1m', '141 Brierley, New Addington, Croydon, CR0 9DS', '3047222723', 'photo-1553095066-5014bc7b7f2d.jpg', 'customer', 1, '2022-03-21 10:06:37', NULL, NULL, 0, 'd-none');
+(53, 'amjid khan', 'abc@admin.com', '$2y$10$Zb4i6aB4F1yy2hfjaOLWj.gRftarhr95WepE9JUowO51eV7RPEM1m', '141 Brierley, New Addington, Croydon, CR0 9DS', '3047222723', 'photo-1553095066-5014bc7b7f2d.jpg', 'customer', 1, '2022-03-21 10:06:37', NULL, NULL, 0, 'd-none'),
+(54, 'Younas', 'hm.younas22@gmail.com1', '$2y$10$CP9s6hzb4o2JsamVQVtSD.UxlZx6YwaicxRW79qzxSRNCr0vBI/SK', NULL, '3047222723', NULL, 'customer', 1, '2022-03-23 22:28:16', NULL, NULL, 0, 'd-none');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- Indexes for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  ADD PRIMARY KEY (`cat_id`);
 
 --
 -- Indexes for table `cart_order`
@@ -552,10 +619,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- AUTO_INCREMENT for table `cart_order`
 --
 ALTER TABLE `cart_order`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -585,7 +664,7 @@ ALTER TABLE `forms_contact`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -621,7 +700,7 @@ ALTER TABLE `subscription`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,7 +1,7 @@
         </div>
 <!-- start footer -->
         <div class="page-footer">
-            <div class="page-footer-inner">Copyright &copy; PK WORLD ADMIN 2021</div>
+            <div class="page-footer-inner">Copyright &copy; Fraichee Admin <?=date('Y')?></div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>
             </div>

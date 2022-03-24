@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>PK WORLD ADMIN</title>
+    <title>Fraichee Admin</title>
     <!-- grocery-crud -->
     <link href="{{url('public/assests/admin/css/style.min.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -53,7 +53,7 @@
                 <div class="page-logo">
                     <a href="{{url('/dashboard')}}">
                         <img alt="" src="{{url('public/assets/admin/img/logo.png')}}">
-                        <span class="logo-default">PK WORLD</span> </a>
+                        <span class="logo-default">Fraichee</span> </a>
                 </div>
                 <!-- logo end -->
                 <ul class="nav navbar-nav navbar-left in">

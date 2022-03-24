@@ -660,102 +660,35 @@
 <section class="insight">
   <div class="container-fluid">
     <div class="mb-3 d-flex" style="justify-content: space-between; align-items: center">
-      <h1 class="insight-heading">Insight</h1>
+      <h1 class="insight-heading">Blogs</h1>
 
-      <button type="button" class="btn btn-primary more-article float-right">
-        <a href="#" class="text-white">View more article</a>
-      </button>
+      <a href="<?=url('blog');?>" class="btn btn-primary more-article float-right text-white">View more article
+      </a>
     </div>
 
     <div class="row">
-      <div class="col-md-3 mt-3">
-        <div class="card">
-          <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/woman-is-doing-laundry-300x205.jpg" alt="Card image cap" />
+      
+        <?php foreach ($blog as $key) { ?>
+          <div class="col-md-3 mt-3">
+          <div class="card">
+          <img class="card-img-top" src="<?= url('public/assets/images/blog').'/'.$key->post_img; ?>" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">
-              <a href="{{url('/blog_details')}}"> Laundry Tips To Follow During Coronavirus</a>
+              <a href="<?= url('/blog-details').'/'. str_replace(' ', '-', $key->post_slug); ?>"> <?=$key->post_title?></a>
             </h5>
             <div class="post-meta-data">
-              <span class="post-date"> November 2, 2021 </span>
+              <span class="post-date"> <?=date('m/d/Y', strtotime($key->post_created_at))?> </span>
               <span class="post-avatar"> No Comments </span>
             </div>
             <div class="post-excerpt">
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                natoque penatibus et magnis dis parturient montes, nascetur
+                <?=Str::limit($key->post_desc, 20) ?>
               </p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 mt-3">
-        <div class="card">
-          <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/laundry-room-with-a-washing-machine-1-300x200.jpg" alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="{{url('/blog_details')}}">
-                Tips To Choose & Maintain The Best Fabrics For Tablecloths
-              </a>
-            </h5>
-            <div class="post-meta-data">
-              <span class="post-date"> November 2, 2021 </span>
-              <span class="post-avatar"> No Comments </span>
-            </div>
-            <div class="post-excerpt">
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                natoque penatibus et magnis dis parturient montes, nascetur
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col-md-3 mt-3">
-        <div class="card">
-          <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/family-doing-laundry-1-300x207.jpg" alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="{{url('/blog_details')}}">
-                Useful Tips to Wash Baby Clothes The Right Way
-              </a>
-            </h5>
-            <div class="post-meta-data">
-              <span class="post-date"> November 2, 2021 </span>
-              <span class="post-avatar"> No Comments </span>
-            </div>
-            <div class="post-excerpt">
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                natoque penatibus et magnis dis parturient montes, nascetur
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mt-3">
-        <div class="card">
-          <img class="card-img-top" src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/family-doing-laundry-300x200.jpg" alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="{{url('/blog_details')}}"> Laundry Tips For Winters </a>
-            </h5>
-            <div class="post-meta-data">
-              <span class="post-date"> November 2, 2021 </span>
-              <span class="post-avatar"> No Comments </span>
-            </div>
-            <div class="post-excerpt">
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                natoque penatibus et magnis dis parturient montes, nascetur
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <?php } ?>
     </div>
   </div>
 </section><!-- Blogs -->

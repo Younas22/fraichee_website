@@ -39,6 +39,14 @@ Route::group(['prefix' => '',"middleware" => "AuthCheck"],function(){
 //categories
 Route::match(['get','post'],'/dashboard/categories', [DashboardController::class,'addcategories'])->name('categories');
 
+
+//blog
+Route::match(['get','post'],'/dashboard/blog-categories', [DashboardController::class,'blog_categories'])->name('blog.categories');
+Route::match(['get','post'],'/dashboard/blog-post', [DashboardController::class,'blog_post'])->name('blog.post');
+
+Route::match(['get','post'],'/dashboard/orders-list', [DashboardController::class,'orders_list'])->name('orders.list');
+Route::match(['get','post'],'/dashboard/the-order-details/{order_no}', [DashboardController::class,'admin_order_details']);
+
 //products
 Route::match(['get','post'],'/dashboard/products', [DashboardController::class,'products'])->name('products');
 Route::match(['get','post'],'/dashboard/child-products', [DashboardController::class,'childproducts'])->name('childproducts');
@@ -80,7 +88,7 @@ Route::post('checkout-order', [Home::class, 'checkout_order'])->name('checkout-o
 Route::get('compalate-checkout-order/{invoice_no}', [Home::class, 'compalate_checkout_order'])->name('compalate-checkout-order');
 
 Route::get('/blog', [Home::class, 'blog'])->name('blog');
-Route::get('/blog_details', [Home::class, 'blog_details'])->name('blog_details');
+Route::get('/blog-details/{link}', [Home::class, 'blog_details'])->name('blog_details');
 Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');
 Route::post('update-cart', [Home::class, 'update_cart'])->name('update.cart');
 Route::delete('remove-from-cart', [Home::class, 'remove'])->name('remove.from.cart');
