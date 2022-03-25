@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>Fraichee Admin</title>
+    <title>Bright laundry services</title>
     <!-- grocery-crud -->
     <link href="{{url('public/assests/admin/css/style.min.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">

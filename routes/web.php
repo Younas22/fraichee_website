@@ -93,3 +93,15 @@ Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');
 Route::post('update-cart', [Home::class, 'update_cart'])->name('update.cart');
 Route::delete('remove-from-cart', [Home::class, 'remove'])->name('remove.from.cart');
 
+
+
+
+Route::get('/clear', function() {
+    $exitCode = Artisan::call('config:cache');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('view:clear');
+    $exitCode = Artisan::call('key:generate');
+    $exitCode = Artisan::call('route:clear');
+    return 'DONE'; //Return anything
+});

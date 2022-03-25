@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>PK WORLD ADMIN</title>
+    <title>Bright laundry services</title>
     <!-- icons -->
     <link href="{{url('public/assets/admin/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{url('public/assets/admin/plugins/iconic/css/material-design-iconic-font.min.css')}}">
