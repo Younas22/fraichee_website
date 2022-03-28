@@ -7,11 +7,11 @@
       <div class="col-12 col-lg-6">
         <div class="banner-text" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-sine">
           <p class="sub">Professional Laundry Service</p>
-          <h1>A better you start with clean clothes</h1>
-          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo</p>
-          <div class="btn-group-banner">
-            <a href="#" class="btn btn-primary btn-lg"><i data-feather="calendar"></i>Pickup Now</a>
-            <a href="#" class="btn btn-outline-light btn-lg">Discover More<i class="ml-2 mr-0" data-feather="arrow-right"></i></a>
+          <h1>Laundry Made simple</h1>
+          <p class="desc" style="font-size: 30px;">Laundry services and Bed linen subscription services all in one place</p>
+          <div class="btn-group-banner text-right">
+            <a href="{{url('/login')}}" class="btn btn-primary btn-lg"><i data-feather="calendar"></i>Order Now</a>
+            <!-- <a href="#" class="btn btn-outline-light btn-lg">Discover More<i class="ml-2 mr-0" data-feather="arrow-right"></i></a> -->
           </div>
         </div>
       </div>
@@ -20,26 +20,23 @@
       <div class="row no-gutters">
         <div class="col-md-8">
           <div class="card-body pt-4">
-            <h4 class="card-title mb-3">Request Pickup</h4>
+            <h4 class="card-title mb-3">Order Pickup</h4>
             <form>
               <div class="row no-gutters">
-                <div class="col-md-4">
-                  <input type="text" class="form-control" placeholder="Name">
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="form-control" placeholder="Phone">
+                <div class="col-md-6">
+                  <input type="Password" class="form-control" placeholder="Password">
                 </div>
-                <div class="col-md-4">
-                  <input type="date" class="form-control" placeholder="Date">
+                <div class="col-md-6">
+                  <input type="date" class="form-control" placeholder="Pickup Date">
                 </div>
-                <div class="col-md-4">
+<!--                 <div class="col-md-4">
                   <input type="time" class="form-control" placeholder="Time">
-                </div>
-                <div class="col-md-4">
-                  <button class="btn btn-primary btn-lg btn-block">Pickup Now!<i data-feather="truck"></i></button>
+                </div> -->
+                <div class="col-md-6">
+                  <button class="btn btn-primary btn-lg btn-block">Select Item!<i data-feather="truck"></i></button>
                 </div>
               </div>
             </form>
@@ -71,25 +68,28 @@
       <div class="col-md-6">
         <div class="position-relative" data-aos="fade-right" data-aos-duration="1000">
           <img src="{{url('public/assets/web/img/women-selecting-clothes-1536x1024.jpg')}}" alt="about_company" class="img-fluid">
-          <div class="count-container" data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-offset="-200"><span class="count">15</span>+
+          <<!-- div class="count-container" data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-offset="-200"><span class="count">15</span>+
             <p>Years Experienced</p>
-          </div>
+          </div> -->
         </div>
       </div>
-      <div class="col-md-5 ml-auto" data-aos="fade-left">
+      <div class="col-md-5 ml-auto" data-aos="fade-left" id="about_us">
         <div class="section-title mt-5">
-          <p>About Company</p>
-          <h1>Excellent quality is worth the price tag.</h1>
+          <p>About Us</p>
+          <h1>Your comfort is our priority</h1>
         </div>
-        <p class='desc'>Arcu eget malesuada imperdiet ornare pretium fringilla elit nullam. Orci elementum nec netus placerat convallis cursus class diam arcu tincidunt sed. Dolor tristique parturient consequat suscipit malesuada viverra proin commodo.</p>
-        <div class="alert alert-secondary d-flex align-items-center mt-5">
+        <p class='desc'>Hi! Yes it is pronounced “freche”, a growing company of Freshness. We Aspire to take over your household chores delivering nothing but top quality Linen and laundry services to our customers.</p><br>
+
+        <p class='desc'>At Fraîchee we believe that laundry services are a necessity which should be affordable and reliable to all, which is why we aim at maintaining top quality services at optimised prices. Fraîchee is here to serve everyone that is within our reach with passion and drive.<b>Your comfort is our priority</b></p>
+
+<!--         <div class="alert alert-secondary d-flex align-items-center mt-5">
           <i data-feather="loader"></i>
           <div class="alert-inner ml-2">
             <h5>The Idea</h5>
             <p>Eget nullam augue accumsan ridiculus sit ac ornare sociosqu molestie nibh massa lorem</p>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -101,10 +101,28 @@
       <div class="row">
         <div class="col-12 col-md-6 p-4" data-aos="fade-right">
           <div class="section-title mt-5">
-            <p class="text-white">Our Promise</p>
-            <h1 class="text-white">24 hours to a day, clean clothes follow the same time schedule.</h1>
+            <!-- <h2 class="text-white">We are fraichee</h2><br> -->
+            <div class="section-title mt-5 text-white">
+          <!-- <p>About Us</p> -->
+          <h1>We are fraichee</h1>
+        </div>
+<!--             <h1 class="text-white">24 hours to a day, clean clothes follow the same time schedule.</h1>
             <span class="text-white d-block">Montes dictum faucibus rutrum morbi sagittis blandit iaculis posuere neque nunc ac tortor</span>
-            <button type="button" class="btn btn-primary btn-lg mt-4">Discover More</button>
+            <button type="button" class="btn btn-primary btn-lg mt-4">Discover More</button> -->
+
+          <ul class="text-white">
+            
+            <li><i class="icofont-check-circled text-dark"></i>We don’t reinvent Laundry</li><br>
+            
+            <li><i class="icofont-check-circled text-dark"></i>We simply pick up your Laundry</li><br>
+            
+            <li><i class="icofont-check-circled text-dark"></i>We clean it  to your needs.</li><br>
+            
+            <li><i class="icofont-check-circled text-dark"></i>We deliver it back in 24 hours</li><br>
+            
+            <li><i class="icofont-check-circled text-dark"></i>We make Laundry  simple</li>
+        </ul>
+
           </div>
         </div>
         <div class="col-lg-6 col-md-6" data-aos="fade-left">
@@ -229,8 +247,8 @@
       <div class="row">
         <div class="col-md-6" data-aos="fade-right">
           <div class="section-title mt-5">
-            <h1 class="text-white">Discount up to 50% Only this month.</h1>
-            <sapn class="d-block text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</sapn>
+            <h1 class="text-white">Discount up to 15% off on your first order</h1>
+            <!-- <sapn class="d-block text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</sapn> -->
             <button type="button" class="btn btn-primary btn-lg mt-4"><i class="bi bi-ticket-fill mr-2"></i>Claim Promo</button>
           </div>
         </div>

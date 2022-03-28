@@ -28,6 +28,32 @@
         <li class="nav-item active">
           <a class="nav-link text-uppercase" href="{{url('/')}}">Home</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Laundry Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Linen Subscription</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Commercial linen</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#about_us">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Contact Us</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">FAQ</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{url('/blog')}}">Blog</a>
         </li>
@@ -54,7 +80,7 @@
 
       </ul>
     </nav>
-    <a class="btn btn-primary" href="{{url('/login')}}"><i data-feather="layers"></i>Get Orders</a>
+    <a class="btn btn-primary" style="min-width: 0 !important;" href="{{url('/login')}}"><i data-feather="layers"></i>Sign In</a>
   </header>
   <!-- header -->
   <!--Moble-collapse-->
