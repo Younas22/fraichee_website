@@ -122,12 +122,7 @@ header .form-inline .input-group {
     border: 2px solid transparent;
     transition: 0.3s ease-in-out;
 }
-header .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-}
+
 header .navbar-nav .nav-item .nav-link {
     color: var(--color-primary);
     font-size: 14px;
@@ -1926,10 +1921,30 @@ footer .copyright {
 /* cart-total */
 /* responsive */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1090px) {
+   
+   header .navbar-nav{
+    display: none;
+   }
+
+   .navbar-expand-lg .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    }
+
     header > .btn-primary {
         display: none;
     }
+}
+
+@media (min-width: 1090px){
+.navbar-expand-lg .navbar-toggler {
+    display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
     .mobile-collapse .input-group-text {
         padding-left: 0;
         padding-right: 0;
