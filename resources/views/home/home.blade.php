@@ -265,13 +265,12 @@
       <div class="col-md-6">
         <div class="section-title" data-aos="fade-right">
           <p>Why Choose Us</p>
-          <h1>A better you start with clean clothes</h1>
+          <h1>Your comfort is our Priority</h1>
         </div>
       </div>
-      <div class="col-md-6" data-aos="fade-left">
-        <p class='desc'>Platea metus letius in habitant montes. Lectus conubia duis condimentum commodo cras.
-          Senectus metus tristique tempus nascetur curae conubia porttitor faucibus convallis est.</p>
-        <button type="button" class="btn btn-primary ">Learn More</button>
+      <div class="col-md-6 mt-5" data-aos="fade-left">
+        <p class='desc' style="font-size: 20px;">We are devoted to make your day-to-day Laundry simple and hustle free, in additional to our laundry services we provide bed linen subscription services where we deliver fresh bed linen weekly or according to your needs with the aim of making your sleep comfortable and soft.  Our services are eco-friendly, can be custom to your needs, and support 24/7.</p>
+        <!-- <button type="button" class="btn btn-primary ">Learn More</button> -->
       </div>
     </div>
   </div>
@@ -284,8 +283,8 @@
           </div>
           <div class="card-title mt-3">
             <h5>Use Eco Material</h5>
-            <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
-              ultrices justo</p>
+            <!-- <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
+              ultrices justo</p> -->
           </div>
         </div>
       </div>
@@ -296,8 +295,8 @@
           </div>
           <div class="card-title mt-3">
             <h5>Fast Service</h5>
-            <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
-              ultrices justo</p>
+            <!-- <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
+              ultrices justo</p> -->
           </div>
         </div>
       </div>
@@ -308,8 +307,8 @@
           </div>
           <div class="card-title mt-3">
             <h5>24/7 Support</h5>
-            <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
-              ultrices justo</p>
+            <!-- <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a
+              ultrices justo</p> -->
           </div>
         </div>
       </div>
@@ -324,13 +323,11 @@
     <div class="row mb-5">
       <div class="col-md-6">
         <div class="section-title" data-aos="fade-right">
-          <h1>Laundry. It’s no longer just your mom’s job</h1>
+          <h1>Join our monthly <br>bed Linen subscription</h1>
         </div>
       </div>
       <div class="col-md-6" data-aos="fade-left">
-        <p>Efficitur habitant eleifend mus egestas urna eget cubilia vulputate quis accumsan erat.
-          Si metus tortor mollis enim risus curae nec dapibus facilisis rhoncus.
-          Curabitur sollicitudin taciti maximus rhoncus euismod consequat libero mauris mus.</p>
+        <p>Washing bulk items like bedsheets, duvet covers can be annoying and often expensive. Our bed linen subscription services provide an easy and cheap alternative. As a subscriber, we will deliver fresh bed linen weekly. You will be able to custom choose bed linen you require from a wide range of selection we provide, and you can choose when you want fresh bed linen to be delivered.</p>
       </div>
     </div>
   </div>
@@ -340,8 +337,8 @@
         <div class="card" data-aos="fade-right">
           <div class="title  justify-content-center d-flex">
             <div class="section-title">
-              <h5>Lite</h5>
-              <p>Basic Package</p>
+              <h5>Double size bedset Linen</h5>
+              <!-- <p>Basic Package</p> -->
               <div class="kg">
                 <span class="dollor">$</span>
                 <span class="price">9</span>
@@ -354,19 +351,18 @@
           </div>
 
           <ul class="card-list">
-            <li> Sed vehicula nibh</li>
-            <li>Sem libero</li>
-            <li> Dictum cubilia facilisi commodo</li>
-            <li>Vestibulum ornare dis</li>
-            <li> Vehicula proin imperdiet</li>
-            <li style="border-bottom:none"> Vehicula proin imperdiet</li>
+            <li>2 bedsheets</li>
+            <li>1 duvet cover</li>
+            <li>2 pillow cases</li>
+            <li>1 bath towel</li>
+            <li>All white</li>
           </ul>
           <div class="card-button content justify-content-center d-flex">
-            <button type="button" class="btn btn-primary btn-lg">Purchase Now</button>
+            <a href="{{url('/login')}}" type="button" class="btn btn-primary btn-lg">Join Now</a>
           </div>
-          <div class="leo justify-content-center d-flex">
+          <!-- <div class="leo justify-content-center d-flex">
             <span>*Venenatis leo augue eget pellentesque tortor mauris fusce iaculis</span>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-4 mt-2">
@@ -380,8 +376,8 @@
           </div>
           <div class="title  justify-content-center d-flex">
             <div class="section-title">
-              <h5>Premium</h5>
-              <p>Pro Package Service</p>
+              <h5>King size bedset Linen</h5>
+              <!-- <p>Pro Package Service</p> -->
               <div class="kg">
                 <span class="dollor">$</span>
                 <span class="price">12</span>
@@ -393,19 +389,18 @@
             </div>
           </div>
           <ul class="card-list">
-            <li> Sed vehicula nibh</li>
-            <li>Sem libero</li>
-            <li> Dictum cubilia facilisi commodo</li>
-            <li>Vestibulum ornare dis</li>
-            <li> Vehicula proin imperdiet</li>
-            <li style="border-bottom:none"> Vehicula proin imperdiet</li>
+            <li>2 bedsheets</li>
+            <li>1 duvet cover</li>
+            <li>4 pillow cases</li>
+            <li>2 bath towel</li>
+            <li>All white</li>
           </ul>
           <div class="card-button content justify-content-center d-flex">
-            <button type="button" class="btn btn-primary btn-lg">Purchase Now</button>
+            <a href="{{url('/login')}}" type="button" class="btn btn-primary btn-lg">Join Now</a>
           </div>
-          <div class="leo justify-content-center d-flex">
+          <!-- <div class="leo justify-content-center d-flex">
             <span>*Venenatis leo augue eget pellentesque tortor mauris fusce iaculis</span>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-4 mt-2">
@@ -419,8 +414,8 @@
           </div>
           <div class="title  justify-content-center d-flex">
             <div class="section-title">
-              <h5>Commercial</h5>
-              <p>Comercial Package</p>
+              <h5>Custom</h5>
+              <!-- <p>Comercial Package</p> -->
               <div class="kg">
                 <span class="dollor">$</span>
                 <span class="price">14</span>
@@ -432,19 +427,18 @@
             </div>
           </div>
           <ul class="card-list">
-            <li> Sed vehicula nibh</li>
-            <li>Sem libero</li>
-            <li> Dictum cubilia facilisi commodo</li>
-            <li>Vestibulum ornare dis</li>
-            <li> Vehicula proin imperdiet</li>
-            <li style="border-bottom:none"> Vehicula proin imperdiet</li>
+            <li>choose bedsheets</li>
+            <li>choose duvet covers</li>
+            <li>choose pillow cases</li>
+            <li>choose bath towels</li>
+            <li>all white</li>
           </ul>
           <div class="card-button content justify-content-center d-flex">
-            <button type="button" class="btn btn-primary btn-lg">Purchase Now</button>
+            <a href="{{url('/login')}}" type="button" class="btn btn-primary btn-lg">Join Now</a>
           </div>
-          <div class="leo justify-content-center d-flex">
+          <!-- <div class="leo justify-content-center d-flex">
             <span>*Venenatis leo augue eget pellentesque tortor mauris fusce iaculis</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -456,7 +450,7 @@
     <div class="row">
       <div class="col-md-5" data-aos="fade-right" data-aos-duration="1000">
         <div class="section-title mt-5">
-          <h1 class="text-white">Ready to get laundry service?</h1>
+          <h1 class="text-white">Drop Us a line for any enquiries</h1>
         </div>
         <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
         <ul class="nav">
@@ -499,32 +493,32 @@
           <div class="card-body pt-4">
             <form>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label>Name</label>
                   <input type="text" class="form-control" placeholder="Name">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label>Email</label>
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label>Phone</label>
                   <input type="text" class="form-control" placeholder="Phone">
                 </div>
-                <div class="col-md-3">
+<!--                 <div class="col-md-3">
                   <label>Date</label>
                   <input type="date" class="form-control" placeholder="Date">
                 </div>
                 <div class="col-md-3">
                   <label>Time Pickup</label>
                   <input type="time" class="form-control" placeholder="Time">
-                </div>
+                </div> -->
                 <div class="col-md-12">
                   <label>Message</label>
                   <textarea name="" id="" class="form-control" placeholder="Message" cols="30" rows="5"></textarea>
                 </div>
                 <div class="col-md-12">
-                  <button class="btn btn-primary btn-lg btn-block">Pickup Now!<i data-feather="truck"></i></button>
+                  <button class="btn btn-primary btn-lg btn-block">Contact us<i data-feather="send"></i></button>
                 </div>
               </div>
             </form>
@@ -538,140 +532,170 @@
 <section class="testimonial">
   <div class="container-fluid">
     <div class="section-title mt-5 text-center">
-      <p>About Company</p>
-      <h1>What They Say</h1>
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+      <!-- <p>About Company</p> -->
+      <h1>FREQUENTLY ASKED QUESTIONS</h1>
+      <!-- <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> -->
     </div>
-    <div class="testimoial-slider mt-5">
-      <div class="col">
-        <div class="card">
-          <div class="card-body text-center px-4">
-            <i class="bi bi-quote text-secondary"></i>
-            <p class="card-text mt-4">Per lacus augue faucibus sociosqu lectus fusce phasellus luctus. Enim porta porttitor tempor non amet molestie. Sollicitudin mi aenean morbi torquent ante lobortis nunc tempor feugiat.</p>
-            <ul class="nav justify-content-center stars mt-4">
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-            </ul>
-            <div class="img-container">
-              <img src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/head-shot-of-smart-asian-smiling-women-scaled.jpg" alt="testmonial" class="img-fluid">
+
+
+
+        <!-- my faq -->
+        <div class="row faq-item d-flex align-items-stretch bg-white" data-aos="fade-up" data-aos-delay="100" style="border-bottom:none;">
+          <div class="col-md-12 px-0 p-5 m-5">
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
+                    <i class="ri-question-line"></i>
+                    <h5>What services are offered by Fraichee?</h5>
+                  </div>
+                  <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            <ul class="list-group">
+                              <li class="list-group-item">We offer Laundry services, Linen subscription services and Linen hire services. All our services can be simply accessed through our website or by contacting us. 
+ </li>
+                            </ul>
+                          </p>
+                      </div>
+                  </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="profile-info mt-5 d-flex flex-column align-items-center pt-3">
-          <strong class="author-name">Lillian Bell</strong>
-          <small class="author-des">Designation</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body text-center px-4">
-            <i class="bi bi-quote text-secondary"></i>
-            <p class="card-text mt-4">Per lacus augue faucibus sociosqu lectus fusce phasellus luctus. Enim porta porttitor tempor non amet molestie. Sollicitudin mi aenean morbi torquent ante lobortis nunc tempor feugiat.</p>
-            <ul class="nav justify-content-center stars mt-4">
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-            </ul>
-            <div class="img-container">
-              <img src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/head-shot-of-smart-asian-smiling-women-scaled.jpg" alt="testmonial" class="img-fluid">
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
+                    <i class="ri-question-line"></i>
+                    <h5>What areas do you operate in?</h5>
+                  </div>
+                  <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p class="bg-white p-4">
+                            London, we currently operate in London only but we will be expanding quickly, if we are not in your area yet, simple leave your email address and we will let you know once we have arrived. 
+                          </p>
+                      </div>
+                  </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="profile-info mt-5 d-flex flex-column align-items-center pt-3">
-          <strong class="author-name">Lillian Bell</strong>
-          <small class="author-des">Designation</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body text-center px-4">
-            <i class="bi bi-quote text-secondary"></i>
-            <p class="card-text mt-4">Per lacus augue faucibus sociosqu lectus fusce phasellus luctus. Enim porta porttitor tempor non amet molestie. Sollicitudin mi aenean morbi torquent ante lobortis nunc tempor feugiat.</p>
-            <ul class="nav justify-content-center stars mt-4">
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-            </ul>
-            <div class="img-container">
-              <img src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/head-shot-of-smart-asian-smiling-women-scaled.jpg" alt="testmonial" class="img-fluid">
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+                    <i class="ri-question-line"></i>
+                    <h5>What types of clothes do you clean?</h5>
+                  </div>
+                  <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            We clean all types of clothes.  Our staff are trained in dealing with any type of clothes/ materials, any cloth that is handed over to us, we guarantee it is in safe hands.
+                          </p>
+                      </div>
+                  </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="profile-info mt-5 d-flex flex-column align-items-center pt-3">
-          <strong class="author-name">Lillian Bell</strong>
-          <small class="author-des">Designation</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body text-center px-4">
-            <i class="bi bi-quote text-secondary"></i>
-            <p class="card-text mt-4">Per lacus augue faucibus sociosqu lectus fusce phasellus luctus. Enim porta porttitor tempor non amet molestie. Sollicitudin mi aenean morbi torquent ante lobortis nunc tempor feugiat.</p>
-            <ul class="nav justify-content-center stars mt-4">
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-              <li class="nav-item text-warning">
-                <i class="bi bi-star-fill"></i>
-              </li>
-            </ul>
-            <div class="img-container">
-              <img src="https://show.moxcreative.com/cleanox/wp-content/uploads/sites/11/2021/11/head-shot-of-smart-asian-smiling-women-scaled.jpg" alt="testmonial" class="img-fluid">
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                    <i class="ri-question-line"></i>
+                    <h5>What is the Delivery time?</h5>
+                  </div>
+                  <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            We aim to make all our deliveries within 24 hours. Counting from when the driver picks up your laundry.
+                          </p>
+                      </div>
+                  </div>
+              </div>
             </div>
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
+                    <i class="ri-question-line"></i>
+                    <h5>How do we ensure our customer’s clothes are not damaged?</h5>
+                  </div>
+                  <div id="question4" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            Our staff are trained to handle any cloth material with complete care from pick up to drop off but if any damages do occur, they will be covered by our insurance. Report an errors or damages as soon as you realise them. Follow terms and condition of guidance.  
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                    <i class="ri-question-line"></i>
+                    <h5>How does our linen subscription service work?</h5>
+                  </div>
+                  <div id="question5" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            <ul class="list-group">
+                              <li class="list-group-item">Choose what Linen you require from a variety listed on our website</li>
+                              <li class="list-group-item">Choose how often you want it delivered</li>
+                              <li class="list-group-item">Choose when to deliver your first order </li>
+                              <li class="list-group-item">Driver will drop off fresh Linen and pick up the used ones following the chosen delievery frequency  </li>
+                            </ul>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <!-- panel group ends here -->
+
+            <!-- panel group start -->
+            <div class="panel-group" id="faqAccordion">
+              <div class="panel panel-info">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                    <i class="ri-question-line"></i>
+                    <h5>Can I use my own linen for the linen subscription?</h5>
+                  </div>
+                  <div id="question5" class="panel-collapse collapse" style="height: 0px;">
+                      <div class="panel-body">
+                          <h5><span class="label label-primary">Answer</span></h5>
+
+                          <p>
+                            No. Linen subscription services are provided on hire basis however you can use our Laundry services for your linen.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <!-- panel group ends here -->
           </div>
+          
         </div>
-        <div class="profile-info mt-5 d-flex flex-column align-items-center pt-3">
-          <strong class="author-name">Lillian Bell</strong>
-          <small class="author-des">Designation</small>
-        </div>
-      </div>
-    </div>
+
+
+
+
   </div>
 </section><!-- Testimonial -->
 <!-- Blogs -->

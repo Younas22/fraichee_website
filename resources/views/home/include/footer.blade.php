@@ -6,8 +6,8 @@
           <div class="row">
             <div class="col-md-6">
               <h5 class="card-title">Need Help?</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-title">+(62)21 2002-2012</h5>
+              <!-- <p class="card-text">Call us on</p> -->
+              <h5 class="card-title">+44 7960381323</h5>
             </div>
             <div class="col-md-6">
               <div class="pl-md-5">
@@ -33,10 +33,10 @@
       <div class="row">
         <div class="col-md-3">
           <div class="footer-logo mb-3">
-            <img src="{{url('public/assets/web/img/footerlogo.png')}}" alt="footerlogo">
+            <img src="http://localhost/fraichee_web/public/assets/web/img/logo.png" alt="footerlogo">
           </div>
           <div class="footer-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <p>We strive to bring comfort and convenience at your doorstep</p>
           </div>
         </div>
         <div class="col-md-8 ml-md-auto">
@@ -77,10 +77,10 @@
                 <ul class="nav flex-column">
                   <li class="list-item d-flex align-items-start">
                     <i class="bi bi-geo-alt-fill mr-2 mt-1"></i>
-                    <p>Jln Cempaka Wangi No 22, Jakarta - Indonesia</p>
+                    <p>Fraichee LTD, 160 City Road London EC1V 2NX</p>
                   </li>
                   <li class="list-item d-flex align-items-start"><i class="bi bi-envelope mr-2 mt-1"></i>
-                    <a href="mailto:#">support@yourdomain.tld</a>
+                    <a href="mailto:#">customerservice@fraichee.com</a>
                   </li>
               </div>
             </div>
