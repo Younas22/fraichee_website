@@ -157,7 +157,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-right">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/washing-machine-02-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/washing-machine-02-1.png')?>" alt="">
             </div>
 
             <div class="title mt-3">
@@ -171,7 +171,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-down">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/shirts-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/shirts-1.png')?>" alt="">
             </div>
 
             <div class="title mt-3">
@@ -184,7 +184,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-left">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/iron-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/iron-1.png')?>" alt="">
             </div>
 
             <div class="title mt-3">
@@ -199,7 +199,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-right">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/hanger-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/hanger-1.png')?>" alt="">
             </div>
 
             <div class="title mt-3">
@@ -213,7 +213,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-up">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/insert-coin-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/insert-coin-1.png')?>" alt="">
             </div>
             <div class="title mt-3">
               <h5>Instant Service</h5>
@@ -225,7 +225,7 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-left">
             <div class="icon">
-              <img width="64" height="64" src="assets/img/insert-coin-1.png" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/insert-coin-1.png')?>" alt="">
             </div>
             <div class="title mt-3">
               <h5>Self Service</h5>

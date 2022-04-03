@@ -254,8 +254,12 @@ function save_to_db(cart_id, new_quantity) {
                     id: ele.attr("data-id")
                 },
                 success: function (response) {
+                  if (response == 0) {
+                    window.location.href = '{{ route('shop') }}'
+                  }else{
                     window.location.reload();
-                }
+                    }
+                  }
             });
         }
     });

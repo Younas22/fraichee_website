@@ -46,7 +46,11 @@ class Home extends Controller
     public function cart()
     {
 
-        return view('home.cart');
+        // dd(session('cart'));
+        if (empty(session('cart'))) {
+           return redirect()->back();
+        }
+         return view('home.cart');
     }
 
     //checkout
@@ -155,13 +159,15 @@ class Home extends Controller
         return view('home.blog_details');
     }
 
-
+ 
 //addToCart
         public function addToCart(Request $request)
     {
         $product = $lan_child_products = DB::table('child_products')
             ->select()
             ->where('cp_id',$request->id)
+            ->join('products', 'products.prod_id', '=', 'child_products.prod_id')
+            ->join('categories', 'categories.service_id', '=', 'child_products.service_id')
             ->first();
             // dd($product);
           
@@ -171,6 +177,11 @@ class Home extends Controller
             $cart[$request->id]['quantity']++;
         } else {
             $cart[$request->id] = [
+                "cat_id" => $product->service_id,
+                "cat_name" => $product->name,
+                "cat_panel" => $product->panel,
+                "prod_id" => $product->prod_id,
+                "title" => $product->title,
                 "name" => $product->cp_name,
                 "quantity" => 1,
                 "image" => $product->cp_image,
@@ -201,13 +212,26 @@ class Home extends Controller
     //remove
         public function remove(Request $request)
     {
-        if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
+        if (count(session()->get('cart')) == 1) {
+            if($request->id) {
+                $cart = session()->get('cart');
+                if(isset($cart[$request->id])) {
+                    unset($cart[$request->id]);
+                    session()->put('cart', $cart);
+                }
+                session()->flash('success', 'Product removed successfully');
             }
-            session()->flash('success', 'Product removed successfully');
+            return 0;
+        }else{
+            if($request->id) {
+                $cart = session()->get('cart');
+                if(isset($cart[$request->id])) {
+                    unset($cart[$request->id]);
+                    session()->put('cart', $cart);
+                }
+                session()->flash('success', 'Product removed successfully');
+            }
+            return 1;
         }
     }
 }

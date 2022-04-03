@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="{{url('public/assets/web/css/style.css')}}" />
   <link rel="stylesheet" href="{{url('public/assets/web/js/jquery.min.js')}}" />
   <script src="{{url('public/assets/web/js/jquery.min.js')}}"></script>
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+  </style>
 </head>
 
 <body>
