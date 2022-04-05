@@ -49,7 +49,7 @@
                                                     <div class="media-body">
                                                         <!-- <h6 class="text-primary">NO HIDDEN FEES</h6> -->
                                                         <h3 class="mt-0">Simple pricing</h3>
-                                                        <p>Fee of £3.99 on orders less than £30</p>
+                                                        <p>free deliveries for Orders over £30</p>
                                                     </div>
                                                 </div>
 
@@ -131,7 +131,7 @@
                                                     <div class="media-body">
                                                         <!-- <h6 class="text-primary">NO HIDDEN FEES</h6> -->
                                                         <h3 class="mt-0">Simple pricing</h3>
-                                                        <p>Fee of £3.99 on orders less than £30</p>
+                                                        <p>free deliveries for Orders over £30</p>
                                                     </div>
                                                 </div>
 

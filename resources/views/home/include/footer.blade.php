@@ -103,7 +103,7 @@
 <div class="se-pre-con"></div>
 
 
-<script src="{{url('public/assets/web/js/aos.js')}}"></script>
+<!-- <script src="{{url('public/assets/web/js/aos.js')}}"></script> -->
 <script src="{{url('public/assets/web/js/feather.min.js')}}"></script>
 <script src="{{url('public/assets/web/js/bootstrap.min.js')}}"></script>
 <script src="{{url('public/assets/web/js/slick.min.js')}}"></script>

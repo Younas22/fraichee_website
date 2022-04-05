@@ -36,6 +36,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th scope="col">Service</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
@@ -52,6 +53,7 @@
 
                         ?>
                     <tr>
+                        <td><?=$cart['cat_name']?></td>
                         <td scope="row" class="cart-product">
                             <a href="#" class="cart-product-img">
                                 <img height="50" width="50" src="<?=url('public/assets/images/products').'/'.$cart['image']?>" alt="cart-product-img">

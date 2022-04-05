@@ -70,7 +70,7 @@ $(document).ready(function () {
 
   // Animate loader off screen
   $(".se-pre-con").fadeOut("fast");
-  AOS.init();
+  // AOS.init();
   $('.cart-table tr').each(function () {
     const that = $(this);
     $(this).find('.increaseQty').click(function () {

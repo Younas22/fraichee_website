@@ -161,7 +161,7 @@
             </div>
 
             <div class="title mt-3">
-              <h5>Washing</h5>
+              <h5>Washing and lroning services</h5>
               <p>
                 Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
@@ -175,7 +175,7 @@
             </div>
 
             <div class="title mt-3">
-              <h5>Folding</h5>
+              <h5>Linen subscription</h5>
               <p> Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
@@ -188,7 +188,7 @@
             </div>
 
             <div class="title mt-3">
-              <h5>Ironing Clothes</h5>
+              <h5>lroning services</h5>
               <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
@@ -203,7 +203,7 @@
             </div>
 
             <div class="title mt-3">
-              <h5>Dry Cleaning</h5>
+              <h5>Dry cleaning services</h5>
               <p>
                 Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
@@ -228,7 +228,7 @@
               <img width="64" height="64" src="<?=url('public/assets/web/img/insert-coin-1.png')?>" alt="">
             </div>
             <div class="title mt-3">
-              <h5>Self Service</h5>
+              <h5>Linen hire</h5>
               <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>

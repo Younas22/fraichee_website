@@ -3,13 +3,12 @@
   <title>Laundry</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{url('public/assets/web/css/aos.css')}}" />
+  <!-- <link rel="stylesheet" href="{{url('public/assets/web/css/aos.css')}}" /> -->
   <link rel="stylesheet" href="{{url('public/assets/web/css/bootstrap.min.css')}}" />
   <link rel="stylesheet" href="{{url('public/assets/web/fonts/bootstrap-icons.css')}}" />
   <link rel="stylesheet" href="{{url('public/assets/web/css/slick.min.css')}}" />
   <link rel="stylesheet" href="{{url('public/assets/web/css/slick-theme.min.css')}}" />
   <link rel="stylesheet" href="{{url('public/assets/web/css/style.css')}}" />
-  <link rel="stylesheet" href="{{url('public/assets/web/js/jquery.min.js')}}" />
   <script src="{{url('public/assets/web/js/jquery.min.js')}}"></script>
   <style>
     html {
