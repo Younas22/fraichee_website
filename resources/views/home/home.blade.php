@@ -163,7 +163,7 @@
             <div class="title mt-3">
               <h5>Washing and lroning services</h5>
               <p>
-                Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+                All items collected will be washed as required and at applicable temperature, ironed, hanged and packaged safely to be delivered to you in time</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>
@@ -176,7 +176,7 @@
 
             <div class="title mt-3">
               <h5>Linen subscription</h5>
-              <p> Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+              <p> Fresh bedsheet will be delivered to you on a weekly basis, you can choose what type of linen you want, how often you would like a delivery of fresh Linen</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>
@@ -189,7 +189,7 @@
 
             <div class="title mt-3">
               <h5>lroning services</h5>
-              <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+              <p>All items will be collected, ironed as required, hanged, packaged and delivered back to you</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>
@@ -201,11 +201,11 @@
             <div class="icon">
               <img width="64" height="64" src="<?=url('public/assets/web/img/hanger-1.png')?>" alt="">
             </div>
-
+ 
             <div class="title mt-3">
               <h5>Dry cleaning services</h5>
               <p>
-                Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+                Dry cleaning items will be picked, dry cleaned as required, hanged and packaged appropriately and delivered back to you</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>
@@ -213,11 +213,11 @@
         <div class="col-md-4">
           <div class="card machine" data-aos="fade-up">
             <div class="icon">
-              <img width="64" height="64" src="<?=url('public/assets/web/img/insert-coin-1.png')?>" alt="">
+              <img width="64" height="64" src="<?=url('public/assets/web/img/time-1.png')?>" alt="">
             </div>
             <div class="title mt-3">
               <h5>Instant Service</h5>
-              <p> Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+              <p> All orders made before 18:00 (GMT) will be picked up on the same day and delivered the next day after 18:00 (GMT). </p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>
@@ -229,7 +229,7 @@
             </div>
             <div class="title mt-3">
               <h5>Linen hire</h5>
-              <p>Venenatis tempor morbi class taciti porttitor habitant aliquam hendrerit auctor a ultrices justo</p>
+              <p>Linen hire for all types of business, contact us to get a specialised a quote. We offer free delivery on all our products for business</p>
               <button type="button" class="btn btn-primary learn-btn">Learn more</button>
             </div>
           </div>

@@ -56,30 +56,69 @@ class Home extends Controller
     //checkout
     public function checkout(Request $request)
     {
-        // dd($request->total_cost);
+        // dd($request->all());
         // dd(session('cart')); 
-        $order_data = [
-            'user_id' => session('logAdmin')->user_id,
-            'order_type' => 'laundry',
-            // 'order_date' => date('m-d-Y'),
-            'note_box' => $request->note_box,
-            'other_address' => $request->other_address,
-            'pickup_date' => $request->pickup_dates,
-            'delivery_date' => $request->delivery_dates,
-            'amount' => $request->total_cost
-        ];
-
-        $laundary = DB::table('orders')->insertGetId($order_data);
-        foreach (session('cart') as $id => $cart) {
-            $cart_order = [
-                'order_id'=>$laundary,
-                'item_id'=>$id,
-                'price'=>$cart['price'],
-                'quantity'=>$cart['quantity']
+        if ($request->panel == 'laundary') {
+            $order_data = [
+                'user_id' => session('logAdmin')->user_id,
+                'order_type' => $request->panel,
+                // 'order_date' => date('m-d-Y'),
+                'note_box' => $request->note_box,
+                'other_address' => $request->other_address,
+                'pickup_date' => $request->pickup_dates,
+                'delivery_date' => $request->delivery_dates,
+                'amount' => $request->total_cost
             ];
 
-            DB::table('cart_order')->insertGetId($cart_order);
+            $laundary = DB::table('orders')->insertGetId($order_data);
+            foreach (session('cart') as $id => $cart) {
+                $cart_order = [
+                    'order_id'=>$laundary,
+                    'item_id'=>$id,
+                    'price'=>$cart['price'],
+                    'quantity'=>$cart['quantity']
+                ];
+
+                DB::table('cart_order')->insertGetId($cart_order);
+            }
+        }else{
+            $total_cost = 0;
+            $delivery_options = $request->delivery_options;
+            if($delivery_options == 1) {
+                $total_cost = $request->total_cost;
+            }
+            if($delivery_options == 2) {
+                $total_cost = $request->total_cost;
+            }
+
+            $order_data = [
+                'user_id' => session('logAdmin')->user_id,
+                'order_type' => $request->panel,
+                // 'order_date' => date('m-d-Y'),
+                'note_box' => $request->note_box,
+                'other_address' => $request->other_address,
+                'delivery_options' => $request->delivery_options,
+                'first_day' => $request->first_day,
+                'second_day' => $request->second_day,
+                'delivery_date' => $request->delivery_dates,
+                'amount' => $total_cost
+            ];
+
+            // dd($order_data);
+
+            $laundary = DB::table('orders')->insertGetId($order_data);
+            foreach (session('cart') as $id => $cart) {
+                $cart_order = [
+                    'order_id'=>$laundary,
+                    'item_id'=>$id,
+                    'price'=>$cart['price'],
+                    'quantity'=>$cart['quantity']
+                ];
+
+                DB::table('cart_order')->insertGetId($cart_order);
+            }
         }
+
         return redirect(route('checkout_order_no',$laundary));
     }
 
@@ -88,6 +127,8 @@ class Home extends Controller
     public function checkout_order_no(Request $request)
     {
         $order_id = $request->order_no;
+        // dd($order_id);
+
         return view('home.checkout',compact('order_id'));
     }
 
@@ -170,7 +211,14 @@ class Home extends Controller
             ->join('categories', 'categories.service_id', '=', 'child_products.service_id')
             ->first();
             // dd($product);
-          
+        if (session('cart')) {
+            foreach(session('cart') as $cart) {
+                if ($cart['cat_panel'] != $product->panel) {
+                    return json_encode(array('msg'=>'befor '.$product->panel.' item you need clear cart','status'=>201));
+                }
+            }
+        }
+
         $cart = session()->get('cart', []);
   
         if(isset($cart[$request->id])) {
@@ -191,8 +239,8 @@ class Home extends Controller
           
         session()->put('cart', $cart);
 
-
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return json_encode(array('msg'=>'Product added to cart successfully','status'=>200));
+        // return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
     //update_cart

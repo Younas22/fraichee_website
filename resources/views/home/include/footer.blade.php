@@ -1,3 +1,5 @@
+<?php //echo Config::get('panel'); exit(); ?>
+
 <footer>
   <section class="newsletter">
     <div class="container-fluid">
@@ -164,8 +166,11 @@ $(function() {
 
 <script type="text/javascript">
 
-
-$('#postcode').click(function(){  
+// function () {
+//   alert('ok');
+// }
+// $("#msg").remove();
+$('#postcode').click(function(){
            var query = $('#get_postcode').val();  
            if(query != '')  
            {  
@@ -188,6 +193,7 @@ $('#postcode').click(function(){
 
 
   $('.add_to_cart').click(function () {
+    // $("#msg").hide();
     var ele = $(this);
     var id = ele.attr("data-id");
             $.ajax({
@@ -197,7 +203,15 @@ $('#postcode').click(function(){
                     _token: '{{ csrf_token() }}',
                     id: id
                 },
+                dataType:"json",
+                cache: false,
                 success: function (response) {
+                  $('#msg').html('');
+                    if (response.status == 201) {
+                      $("#msg").append('<div class="alert alert-warning"><strong>warning!</strong> '+response.msg+'.</div>');
+                    }else{
+                      $("#msg").append('<div class="alert alert-success"><strong>Success!</strong> '+response.msg+'.</div>');
+                    }
                     window.location.reload();
                 }
             });
@@ -263,6 +277,100 @@ function save_to_db(cart_id, new_quantity) {
             });
         }
     });
+
+
+
+
+$('#delivery_day1').click(function(){
+  let total = "<?=number_format((float)Config::get('total'), 2, '.', '') ?>";
+  // let coupon_code = "coupon_code()";
+  let coupon_code = 0;
+  let o_otal = 1.99+total*4;
+  let c_total = o_otal*coupon_code/100;
+  let final_total = o_otal-c_total;
+  let vat = final_total*20/100;
+  let delivery_cost = Number(final_total).toFixed(2)-total;
+
+       $('#first_day').remove();
+       $('#second_day').remove();
+       $('#total_price2').remove();
+       $('#btnDelete').remove();
+  $('#select1').append(`<td id="first_day"><fieldset class="form-group"><select class="form-control" name="first_day">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select></fieldset><fieldset class="form-group"><button class="btnDelete btn-sm btn btn-danger">Delete</button></fieldset></td>`);
+
+  $('#subscribe_pay_details').append('<ul class="nav flex-column" id="total_price1"><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">VAT Amount:</p><strong>£ '+Number(vat).toFixed(2)+'</strong></li><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">Total amount per month:</p><strong>£ '+Number(final_total).toFixed(2)+'</strong></li><input type="hidden" class="form-control" name="delivery_cost" value="'+delivery_cost+'"></ul>');
+
+    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+delivery_cost+'">');
+
+});
+
+
+
+$("#tbUser").on('click','.btnDelete',function(){
+  // alert('ok');
+       $('#first_day').remove();
+       $('#second_day').remove();
+       $('#btnDelete').remove();
+     });
+
+
+
+$('#delivery_day2').click(function(){
+  let total = "<?=number_format((float)Config::get('total'), 2, '.', '') ?>";
+  // let coupon_code = "coupon_code()";
+  let coupon_code = 0;
+  let o_otal = 1.99+total*8;
+  let c_total = o_otal*coupon_code/100;
+  let final_total = o_otal-c_total;
+  let vat = final_total*20/100;
+  let delivery_cost = Number(final_total).toFixed(2)-total;
+
+
+       $('#first_day').remove();
+       $('#second_day').remove();
+       $('#total_price1').remove();
+       $('#btnDelete').remove();
+  $('#select1').append(`<td id="first_day">
+        <fieldset class="form-group">
+            <select class="form-control" name="first_day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </fieldset>
+        <fieldset class="form-group"><button class="btnDelete btn-sm btn btn-danger">Delete</button></fieldset>
+    </td>`);
+  $('#select1').append(`<td id="second_day">
+        <fieldset class="form-group">
+            <select class="form-control" name="second_day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </fieldset>
+        <fieldset class="form-group"><p style="background: white; color: white;">Delete</p></fieldset>
+    </td>`);
+
+
+$('#subscribe_pay_details').append('<ul class="nav flex-column" id="total_price2"><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">VAT Amount:</p><strong>£ '+Number(vat).toFixed(2)+'</strong></li><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">Total amount per month:</p><strong>£ '+Number(final_total).toFixed(2)+'</strong></li><input type="hidden" class="form-control" name="delivery_cost" value="'+delivery_cost+'"></ul>');
+
+    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+delivery_cost+'">');
+});
 
 </script>
 </body>

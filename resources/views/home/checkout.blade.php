@@ -1,4 +1,8 @@
 @include('home.include.header')
+<?php 
+$server = 'dev'; 
+// dd(get_orders($order_id)->order_type);
+?>
 <style>
     footer .newsletter::before {
         background: linear-gradient(180deg, #ffffff 45%, #032b56 30%);
@@ -102,12 +106,12 @@
 
                         <div class="col-md-6 form-group">
                             <label for="inputCity" class="form-label">Card Holder Name *</label>
-                            <input type="text" name="card_holder_name" class="form-control required" placeholder="Card Holder Name" required="" />
+                            <input type="text" name="card_holder_name" class="form-control required" placeholder="Card Holder Name" required="" value="<?php if($server == 'dev'){echo 'Reagan';} ?>" />
                             <input type="hidden" name="order_id" value="<?=$order_id?>" />
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="inputCity" class="form-label">Card Number *</label>
-                            <input type="text" name="card_no" class="form-control required" id="card_no" placeholder="Card Number" required="" />
+                            <input type="text" name="card_no" class="form-control required" id="card_no" placeholder="Card Number" required="" value="<?php if($server == 'dev'){echo 4242424242424242;} ?>" />
                         </div>
                         <div class="col-4 form-group">
                             <label for="inputAddress2" class="form-label">Expiry Month *</label>
@@ -130,12 +134,8 @@
                             <div class="col-4 form-group">
                             <label for="inputAddress2" class="form-label">Expiry Year *</label>
                                <select name="year" id="card-expiry-year" class="form-control required" required>
-                                    <option value="18">2018</option>
-                                    <option value="19">2019</option>
-                                    <option value="20">2020</option>
-                                    <option value="21">2021</option>
                                     <option value="22">2022</option>
-                                    <option value="23">2023</option>
+                                    <option value="23" <?php if($server == 'dev'){echo 'selected';} ?>>2023</option>
                                     <option value="24">2024</option>
                                     <option value="25">2025</option>
                                     <option value="26">2026</option>
@@ -148,7 +148,7 @@
 
                         <div class="col-4 form-group">
                             <label for="inputAddress2" class="form-label">CVC *</label>
-                            <input type="text" id="card-cvc" name="cvc" class="form-control required" placeholder="CVC" required>
+                            <input type="text" id="card-cvc" name="cvc" value="<?php if($server == 'dev'){echo 123;} ?>" class="form-control required" placeholder="CVC" required>
                         </div>
                     <div class="order-button-payment text-center mt-3">
                         <input value="Place order" class="btn btn-primary btn-lg btn-block" type="submit" />
@@ -171,14 +171,14 @@
                             </thead>
                             <tbody>
 
-                    <?php if(session('cart')){ $total = 0; foreach (session('cart') as $id => $cart) {
-                        $total = $total + $cart['price']*$cart['quantity'];
+                    <?php $total = 0; foreach (get_cart_order($order_id) as $id => $cart) {
+                        $total = $total + $cart->price * $cart->quantity;
                         ?>
                                 <tr>
-                                    <th scope="row"><?=$cart['name']?> <strong>× <?=$cart['quantity']?></strong></th>
-                                    <td>£<?=$cart['price']*$cart['quantity'];?></td>
+                                    <th scope="row"><?=$cart->cp_name?> <strong>× <?=$cart->quantity?></strong></th>
+                                    <td>£<?=$cart->price * $cart->quantity;?></td>
                                 </tr>
-                    <?php }} ?>
+                    <?php } ?>
 
 <!--                                 <tr>
                                     <th scope="row">Cart Subtotal</th>
@@ -189,7 +189,8 @@
                                     <td>£<?=$total?></td>
                                 </tr> -->
 
-                        <?php if ($total < 30) { ?>
+                        <?php if (get_orders($order_id)->order_type != 'subscribe') { 
+                            if ($total < 30) { ?>
                         <tr>
                             <th scope="row">Subtotal</th>
                             <td>£<?=$total?></td>
@@ -210,6 +211,11 @@
                         <tr>
                             <td>Total Price:</td>
                             <td class="text-primary">£<?= $total?></td>
+                        </tr>
+                        <?php }}else{?>
+                        <tr>
+                            <td>Total Price:</td>
+                            <td class="text-primary">£<?= get_orders($order_id)->amount?></td>
                         </tr>
                         <?php } ?>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2022 at 06:29 AM
+-- Generation Time: Apr 09, 2022 at 09:39 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fraichee`
+-- Database: `fraichee_`
 --
 
 -- --------------------------------------------------------
@@ -90,19 +90,6 @@ CREATE TABLE `cart_order` (
   `quantity` int(255) DEFAULT NULL,
   `status` enum('pending','approved','cancelled') NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart_order`
---
-
-INSERT INTO `cart_order` (`cart_id`, `order_id`, `item_id`, `price`, `quantity`, `status`) VALUES
-(1, 1, 65, 4.69, 1, 'pending'),
-(2, 1, 103, 7.69, 1, 'pending'),
-(3, 1, 15, 6.69, 1, 'pending'),
-(4, 2, 65, 4.69, 2, 'pending'),
-(5, 3, 65, 4.69, 2, 'pending'),
-(6, 3, 104, 3.69, 2, 'pending'),
-(7, 4, 115, 14.69, 1, 'pending');
 
 -- --------------------------------------------------------
 
@@ -348,24 +335,13 @@ CREATE TABLE `orders` (
   `delivery_date` varchar(255) DEFAULT NULL,
   `first_day` varchar(255) DEFAULT NULL,
   `second_day` varchar(255) DEFAULT NULL,
-  `therd_day` varchar(255) DEFAULT NULL,
-  `fourth_day` varchar(255) DEFAULT NULL,
+  `delivery_options` int(11) DEFAULT NULL,
   `invoice_id` varbinary(255) DEFAULT NULL,
   `amount` decimal(11,2) DEFAULT NULL,
   `card_holder_name` varchar(255) DEFAULT NULL,
   `card_type` varchar(255) DEFAULT NULL,
   `status` enum('1','0') DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `user_id`, `order_type`, `order_date`, `note_box`, `other_address`, `pickup_date`, `delivery_date`, `first_day`, `second_day`, `therd_day`, `fourth_day`, `invoice_id`, `amount`, `card_holder_name`, `card_type`, `status`) VALUES
-(1, 53, 'laundry', '2022-03-21 05:10:48', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-21', '2022-03-29', NULL, NULL, NULL, NULL, 0x4635373534, '23.06', 'Younas', 'visa', '0'),
-(2, 53, 'laundry', '2022-03-21 19:07:23', NULL, 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-22', '2022-03-30', NULL, NULL, NULL, NULL, 0x4631373934, '13.37', 'Younas', 'visa', '1'),
-(3, 54, 'laundry', '2022-03-23 17:29:04', 'abc', 'Phptravels software house Commercial Area Cavalry Ground, 65, Lahore, Punjab 54000', '2022-03-23', '2022-03-31', NULL, NULL, NULL, NULL, 0x4634363732, '20.75', 'Younas', 'visa', '1'),
-(4, 54, 'laundry', '2022-03-23 17:33:53', 'abc', 'chak 22-10-R kacha khuh', '2022-03-23', '2022-04-08', NULL, NULL, NULL, NULL, 0x4635333334, '18.68', 'Younas', 'visa', '1');
 
 -- --------------------------------------------------------
 
@@ -634,7 +610,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `cart_order`
 --
 ALTER TABLE `cart_order`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -664,7 +640,7 @@ ALTER TABLE `forms_contact`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`

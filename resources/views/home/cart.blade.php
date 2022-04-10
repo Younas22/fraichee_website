@@ -1,4 +1,5 @@
 @include('home.include.header')
+<?php //dd(session('cart')); ?>
 <style>
     footer .newsletter::before {
         background: linear-gradient(180deg, #ffffff 45%, #032b56 30%);
@@ -47,11 +48,12 @@
                 <tbody>
 
 
-                    <?php if(session('cart')){ $total = 0; foreach (session('cart') as $id => $cart) {
-                        
-                        $total = $total + $cart['price']*$cart['quantity'];
-
-                        ?>
+<?php if(session('cart')){
+$panel = ''; $total = 0; foreach (session('cart') as $id => $cart) {
+$total = $total + $cart['price']*$cart['quantity'];
+$panel = $cart['cat_panel'];
+// dd($panel);
+?>
                     <tr>
                         <td><?=$cart['cat_name']?></td>
                         <td scope="row" class="cart-product">
@@ -106,18 +108,25 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="table-responsive">
-                    <form action="{{route('checkout')}}" method="POST">
+                    <form action="{{route('checkout')}}" method="POST" id="form">
                         @csrf
+                        <?php if ($panel == 'laundary') {?>
                         <?php if ($total < 30) { ?>
                             <input type="hidden" name="total_cost" value="<?=$total+3.99?>">
                         <?php }else{?>
                             <input type="hidden" name="total_cost" value="<?=$total?>">
                         <?php } ?>
+                        <?php } ?>
                     
-                    <table class="table table-responsive">
+                    <table class="table table-responsive" id="tbUser">
                         <thead>
                             <tr>
-                                <th scope="col">Pick Up Date</th>
+                                <?php if ($panel == 'laundary') {?>
+                                    <th scope="col">Pick Up Date</th>
+                                <?php }else{?>
+                                    <th scope="col">Delivery Day's a week</th>
+                                <?php }?>
+                                
                                 <th scope="col">Delivery Date</th>
                             </tr>
                         </thead>
@@ -125,19 +134,40 @@
 
                             <tr>
                                 <td>
+                                    <?php if ($panel == 'laundary') {?>
                                     <fieldset class="form-group">
                                         <!-- <label for="exampleInputEmail1">Pick Up Date</label> -->
                                         <input type="date" class="form-control" name="pickup_dates" placeholder="dd-mm-yyyy" required="">
+                                        <input type="hidden" class="form-control" name="panel" value=" laundary">
                                     </fieldset>
+                                <?php }else{?>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="delivery_options" id="delivery_day1" value="1" checked=""> 1 delivery
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="delivery_options" id="delivery_day2" value="2"> 2 deliveries
+                                    </label>
+                                    <input type="hidden" class="form-control" name="panel" value="subscribe">
+                                <?php }?>
+
                                 </td>
 
                                 <td>
                                     <fieldset class="form-group">
                                         <!-- <label for="exampleInputEmail1">Pick Up Date</label> -->
                                         <input type="date" class="form-control" name="delivery_dates" placeholder="dd-mm-yyyy" required="">
+                                        
                                     </fieldset>
                                 </td>
                             </tr>
+
+                            <?php 
+                            Config::set('panel', $panel);
+                            Config::set('total', $total);
+                            if ($panel == 'subscribe') {?>
+                            <tr id="select1"></tr>
+                            <?php }?>
+
                         </tbody>
 
                         <thead>
@@ -172,6 +202,8 @@
             <div class="col-md-6">
                 <div class="cart-check-out">
                     <h3>Payment details</h3>
+
+                    <?php if ($panel != 'subscribe') {?>
                     <ul class="nav flex-column">
                         <?php if ($total < 30) { ?>
                         <li class="nav-item d-flex justify-content-between align-items-center mb-3">
@@ -196,9 +228,11 @@
                             <strong class="text-primary">£<?= $total?></strong>
                         </li>
                         <?php } ?>
-
-
                     </ul>
+                <?php }else{?>
+                    <div id="subscribe_pay_details"></div>
+                <?php } ?>
+
                 </div>
             </div>
         </div>

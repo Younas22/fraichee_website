@@ -10,6 +10,7 @@
         <div class="row">
             <div class="col-md-8">
                 <?php //dd(session('cart')); ?>
+<div id="msg"></div>
 <!-- // Laundary -->
 <h4>Laundry</h4>
             <?php foreach ($laundary as $key): ?>
