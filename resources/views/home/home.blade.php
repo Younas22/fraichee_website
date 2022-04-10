@@ -164,7 +164,7 @@
               <h5>Washing and lroning services</h5>
               <p>
                 All items collected will be washed as required and at applicable temperature, ironed, hanged and packaged safely to be delivered to you in time</p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
             <div class="title mt-3">
               <h5>Linen subscription</h5>
               <p> Fresh bedsheet will be delivered to you on a weekly basis, you can choose what type of linen you want, how often you would like a delivery of fresh Linen</p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@
             <div class="title mt-3">
               <h5>lroning services</h5>
               <p>All items will be collected, ironed as required, hanged, packaged and delivered back to you</p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
@@ -206,7 +206,7 @@
               <h5>Dry cleaning services</h5>
               <p>
                 Dry cleaning items will be picked, dry cleaned as required, hanged and packaged appropriately and delivered back to you</p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
@@ -218,7 +218,7 @@
             <div class="title mt-3">
               <h5>Instant Service</h5>
               <p> All orders made before 18:00 (GMT) will be picked up on the same day and delivered the next day after 18:00 (GMT). </p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
@@ -230,7 +230,7 @@
             <div class="title mt-3">
               <h5>Linen hire</h5>
               <p>Linen hire for all types of business, contact us to get a specialised a quote. We offer free delivery on all our products for business</p>
-              <button type="button" class="btn btn-primary learn-btn">Learn more</button>
+              <button type="button" class="btn btn-primary learn-btn d-none">Learn more</button>
             </div>
           </div>
         </div>
