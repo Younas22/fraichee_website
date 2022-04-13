@@ -134,6 +134,7 @@ class UserController extends Controller
         $customer_order = DB::table('orders')
         ->select('orders.*','users.name')
         ->where('orders.user_id', session('logAdmin')->user_id)
+        ->where('orders.order_type', 'laundary')
         ->join('users', 'users.user_id', '=', 'orders.user_id')
         ->paginate(10);
 
@@ -145,13 +146,32 @@ class UserController extends Controller
     }
 
 
+        // all orders-list Show
+    public Function subscribe_list(Request $request)
+    {
+
+        $customer_order = DB::table('orders')
+        ->select('orders.*','users.name','users.email','users.contact')
+        ->where('orders.order_type', 'subscribe')
+        ->join('users', 'users.user_id', '=', 'orders.user_id')
+        ->paginate(10);
+
+        // dd($order_details);
+        return view('admin.customer_order', 
+                compact(
+                'customer_order'
+            ));
+    }
+
+
         // all customer_order Show
     public Function order_details(Request $request)
     {
         $order_details = DB::table('cart_order')
-        ->select('cart_order.*','child_products.cp_name as name','child_products.cp_image')
+        ->select('cart_order.*','child_products.cp_name as name','child_products.cp_image','categories.name as service_name')
         ->where('cart_order.order_id', $request->order_no)
         ->join('child_products', 'child_products.cp_id', '=', 'cart_order.item_id')
+        ->join('categories', 'categories.service_id', '=', 'child_products.service_id')
         ->get();
 
         // dd($order_details);

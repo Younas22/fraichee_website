@@ -1827,7 +1827,7 @@ footer .copyright {
 }
 
 .shop .card .modal-body .modal-pricing .list-items .item {
-    background-image: url(https://app.laundryheap.com/images/dot-bg.png);
+    /*background-image: url(https://app.laundryheap.com/images/dot-bg.png);*/
     background-position: bottom;
     background-repeat: repeat-x;
     background-size: 7px;

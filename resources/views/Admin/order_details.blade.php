@@ -15,6 +15,7 @@
 											<thead>
 												<tr>
 													<th class="center"> # </th>
+													<th class="center"> Product </th>
 													<th class="center"> Name </th>
 													<th class="center"> Price </th>
 													<th class="center"> quantity </th>
@@ -26,6 +27,7 @@
 												<?php $count=1; foreach ($order_details as $key) { ?>
 													<tr class="odd gradeX">
 														<td class="center"><?=$count?></td>
+														<td class="center"><?=$key->service_name?></td>
 														<td class="center"><?=$key->name?></td>
 														<td class="center">£<?=$key->price?></td>
 														<td class="center"><?=$key->quantity?></td>

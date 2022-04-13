@@ -190,7 +190,24 @@ class DashboardController extends Controller
 
         $customer_order = DB::table('orders')
         ->select('orders.*','users.name','users.email','users.contact')
-        // ->where('orders.user_id', session('logAdmin')->user_id)
+        ->where('orders.order_type', 'laundary')
+        ->join('users', 'users.user_id', '=', 'orders.user_id')
+        ->paginate(10);
+
+        // dd($order_details);
+        return view('Admin.customer_order', 
+                compact(
+                'customer_order'
+            ));
+    }
+
+        // all orders-list Show
+    public Function subscribe_list(Request $request)
+    {
+
+        $customer_order = DB::table('orders')
+        ->select('orders.*','users.name','users.email','users.contact')
+        ->where('orders.order_type', 'subscribe')
         ->join('users', 'users.user_id', '=', 'orders.user_id')
         ->paginate(10);
 

@@ -34,6 +34,7 @@ Route::group(['prefix' => '',"middleware" => "AuthCheck"],function(){
     Route::match(['get','post'],'/dashboard/client-user', [UserController::class,'clientUser']);
     Route::match(['get','post'],'/dashboard/customer-profile', [UserController::class,'customer_profile']);
     Route::match(['get','post'],'/dashboard/customer-order', [UserController::class,'customer_order']);
+    Route::match(['get','post'],'/dashboard/subscribe-order', [UserController::class,'subscribe_list']);
     Route::match(['get','post'],'/dashboard/order-details/{order_no}', [UserController::class,'order_details']);
 
 //categories
