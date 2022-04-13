@@ -80,10 +80,34 @@ class AdminAccount extends Controller
             ));
         }
 
+        if (session('logAdmin')->role == 'admin') {
+        $customer_order = DB::table('orders')
+        ->select('orders.*','users.name')
+        ->where('orders.order_type', 'laundary')
+        ->join('users', 'users.user_id', '=', 'orders.user_id')
+        ->paginate(10);
 
-        // dd($customer_order);
+        $complete_order = DB::table('orders')
+        ->where('orders.status', 1)
+        ->get();
 
-        return view('admin.home');
+        $complete_order_no = $complete_order->count();
+
+        $pending_order = DB::table('orders')
+        ->where('orders.status', 0)
+        ->get();
+
+        $pending_order_no = $pending_order->count();
+
+
+                return view('admin.home', 
+                compact(
+                'customer_order',
+                'complete_order_no',
+                'pending_order_no'
+            ));
+        }
+
     }
 
 

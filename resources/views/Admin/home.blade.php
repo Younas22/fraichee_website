@@ -199,6 +199,67 @@
                     </div>
 <?php } ?>
 
+                    <!-- start Payment Details -->
+                    <?php if (session('logAdmin')->role == 'admin') {?>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card  card-box">
+                                <div class="card-head">
+                                    <header>Orders</header>
+                                    <div class="tools d-none">
+                                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                    </div>
+                                </div>
+                                <div class="card-body ">
+                                    <div class="table-wrap">
+                                        <div class="table-responsive">
+                                            <table class="table display product-overview mb-30" id="support_table5">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Invoice No</th>
+                                                        <th>Name</th>
+                                                        <th>Pickup</th>
+                                                        <th>Delivery</th>
+                                                        <th>Amount</th>
+                                                        <th>Order Date</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                    <?php if (isset($customer_order)) { $count=1; foreach ($customer_order as $key) { ?>
+                                                    <tr>
+                                                        <td><?=$count?></td>
+                                                        <td class=""><a href="<?=url('dashboard/order-details').'/'.$key->order_id?>"><?=$key->invoice_id?></a></td>
+                                                        <td><?=$key->name?></td>
+                                                        <td><?=$key->pickup_date?></td>
+                                                        <td><?=$key->delivery_date?></td>
+                                                        <td>£<?=$key->amount?></td>
+                                                        <td><?=$key->order_date?></td>
+                                                        <td><?php if ($key->status == 1) { ?>
+                                                        <span class="label label-sm label-success">Complete </span>
+                                                       <?php }else{ ?>
+                                                        <span class="label label-sm label-warning">Pending </span>
+                                                        <?php } ?></td>
+                                                    </tr>
+
+                                        <?php $count++; }  ?>
+                                        <?php } else{echo "Order Not Found!";} ?>
+
+                                       
+                                                </tbody>
+                                            </table>
+
+                                        </div><hr><?= $customer_order->links(); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<?php } ?>
+
 
                 </div>
             </div>
