@@ -157,7 +157,7 @@ class UserController extends Controller
         ->paginate(10);
 
         // dd($order_details);
-        return view('admin.customer_order', 
+        return view('Admin.customer_order', 
                 compact(
                 'customer_order'
             ));

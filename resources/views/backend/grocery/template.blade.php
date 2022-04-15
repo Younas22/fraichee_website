@@ -1,4 +1,4 @@
-@include('backend.grocery.header')
+@include('Backend.grocery.header')
 <div class="page-content-wrapper">
     <div class="page-content">
         <div class="row">

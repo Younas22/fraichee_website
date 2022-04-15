@@ -72,7 +72,7 @@ class AdminAccount extends Controller
         $pending_order_no = $pending_order->count();
 
 
-                return view('admin.home', 
+                return view('Admin.home', 
                 compact(
                 'customer_order',
                 'complete_order_no',
@@ -100,7 +100,7 @@ class AdminAccount extends Controller
         $pending_order_no = $pending_order->count();
 
 
-                return view('admin.home', 
+                return view('Admin.home', 
                 compact(
                 'customer_order',
                 'complete_order_no',
