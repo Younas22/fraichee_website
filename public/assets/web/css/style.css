@@ -196,14 +196,14 @@ header > .btn-primary svg {
     margin-top: 14px;
 }
 .banner .btn-group-banner {
-    display: flex;
-    padding-bottom: 50px;
+    /*display: flex;*/
+    padding-bottom: 155px;
     flex-wrap: wrap;
 }
 .banner .btn-group-banner .btn-lg {
     padding: 18px 45px;
     font-size: 16px;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     border-radius: 7px;
     border-width: 2px;

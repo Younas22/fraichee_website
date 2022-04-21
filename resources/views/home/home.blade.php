@@ -4,19 +4,24 @@
 <section class="banner">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-12">
         <div class="banner-text" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-          <p class="sub">Professional Laundry Service</p>
-          <h1>Laundry Made simple</h1>
-          <p class="desc" style="font-size: 30px;">Laundry services and Bed linen subscription services all in one place</p>
-          <div class="btn-group-banner text-right">
-            <a href="{{url('/login')}}" class="btn btn-primary btn-lg"><i data-feather="calendar"></i>Order Now</a>
+          <p class="sub">Linen & Laundry Service</p>
+          <center>
+            <h1 style="font-size: 50px;">Fresh Bed linen subscription</h1><br>
+          <p class="desc" style="font-size: 30px;">Fresh bed sheets and towel delivered at your door weekly from just £39.99 per month</p><br>
+          </center>
+
+          <center>
+            <div class="btn-group-banner" style="text-align: center;">
+            <a href="{{url('/login')}}" style="text-align: center;" class="btn btn-primary btn-lg"><i data-feather="calendar"></i>View offers</a>
             <!-- <a href="#" class="btn btn-outline-light btn-lg">Discover More<i class="ml-2 mr-0" data-feather="arrow-right"></i></a> -->
           </div>
+          </center>
         </div>
       </div>
     </div>
-    <div class="card" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
+    <div class="card d-none" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
       <div class="row no-gutters">
         <div class="col-md-8">
           <div class="card-body pt-4">
@@ -61,6 +66,65 @@
     </div>
   </div>
 </section><!-- Banner -->
+
+<!-- How it works -->
+<section class="why-choose-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="section-title" data-aos="fade-right">
+          <!-- <p>Why Choose Us</p> -->
+          <h1>How it works</h1>
+        </div>
+
+        <p class='desc' style="font-size: 20px;">We are devoted to make your day-to-day.</p>
+        <!-- <button type="button" class="btn btn-primary ">Learn More</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row pt-5">
+      <div class="col-md-6 col-sm-12 col-lg-4">
+        <div class="card" data-aos="fade-right">
+          <div class="box-icon">
+              <img width="64" height="64" src="https://cdn-icons-png.flaticon.com/512/1819/1819145.png" alt="">
+            </div>
+          <div class="card-title mt-3">
+            <h5>Choose your bedlinen </h5>
+            <p>We offer a wide range of bed linen products with different sizes; simply add the products you need to your order. These will be delivered weekly on your door of choosing. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-lg-4">
+        <div class="card" data-aos="fade-up">
+          <div class="box-icon">
+            <i class="bi bi-box2"></i>
+          </div>
+          <div class="card-title mt-3">
+            <h5>Create your box </h5>
+            <p>You can customise you box to suit your lifestyle, we offer a wide range of bedlinen products</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-lg-4">
+        <div class="card" data-aos="fade-left">
+          <div class="box-icon">
+            <!-- <i class="bi bi-chat-square-dots"></i> -->
+            <i class="bi bi-truck"></i>
+          </div>
+          <div class="card-title mt-3">
+            <h5>Get weekly deliveries </h5>
+            <p>Every week, on the day of your choosing, fresh bed linen will be delivered and used ones taken away</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="text-center desc" style="font-size: 20px;">Suspend or cancel service any time</p>
+  </div>
+</section>
+<!-- End How it works -->
+
 <!-- About -->
 <section class="about-company">
   <div class="container-fluid">
@@ -95,7 +159,7 @@
   </div>
 </section><!-- About -->
 <!-- Our-Promise -->
-<section class="our-promise ">
+<section class="our-promise d-none">
   <div class="bg-img">
     <div class="container">
       <div class="row">
@@ -132,8 +196,51 @@
     </div>
   </div>
 </section><!-- Our-Promise -->
+
+
+
+<section class="about-company">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="position-relative" data-aos="fade-right" data-aos-duration="1000">
+          <img src="{{url('public/assets/web/img/women-selecting-clothes-1536x1024.jpg')}}" alt="about_company" class="img-fluid">
+          <<!-- div class="count-container" data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-offset="-200"><span class="count">15</span>+
+            <p>Years Experienced</p>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-5 ml-auto" data-aos="fade-left" id="about_us">
+        <div class="mt-5 mb-5">
+          <h1 style="font-weight: bold; font-size: 20px;">Comfort at low cost, hustle free, eco-friendly and professionally design for personal needs</h1>
+        </div>
+        
+        <ul class="" style="list-style-type: none;"> 
+            
+            <li style="font-weight: bold;"><i class="bi bi-box2 text-dark mr-3" style="font-size: 25px"></i>Cost effective</li>
+            <p>We cut the price of washing you bedding in half and in additional to that you are guaranteed a delivery of fresh linen weekly.</p><br>
+            
+            <li style="font-weight: bold;"><i class="bi bi-box2 text-dark mr-3" style="font-size: 25px"></i>
+            One less thing to worry about </li>
+            <p>Once on your subscription list, you will never have to worry about your bed linen anymore, we will automatically delivery your order on the day of your choosing.</p><br>
+            
+            <li style="font-weight: bold;"><i class="bi bi-box2 text-dark mr-3" style="font-size: 25px"></i>Good for the environment</li>
+            <p>All bed linen is washed in a sustainable laundry routine and at a planned specific time with eco-friendly washing and ironing machines the favours the use of energy and water</p><br>
+
+            <li style="font-weight: bold;"><i class="bi bi-box2 text-dark mr-3" style="font-size: 25px"></i>Professionally cleaned</li>
+            <p>All our services are scoured from professional individuals with industrial approval machine guaranteeing you 100% cleanliness.</p><br>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="about">
   <div class="service">
+ <!--    
     <div class="container">
       <div class="row content">
         <div class="col-md-6">
@@ -150,7 +257,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
       <div class="row mt-3">
