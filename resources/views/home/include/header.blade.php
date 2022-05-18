@@ -12,8 +12,12 @@
   <script src="{{url('public/assets/web/js/jquery.min.js')}}"></script>
   <style>
     html {
-  scroll-behavior: smooth;
-}
+        scroll-behavior: smooth;
+    }
+
+    p{
+      font-size: 20px !important;
+    }
   </style>
 </head>
 
@@ -68,10 +72,21 @@
                 <a class="nav-link text-uppercase" href="{{url('/dashboard')}}">Dashboard</a>
             </li>
             <?php } ?>
+            
 
       </ul>
     </nav>
-    <a class="btn btn-primary" style="min-width: 0 !important;" href="{{url('/login')}}"><i data-feather="layers"></i>Sign In</a>
+
+<?php  if (session()->has('logAdmin') && session('logAdmin')->role == 'customer') { ?>
+  <a class="btn btn-primary" style="min-width: 0 !important;" href="{{url('/usersignout')}}">
+    <i data-feather="layers"></i>Logout
+  </a>
+<?php }else{ ?>
+  <a class="btn btn-primary" style="min-width: 0 !important;" href="{{url('/login')}}">
+    <i data-feather="layers"></i>Sign In
+  </a>
+<?php } ?>
+
   </header>
   <!-- header -->
   <!--Moble-collapse-->
@@ -121,9 +136,17 @@
           <?php } ?>
 
 
+<?php  if (session()->has('logAdmin') && session('logAdmin')->role == 'customer') { ?>
+      <li class="nav-item">
+        <a class="btn btn-primary px-4" style="min-width: 0 !important;" href="{{ route('usersignout') }}"><i data-feather="layers" style="width: 20px; height: 20px;" class="mr-2"></i> Logout</a>
+      </li>
+<?php }else{ ?>
         <li class="nav-item">
             <a class="btn btn-primary px-4" style="min-width: 0 !important;" href="{{url('/login')}}"><i data-feather="layers" style="width: 20px; height: 20px;" class="mr-2"></i> Sign In</a>
         </li>
+<?php } ?>
+
+
 
 
           </ul>

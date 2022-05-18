@@ -57,9 +57,9 @@ $panel = $cart['cat_panel'];
                     <tr>
                         <td><?=$cart['cat_name']?></td>
                         <td scope="row" class="cart-product">
-                            <a href="#" class="cart-product-img">
+                            <!-- <a href="#" class="cart-product-img">
                                 <img height="50" width="50" src="<?=url('public/assets/images/products').'/'.$cart['image']?>" alt="cart-product-img">
-                            </a>
+                            </a> -->
                             <a href="#">
                                 <h5><?=$cart['name']?></h5>
                             </a>
@@ -124,10 +124,10 @@ $panel = $cart['cat_panel'];
                                 <?php if ($panel == 'laundary') {?>
                                     <th scope="col">Pick Up Date</th>
                                 <?php }else{?>
-                                    <th scope="col">Delivery Day's a week</th>
+                                    <th scope="col">Number of deliveries a week</th>
                                 <?php }?>
                                 
-                                <th scope="col">Delivery Date</th>
+                                <th scope="col">Choose a preferred delivery day</th>
                             </tr>
                         </thead>
                         <tbody>

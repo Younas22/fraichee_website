@@ -212,7 +212,7 @@ $('#postcode').click(function(){
                     }else{
                       $("#msg").append('<div class="alert alert-success"><strong>Success!</strong> '+response.msg+'.</div>');
                     }
-                    window.location.reload();
+                    // window.location.reload();
                 }
             });
         
