@@ -75,7 +75,7 @@ Route::post('custom-registration', [WebAccount::class, 'customRegistration'])->n
 Route::get('/forget-password', [WebAccount::class, 'forget_password'])->name('forget-password');
 Route::post('/location', [WebAccount::class, 'location'])->name('location');
 Route::get('usersignout', [WebAccount::class, 'signOutuser'])->name('usersignout');
-
+ 
 
 
 

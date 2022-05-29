@@ -80,6 +80,37 @@ $panel = $cart['cat_panel'];
                 </tbody>
             </table>
         </div>
+        <div class="row">
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6">
+            <div style="float: right;">
+                <b>Order Summary</b>
+                
+                
+                
+                
+                    <?php if ($panel != 'subscribe') {?>
+                        <?php if ($total < 30) { ?>
+                            <p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £<?=$total?></span></p>
+                            <p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £3.99</span></p>
+                            <p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £<?= $total+3.99?></span></p>
+                            <p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £<?= $total+3.99?></span></p>
+
+                        <?php }else{?>
+                        <p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £<?=$total?></span></p>
+                            <p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £0.00</span></p>
+                            <p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £<?= $total+0.00?></span></p>
+                            <p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £<?= $total+0.00?></span></p>
+                        <?php } ?>
+                <?php }else{?>
+                    <div id="subscribe_pay_details_"></div>
+                <?php } ?>
+
+
+            </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- cart-table -->
@@ -207,24 +238,38 @@ $panel = $cart['cat_panel'];
                     <ul class="nav flex-column">
                         <?php if ($total < 30) { ?>
                         <li class="nav-item d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Subtotal</p>
+                            <p class="mb-0">Item(s) Subtotal</p>
                             <strong>£<?=$total?></strong>
                         </li>
                         <li class="nav-item d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Delivery cost</p>
+                            <p class="mb-0">Delivery Fee</p>
                             <strong>£3.99</strong>
                         </li>
                         <li class="nav-items d-flex justify-content-between align-items-center">
-                            <strong>Total Price:</strong>
+                            <strong>Total:</strong>
                             <strong class="text-primary">£<?= $total+3.99?></strong>
                         </li>
+                        <li class="nav-items d-flex justify-content-between align-items-center">
+                            <strong>Grand Total:</strong>
+                            <strong class="text-primary">£<?= $total+3.99?></strong>
+                        </li>
+
+
                         <?php }else{?>
                         <li class="nav-item d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Subtotal</p>
+                            <p class="mb-0">Item(s) Subtotal</p>
                             <strong>£<?=$total?></strong>
                         </li>
+                        <li class="nav-item d-flex justify-content-between align-items-center mb-3">
+                            <p class="mb-0">Delivery Fee</p>
+                            <strong>£0.00</strong>
+                        </li>
                         <li class="nav-items d-flex justify-content-between align-items-center">
-                            <strong>Total Price:</strong>
+                            <strong>Total:</strong>
+                            <strong class="text-primary">£<?= $total?></strong>
+                        </li>
+                        <li class="nav-items d-flex justify-content-between align-items-center">
+                            <strong>Grand Total:</strong>
                             <strong class="text-primary">£<?= $total?></strong>
                         </li>
                         <?php } ?>

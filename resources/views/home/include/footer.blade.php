@@ -285,16 +285,19 @@ $('#delivery_day1').click(function(){
   let total = "<?=number_format((float)Config::get('total'), 2, '.', '') ?>";
   // let coupon_code = "coupon_code()";
   let coupon_code = 0;
-  let o_otal = 1.99+total*4;
-  let c_total = o_otal*coupon_code/100;
-  let final_total = o_otal-c_total;
-  let vat = final_total*20/100;
-  let delivery_cost = Number(final_total).toFixed(2)-total;
+  let with_fee = parseFloat(total)+2.99+1.99;
+  let with_number = with_fee*4;
+  // let c_total = o_otal*coupon_code/100;
+  // let final_total = o_otal-c_total;
+  let vat = with_number*20/100;
+  let final_total = with_number+vat;
+  // let delivery_cost = Number(final_total).toFixed(2)-total;
 
-       $('#first_day').remove();
-       $('#second_day').remove();
-       $('#total_price2').remove();
-       $('#btnDelete').remove();
+  $('#first_day').remove();
+  $('#second_day').remove();
+  $('#total_price2').remove();
+  $('#total_price2_').remove();
+  $('#btnDelete').remove();
   $('#select1').append(`<td id="first_day"><fieldset class="form-group"><select class="form-control" name="first_day">
     <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
@@ -305,9 +308,11 @@ $('#delivery_day1').click(function(){
     <option value="Sunday">Sunday</option>
   </select></fieldset><fieldset class="form-group"><button class="btnDelete btn-sm btn btn-danger">Delete</button></fieldset></td>`);
 
-  $('#subscribe_pay_details').append('<ul class="nav flex-column" id="total_price1"><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">VAT Amount:</p><strong>£ '+Number(vat).toFixed(2)+'</strong></li><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">Total amount per month:</p><strong>£ '+Number(final_total).toFixed(2)+'</strong></li><input type="hidden" class="form-control" name="delivery_cost" value="'+delivery_cost+'"></ul>');
+  $('#subscribe_pay_details_').append('<div id="total_price1"><p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £ '+total+'</span></p><p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £2.99</span></p><p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £'+Number(with_number).toFixed(2)+'</span></p><p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £'+Number(final_total).toFixed(2)+'</span></p></div>');
 
-    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+delivery_cost+'">');
+  $('#subscribe_pay_details').append('<div id="total_price1_"><p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £ '+total+'</span></p><p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £2.99</span></p><p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £'+Number(with_number).toFixed(2)+'</span></p><p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £'+Number(final_total).toFixed(2)+'</span></p></div>');
+
+    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+Number(final_total).toFixed(2)+'">');
 
 });
 
@@ -324,18 +329,21 @@ $("#tbUser").on('click','.btnDelete',function(){
 
 $('#delivery_day2').click(function(){
   let total = "<?=number_format((float)Config::get('total'), 2, '.', '') ?>";
-  // let coupon_code = "coupon_code()";
+ // let coupon_code = "coupon_code()";
   let coupon_code = 0;
-  let o_otal = 1.99+total*8;
-  let c_total = o_otal*coupon_code/100;
-  let final_total = o_otal-c_total;
-  let vat = final_total*20/100;
-  let delivery_cost = Number(final_total).toFixed(2)-total;
+  let with_fee = parseFloat(total)+2.99+1.99;
+  let with_number = with_fee*8;
+  // let c_total = o_otal*coupon_code/100;
+  // let final_total = o_otal-c_total;
+  let vat = with_number*20/100;
+  let final_total = with_number+vat;
+  // let delivery_cost = Number(final_total).toFixed(2)-total;
 
 
        $('#first_day').remove();
        $('#second_day').remove();
        $('#total_price1').remove();
+       $('#total_price1_').remove();
        $('#btnDelete').remove();
   $('#select1').append(`<td id="first_day">
         <fieldset class="form-group">
@@ -366,10 +374,12 @@ $('#delivery_day2').click(function(){
         <fieldset class="form-group"><p style="background: white; color: white;">Delete</p></fieldset>
     </td>`);
 
+  $('#subscribe_pay_details_').append('<div id="total_price2"><p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £ '+total+'</span></p><p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £2.99</span></p><p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £'+Number(with_number).toFixed(2)+'</span></p><p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £'+Number(final_total).toFixed(2)+'</span></p></div>');
 
-$('#subscribe_pay_details').append('<ul class="nav flex-column" id="total_price2"><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">VAT Amount:</p><strong>£ '+Number(vat).toFixed(2)+'</strong></li><li class="nav-item d-flex justify-content-between align-items-center mb-3"><p class="mb-0">Total amount per month:</p><strong>£ '+Number(final_total).toFixed(2)+'</strong></li><input type="hidden" class="form-control" name="delivery_cost" value="'+delivery_cost+'"></ul>');
+  $('#subscribe_pay_details').append('<div id="total_price2_"><p style="margin-bottom:0 !important;">Item(s) Subtotal: <span style="float: right; margin-left: 100px;"> £ '+total+'</span></p><p style="margin-bottom:0 !important;">Delivery Fee: <span style="float: right; margin-left: 100px;"> £2.99</span></p><p style="margin-bottom:0 !important;">Total: <span style="float: right; margin-left: 100px;"> £'+Number(with_number).toFixed(2)+'</span></p><p style="margin-bottom:0 !important;">Grand Total: <span style="float: right; margin-left: 100px;"> £'+Number(final_total).toFixed(2)+'</span></p></div>');
 
-    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+delivery_cost+'">');
+    $('#form').append('<input type="hidden" class="form-control" name="total_cost" value="'+Number(final_total).toFixed(2)+'">');
+
 });
 
 </script>

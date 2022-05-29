@@ -56,7 +56,7 @@ class Home extends Controller
     //checkout
     public function checkout(Request $request)
     {
-        // dd($request->all());
+        dd($request->all()); exit();
         // dd(session('cart')); 
         if ($request->panel == 'laundary') {
             $order_data = [
@@ -104,7 +104,7 @@ class Home extends Controller
                 'amount' => $total_cost
             ];
 
-            // dd($order_data);
+            dd($order_data); exit();
 
             $laundary = DB::table('orders')->insertGetId($order_data);
             foreach (session('cart') as $id => $cart) {
