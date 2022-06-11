@@ -88,7 +88,7 @@ Route::get('checkout_order_no/{order_no}', [Home::class, 'checkout_order_no'])->
 Route::post('checkout-order', [Home::class, 'checkout_order'])->name('checkout-order');
 Route::get('compalate-checkout-order/{invoice_no}', [Home::class, 'compalate_checkout_order'])->name('compalate-checkout-order');
 
-Route::get('/blog', [Home::class, 'blog'])->name('blog');
+// Route::get('/blog', [Home::class, 'blog'])->name('blog');
 Route::get('/blog-details/{link}', [Home::class, 'blog_details'])->name('blog_details');
 Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');
 Route::post('update-cart', [Home::class, 'update_cart'])->name('update.cart');

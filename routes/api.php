@@ -1,8 +1,8 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\SubscriptionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [RegisterController::class, 'login']);
+Route::get('user-data', [RegisterController::class, 'user_data']);
+Route::get('subscription-products', [SubscriptionController::class, 'subscription_products']);
+Route::get('user-subscription-products', [SubscriptionController::class, 'user_subscription_products']);
+Route::post('user-subscription-pro', [SubscriptionController::class, 'user_subscription_pro']);
+Route::post('pause-subscription-products', [SubscriptionController::class, 'pause_subscription_products']);
+Route::post('cancel-subscription-products', [SubscriptionController::class, 'cancel_subscription_products']);
+Route::post('checkout', [SubscriptionController::class, 'checkout']);
+
+// Route::middleware('auth:api')->group( function () {
+//     Route::resource('products', ProductController::class);
+// });
