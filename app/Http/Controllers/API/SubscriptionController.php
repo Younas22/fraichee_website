@@ -95,6 +95,27 @@ class SubscriptionController extends BaseController
         // $success['name'] =  $user->name;
         return $this->sendResponse($input, 'pause subscription products successfully.');
     }
+    
+   	    public function unpause_subscription_products(Request $request)
+    {
+        // $validator = Validator::make($request->all(), [
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        //     'password' => 'required',
+        //     'c_password' => 'required|same:password',
+        // ]);
+
+        // if($validator->fails()){
+        //     return $this->sendError('Validation Error.', $validator->errors());       
+        // }
+   
+        $input = $request->product_id;
+        // $input['password'] = bcrypt($input['password']);
+        // $user = User::create($input);
+        // $success['token'] =  $user->createToken('MyApp')->accessToken;
+        // $success['name'] =  $user->name;
+        return $this->sendResponse($input, 'pause subscription products successfully.');
+    }
 
    	    public function cancel_subscription_products(Request $request)
     {

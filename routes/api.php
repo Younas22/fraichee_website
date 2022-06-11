@@ -21,6 +21,7 @@ Route::get('subscription-products', [SubscriptionController::class, 'subscriptio
 Route::get('user-subscription-products', [SubscriptionController::class, 'user_subscription_products']);
 Route::post('user-subscription-pro', [SubscriptionController::class, 'user_subscription_pro']);
 Route::post('pause-subscription-products', [SubscriptionController::class, 'pause_subscription_products']);
+Route::post('unpause-subscription-products', [SubscriptionController::class, 'unpause_subscription_products']);
 Route::post('cancel-subscription-products', [SubscriptionController::class, 'cancel_subscription_products']);
 Route::post('checkout', [SubscriptionController::class, 'checkout']);
 
