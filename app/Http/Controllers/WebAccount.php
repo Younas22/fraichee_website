@@ -89,16 +89,15 @@ class WebAccount extends Controller
     }
 
         public function customRegistration(Request $request)
-    {  
+    {
         $request->validate([
             'phone' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
-           
+
         $data = $request->all();
         $check = $this->create($data);
-         
         return redirect("login")->withSuccess('You have signed-in');
     }
 

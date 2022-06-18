@@ -19,7 +19,7 @@
                     </div>
                     @endif
             </div>
-            <form class="account-form" action="{{ route('user-login.custom') }}" method="POST" >
+            <form class="account-form" action="{{ route('user.login.custom') }}" method="POST" >
                 @csrf
                 <div class="form-group mb-3">
                     <label class="label" for="email">Email</label>

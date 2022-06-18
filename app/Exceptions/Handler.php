@@ -48,36 +48,36 @@ class Handler extends ExceptionHandler
         });
     }
 
-           public function render($request, Throwable $exception)
-    {
-        if ($exception instanceof NotFoundHttpException) {
-            $response = ['success' => false,'message' => 'Not Found!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }else if ($exception instanceof BadMethodCallException) {
-            $response = ['success' => false,'message' => 'Bad Method!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }else if ($exception instanceof MethodNotAllowedHttpException) {
-            $response = ['success' => false,'message' => 'Method Not Allowed!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }else if ($exception instanceof QueryException) {
-            $response = ['success' => false,'message' => 'Query is wrong!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }
-        else if ($exception instanceof AuthenticationException) {
-            $response = ['success' => false,'message' => 'Unauthenticated!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }
+    //        public function render($request, Throwable $exception)
+    // {
+    //     if ($exception instanceof NotFoundHttpException) {
+    //         $response = ['success' => false,'message' => 'Not Found!'];
+    //         $response['data'] = (object)array();
+    //         return response()->json($response, 404);
+    //     }else if ($exception instanceof BadMethodCallException) {
+    //         $response = ['success' => false,'message' => 'Bad Method!'];
+    //         $response['data'] = (object)array();
+    //         return response()->json($response, 404);
+    //     }else if ($exception instanceof MethodNotAllowedHttpException) {
+    //         $response = ['success' => false,'message' => 'Method Not Allowed!'];
+    //         $response['data'] = (object)array();
+    //         return response()->json($response, 404);
+    //     }else if ($exception instanceof QueryException) {
+    //         $response = ['success' => false,'message' => 'Query is wrong!'];
+    //         $response['data'] = (object)array();
+    //         return response()->json($response, 404);
+    //     }
+    //     else if ($exception instanceof AuthenticationException) {
+    //         $response = ['success' => false,'message' => 'Unauthenticated!'];
+    //         $response['data'] = (object)array();
+    //         return response()->json($response, 404);
+    //     }
 
-        else if ($exception instanceof ErrorException) {
-            $response = ['success' => false,'message' => 'Data Not Found!'];
-            $response['data'] = (object)array();
-            return response()->json($response, 404);
-        }
+        // else if ($exception instanceof ErrorException) {
+        //     $response = ['success' => false,'message' => 'Data Not Found!'];
+        //     $response['data'] = (object)array();
+        //     return response()->json($response, 404);
+        // }
 
-    }
+    // }
 }

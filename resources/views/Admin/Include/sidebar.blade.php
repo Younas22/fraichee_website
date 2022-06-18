@@ -47,7 +47,7 @@
 
 
                         <li class="nav-item">
-                                <a href="{{url('/')}}" class="nav-link nav-toggle" target="blank">
+                                <a href="{{url('/home')}}" class="nav-link nav-toggle" target="blank">
                                     <i class="material-icons">home</i>
                                     <span class="title">Web</span>
                                     {{-- <span class="label label-rouded label-menu label-danger">new</span> --}}

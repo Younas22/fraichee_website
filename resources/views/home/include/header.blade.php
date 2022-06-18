@@ -26,7 +26,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg bg-white py-0 ">
-      <a class="navbar-brand p-0" href="{{url('/')}}">
+      <a class="navbar-brand p-0" href="{{url('/home')}}">
         <img src="{{url('public/assets/web/img/logo.png')}}" alt="logo" class="img-fluid logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse-mobile" aria-expanded="false" aria-controls="collapse-mobile">
@@ -34,7 +34,7 @@
       </button>
       <ul class="navbar-nav ml-auto align-items-center">
         <li class="nav-item active">
-          <a class="nav-link text-uppercase" href="{{url('/')}}">Home</a>
+          <a class="nav-link text-uppercase" href="{{url('/home')}}">Home</a>
         </li>
 
         <li class="nav-item">

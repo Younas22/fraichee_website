@@ -48,7 +48,9 @@ class RegisterController extends BaseController
             $success['user_id'] =  $check_user->user_id;
             $success['name'] =  $check_user->name;
             $success['email'] =  $check_user->email;
+            $success['contact'] =  $check_user->contact;
             $success['address'] =  $check_user->address;
+            $success['password'] =  $check_user->password;
             return $this->sendResponse($success, 'User login successfully.');
         }else{
             $success['data'] =  null;
@@ -73,9 +75,40 @@ class RegisterController extends BaseController
             $success['email'] =  $user_data->email;
             $success['contact'] =  $user_data->contact;
             $success['address'] =  $user_data->address;
+            $success['password'] =  $user_data->password;
             return $this->sendResponse($success, 'User profile data getting successfully.');
         }else{
             return $this->sendResponse($success, 'something wrong!');
         }
+    }
+
+
+        public function edit_profile(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+
+        $edit_profile = [
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'address' => $request->address,
+            'password' => $request->password
+        ];
+
+        DB::table('users')->where('user_id', $request->user_id)->update($edit_profile);
+        $user_data = DB::table('users')->where(['user_id'=>$request->user_id])->first();
+        $success['user_id'] =  $user_data->user_id;
+        $success['name'] =  $user_data->name;
+        $success['email'] =  $user_data->email;
+        $success['contact'] =  $user_data->contact;
+        $success['address'] =  $user_data->address;
+        $success['password'] =  $user_data->password;
+        return $this->sendResponse($success, 'profile updated!');
     }
 }

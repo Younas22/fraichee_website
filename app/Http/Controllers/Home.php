@@ -197,7 +197,7 @@ class Home extends Controller
     {
         return view('home.blog_details');
     }
-
+ 
  
 //addToCart
         public function addToCart(Request $request)

@@ -69,18 +69,18 @@ Route::match(['get','post'],'/dashboard/subscribers', [DashboardController::clas
 
 //web accounts details
 Route::get('/login', [WebAccount::class, 'login'])->name('login');
-Route::post('user-custom-login', [WebAccount::class, 'usercustomLogin'])->name('user-login.custom'); 
+Route::post('/user-custom-login', [WebAccount::class, 'usercustomLogin'])->name('user.login.custom'); 
 Route::get('/signup', [WebAccount::class, 'signup'])->name('signup');
-Route::post('custom-registration', [WebAccount::class, 'customRegistration'])->name('register.custom'); 
+Route::post('/custom-registration', [WebAccount::class, 'customRegistration'])->name('register.custom'); 
 Route::get('/forget-password', [WebAccount::class, 'forget_password'])->name('forget-password');
 Route::post('/location', [WebAccount::class, 'location'])->name('location');
-Route::get('usersignout', [WebAccount::class, 'signOutuser'])->name('usersignout');
+Route::get('/usersignout', [WebAccount::class, 'signOutuser'])->name('usersignout');
  
 
 
 
 //Home
-Route::get('/', [Home::class, 'index'])->name('index');
+Route::get('/home', [Home::class, 'index'])->name('index');
 Route::get('/shop', [Home::class, 'shop'])->name('shop');
 Route::get('/cart', [Home::class, 'cart'])->name('cart');
 Route::post('checkout', [Home::class, 'checkout'])->name('checkout');
@@ -88,7 +88,7 @@ Route::get('checkout_order_no/{order_no}', [Home::class, 'checkout_order_no'])->
 Route::post('checkout-order', [Home::class, 'checkout_order'])->name('checkout-order');
 Route::get('compalate-checkout-order/{invoice_no}', [Home::class, 'compalate_checkout_order'])->name('compalate-checkout-order');
 
-// Route::get('/blog', [Home::class, 'blog'])->name('blog');
+Route::get('/blog', [Home::class, 'blog'])->name('blog');
 Route::get('/blog-details/{link}', [Home::class, 'blog_details'])->name('blog_details');
 Route::get('add-to-cart', [Home::class, 'addToCart'])->name('add.to.cart');
 Route::post('update-cart', [Home::class, 'update_cart'])->name('update.cart');
