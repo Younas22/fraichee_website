@@ -1,5 +1,7 @@
 <?php
  use Illuminate\Support\Facades\DB;
+ use Illuminate\Support\Str;
+
 
 if (!function_exists('lan_products')) {
     
@@ -48,5 +50,16 @@ if (!function_exists('get_cart_order')) {
             ->join('child_products', 'child_products.cp_id', '=', 'cart_order.item_id')
             ->get();
             return $get_cart_order;
+        }
+}
+
+
+if (!function_exists('generateAndSaveApiAuthToken')) {
+    
+        function generateAndSaveApiAuthToken()
+        {
+            $token = Str::random(60);
+            $api_token = $token;
+            return $api_token;
         }
 }

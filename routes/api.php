@@ -16,6 +16,7 @@ use App\Http\Controllers\API\SubscriptionController;
 
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/loginapi', [RegisterController::class, 'login']);
+Route::post('/logoutapi', [RegisterController::class, 'user_logout']);
 Route::get('user-data', [RegisterController::class, 'user_data']);
 Route::post('edit-profile', [RegisterController::class, 'edit_profile']);
 

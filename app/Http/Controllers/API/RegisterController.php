@@ -3,18 +3,27 @@
 namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
-// use App\Models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Support\Facades\DB;
    
 class RegisterController extends BaseController
 {
+
+    public function aa($value='')
+    {
+        echo "<pre>";
+        print_r($value);
+        exit;
+    }
+
 	    public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
+            'contact' => 'required|unique:users',
             'address' => 'required',
             'password' => 'required'
         ]);
@@ -22,11 +31,20 @@ class RegisterController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
+        
+        $data = array(
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'address'=> $request->address,
+            'password'=> $request->password,
+            'contact'=> $request->contact,
+            'api_token'=>generateAndSaveApiAuthToken()
+        );
+
+        // $this->aa($data);
+        DB::table('users')->insert($data);
    
-        $input = $request->all();
-        DB::table('users')->insert($input);
-   
-        return $this->sendResponse($input, 'User register successfully.');
+        return $this->sendResponse($data, 'User register successfully.');
     }
 
 	    public function login(Request $request)
@@ -44,17 +62,48 @@ class RegisterController extends BaseController
         $password = $request->password;
 
         $check_user = DB::table('users')->where(['email'=>$email,'password'=>$password])->first();
+
         if (!empty($check_user)) {
-            $success['user_id'] =  $check_user->user_id;
-            $success['name'] =  $check_user->name;
-            $success['email'] =  $check_user->email;
-            $success['contact'] =  $check_user->contact;
-            $success['address'] =  $check_user->address;
-            $success['password'] =  $check_user->password;
+            DB::table('users')->where(['email'=>$email,'password'=>$password])->update(['api_token'=>generateAndSaveApiAuthToken()]);
+
+            $get_user = DB::table('users')->where(['email'=>$email,'password'=>$password])->first();
+            $success['user_id'] =  $get_user->user_id;
+            $success['name'] =  $get_user->name;
+            $success['email'] =  $get_user->email;
+            $success['contact'] =  $get_user->contact;
+            $success['address'] =  $get_user->address;
+            $success['password'] =  $get_user->password;
+            $success['api_token'] =  $get_user->api_token;
             return $this->sendResponse($success, 'User login successfully.');
+
         }else{
             $success['data'] =  null;
             return $this->sendResponse($success, 'email or password Wrong!');
+        }        
+    }  
+
+         public function user_logout(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'api_token' => 'required'
+            ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+   
+        $api_token = $request->api_token;
+
+        $check_user = DB::table('users')->where(['api_token'=>$api_token])->first();
+
+        if (!empty($check_user)) {
+            DB::table('users')->where(['api_token'=>$api_token])->update(['api_token'=>null]);
+            $success['api_token'] =  null;
+            return $this->sendResponse($success, 'User logout successfully.');
+            
+        }else{
+            $success['data'] =  null;
+            return $this->sendResponse($success, 'api_token Wrong!');
         }        
     }
 

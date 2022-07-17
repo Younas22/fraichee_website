@@ -32,6 +32,7 @@
     "autoload": {
             "files": [
         "app/Helpers/Helper.php"
+        "app/Helpers/Tokenable.php"
     ],
         "psr-4": {
             "App\\": "app/",
