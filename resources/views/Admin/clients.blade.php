@@ -1,4 +1,4 @@
-@include('Admin.Include.header')
+@include('admin.include.header')
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -238,4 +238,4 @@
 <!-- End of Main Content -->
 
 
-@include('Admin.Include.footer')
+@include('admin.include.footer')

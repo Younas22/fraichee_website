@@ -1,4 +1,4 @@
-    @include('Admin.Include.header')
+    @include('admin.include.header')
 
                 <!-- start page content -->
                 <div class="page-content-wrapper">
@@ -627,4 +627,4 @@
                 </div>
                 <!-- end chat sidebar -->
 
-    @include('Admin.Include.footer')
+    @include('admin.include.footer')

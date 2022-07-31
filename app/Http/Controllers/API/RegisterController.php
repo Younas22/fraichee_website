@@ -78,7 +78,7 @@ class RegisterController extends BaseController
 
         }else{
             $success['data'] =  null;
-            return $this->sendResponse($success, 'email or password Wrong!');
+            return $this->sendError($success, 'email or password Wrong!');
         }        
     }  
 

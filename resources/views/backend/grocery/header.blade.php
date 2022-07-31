@@ -275,4 +275,4 @@
             </div>
         </div>
 
-@include('Admin.Include.sidebar')
+@include('admin.include.sidebar')

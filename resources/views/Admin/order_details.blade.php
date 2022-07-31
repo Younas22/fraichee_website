@@ -1,4 +1,4 @@
-@include('admin.Include.header')
+@include('admin.include.header')
 			<!-- start page content -->
 			<div class="page-content-wrapper">
 				<div class="page-content">
@@ -47,4 +47,4 @@
 				</div>
 			</div>
 			<!-- end page content -->
-			@include('admin.Include.footer')
+			@include('admin.include.footer')
