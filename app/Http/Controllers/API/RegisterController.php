@@ -42,9 +42,20 @@ class RegisterController extends BaseController
         );
 
         // $this->aa($data);
-        DB::table('users')->insert($data);
-   
-        return $this->sendResponse($data, 'User register successfully.');
+        $insert_Id = DB::table('users')->insertGetId($data);
+        $users = DB::table('users')->where('user_id',$insert_Id)->first();
+        
+        $usersdata = array(
+            'id'=> $users->user_id,
+            'name'=> $users->name,
+            'email'=> $users->email,
+            'address'=> $users->address,
+            'password'=> $users->password,
+            'contact'=> $users->contact,
+            'api_token'=>generateAndSaveApiAuthToken()
+        );
+
+        return $this->sendResponse($usersdata, 'User register successfully.');
     }
 
 	    public function login(Request $request)
