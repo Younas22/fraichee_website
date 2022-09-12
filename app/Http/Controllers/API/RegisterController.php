@@ -78,6 +78,8 @@ class RegisterController extends BaseController
             DB::table('users')->where(['email'=>$email,'password'=>$password])->update(['api_token'=>generateAndSaveApiAuthToken()]);
 
             $get_user = DB::table('users')->where(['email'=>$email,'password'=>$password])->first();
+            $request->session()->put('loguser', $get_user);
+
             $success['user_id'] =  $get_user->user_id;
             $success['name'] =  $get_user->name;
             $success['email'] =  $get_user->email;

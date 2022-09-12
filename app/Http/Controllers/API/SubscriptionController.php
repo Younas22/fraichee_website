@@ -8,7 +8,7 @@ use Session;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB; 
    
 class SubscriptionController extends BaseController
 {
@@ -97,10 +97,10 @@ class SubscriptionController extends BaseController
         $success['cp_name'] =  $lan_child_products->cp_name;
         $success['cp_price'] =  $lan_child_products->cp_price;
         $success['cp_desc'] =  $lan_child_products->cp_desc;
-        $success['cp_image'] =  env('APP_URL').'public/assets/web/img/'.$lan_child_products->cp_image;
+        $success['cp_image'] =  $lan_child_products->cp_image;
         $success['service_id'] =  $lan_child_products->service_id;
         $success['services_name'] =  $lan_child_products->title;
-        $success['services_image'] =  env('APP_URL').'public/assets/web/img/'.$lan_child_products->image;
+        $success['services_image'] =  $lan_child_products->image;
         $success['product_id'] =  $lan_child_products->prod_id;
         $success['product_name'] =  $lan_child_products->name;
    
@@ -111,7 +111,7 @@ class SubscriptionController extends BaseController
 //add to cart
    	    public function addtocart_product(Request $request)
     {
-
+        // echo $request->cp_id; exit;
         $validator = Validator::make($request->all(), [
             'cp_id' => 'required'
         ]);
@@ -128,7 +128,7 @@ class SubscriptionController extends BaseController
             ->first();
 
 
-        $cart = session()->get('cart_data', []);
+        $cart = session()->get('cart_data_'.session('loguser')->user_id, []);
         if(isset($cart[$request->cp_id])) {
             $cart[$request->cp_id]['quantity']++;
         } else {
@@ -140,14 +140,14 @@ class SubscriptionController extends BaseController
                 "title" => $product->title,
                 "name" => $product->cp_name,
                 "quantity" => 1,
-                "image" => env('APP_URL').'public/assets/web/img/'.$product->cp_image,
+                "image" => $product->cp_image,
                 "price" => $product->cp_price
             ];
         }
           
-        Session()->put('cart_data', $cart);
+        Session()->put('cart_data_'.session('loguser')->user_id, $cart);
    
-        return $this->sendResponse(Session('cart_data'), 'Product added to cart successfully.');
+        return $this->sendResponse(Session('cart_data_'.session('loguser')->user_id), 'Product added to cart successfully.');
     }
 
         //update_cart
@@ -163,10 +163,10 @@ class SubscriptionController extends BaseController
         }
 
         if($request->cp_id && $request->quantity){
-            $cart = session()->get('cart_data');
+            $cart = session()->get('cart_data_'.session('loguser')->user_id);
             $cart[$request->cp_id]["quantity"] = $request->quantity;
-            session()->put('cart_data', $cart);
-            return $this->sendResponse(session('cart_data'), 'Cart updated successfully');
+            session()->put('cart_data_'.session('loguser')->user_id, $cart);
+            return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'Cart updated successfully');
         }
     }
 
@@ -174,43 +174,48 @@ class SubscriptionController extends BaseController
 //remove
         public function remove_cart(Request $request)
     {
-        if (count(session()->get('cart_data')) == 1) {
+        if (count(session()->get('cart_data_'.session('loguser')->user_id)) == 1) {
             if($request->cp_id) {
-                $cart = session()->get('cart_data');
+                $cart = session()->get('cart_data_'.session('loguser')->user_id);
                 if(isset($cart[$request->cp_id])) {
                     unset($cart[$request->cp_id]);
-                    session()->put('cart_data', $cart);
+                    session()->put('cart_data_'.session('loguser')->user_id, $cart);
                 }
             }
-            return $this->sendResponse(session('cart_data'), 'Product removed successfully');
+            return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'Product removed successfully');
             
         }else{
             if($request->cp_id) {
-                $cart = session()->get('cart_data');
+                $cart = session()->get('cart_data_'.session('loguser')->user_id);
                 if(isset($cart[$request->cp_id])) {
                     unset($cart[$request->cp_id]);
-                    session()->put('cart_data', $cart);
+                    session()->put('cart_data_'.session('loguser')->user_id, $cart);
                 }
             }
-            return $this->sendResponse(session('cart_data'), 'Product removed successfully');
+            return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'Product removed successfully');
         }
     }
 
 //cart-details
         public function cart_details(Request $request)
     {
-        if (session('cart_data') != null) {
-            return $this->sendResponse(session('cart_data'), 'cart data');
-            
+        $user_id = session('loguser')->user_id;
+        if ($request->user_id == $user_id) {
+            if (session('cart_data_'.session('loguser')->user_id) != null) {
+                return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'cart data');
+                
+            }else{
+                return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'cart is empty');
+            }
         }else{
-            return $this->sendResponse(session('cart_data'), 'cart is empty');
+            return $this->sendError('user not logged!', null);
         }
+
     }
 
         public function check_bill_details(Request $request)
     {
-
-        if (session('cart_data') != null) {
+        if (session('cart_data_'.session('loguser')->user_id) != null) {
             $validator = Validator::make($request->all(), [
                 'user_id' => 'required',
                 'delivery_option' => 'required',
@@ -221,12 +226,12 @@ class SubscriptionController extends BaseController
                 return $this->sendError('Validation Error.', $validator->errors());       
             }
         }else{
-            return $this->sendResponse(session('cart_data'), 'first you need to add item in cart');
+            return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'first you need to add item in cart');
         }
 
-        if(session('cart_data')){
+        if(session('cart_data_'.session('loguser')->user_id)){
             $total = 0;
-            foreach (session('cart_data') as $id => $cart) {
+            foreach (session('cart_data_'.session('loguser')->user_id) as $id => $cart) {
                     $total = $total + $cart['price']*$cart['quantity']; 
                 }
         }
@@ -271,7 +276,7 @@ class SubscriptionController extends BaseController
         $success['user_id'] = $request->user_id;
         $success['delivery_option'] = $delivery_option;
         $success['delivery_days'] = $delivery_days;
-        $success['cart_data'] = session('cart_data');
+        $success['cart_data_'.session('loguser')->user_id] = session('cart_data_'.session('loguser')->user_id);
         $success['subtotal'] =  $total;
         $success['delivery_fee'] =  2.99;
         $success['total'] = number_format((float)$with_number, 2, '.', '');
@@ -284,7 +289,7 @@ class SubscriptionController extends BaseController
 
         public function place_order(Request $request)
     {
-        if (session('cart_data') != null) {
+        if (session('cart_data_'.session('loguser')->user_id) != null) {
             $validator = Validator::make($request->all(), [
                 'user_id' => 'required',
                 'delivery_option' => 'required',
@@ -296,7 +301,7 @@ class SubscriptionController extends BaseController
                 return $this->sendError('Validation Error.', $validator->errors());       
             }
         }else{
-            return $this->sendResponse(session('cart_data'), 'first you need to add item in cart');
+            return $this->sendResponse(session('cart_data_'.session('loguser')->user_id), 'first you need to add item in cart');
         }
 
         $user_id = $request->user_id;
@@ -335,7 +340,7 @@ class SubscriptionController extends BaseController
 
 
         $subscribe = DB::table('orders')->insertGetId($order_data);
-            foreach (session('cart_data') as $id => $cart) {
+            foreach (session('cart_data_'.session('loguser')->user_id) as $id => $cart) {
                 $cart_order = [
                     'order_id'=>$subscribe,
                     'item_id'=>$id,
@@ -376,7 +381,7 @@ class SubscriptionController extends BaseController
         ];
 
         DB::table('orders')->where('order_id', $request->order_number)->update($payment_details);
-        Session::forget('cart_data');
+        Session::forget('cart_data_'.session('loguser')->user_id);
 
         $success['invoice_id'] = $invoice_id;
         return $this->sendResponse($success, 'your order paid!');
